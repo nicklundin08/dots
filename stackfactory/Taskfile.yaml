@@ -1,0 +1,102 @@
+version: "3"
+
+dotenv: ['./envs/local.env']
+
+includes:
+  psql:
+    taskfile: ./psql/
+    dir: ./psql/
+  sd:
+    taskfile: ./sequencediagrams/
+    dir: ./sequencediagrams/
+  erd:
+    taskfile: ./erd/
+    dir: ./erd/
+  openapi:
+    taskfile: ./openapi/
+    dir: ./openapi/
+  compose:
+    taskfile: ./compose/
+    dir: ./compose/
+  docker:
+    taskfile: ./docker/
+    dir: ./docker/
+  liquibase:
+    taskfile: ./liquibase/
+    dir: ./liquibase/
+
+tasks:
+  default:
+    summary: |
+      Starts all docker compose dependencies.
+      Applies all liquibase migrations.
+      (Re)Generates the open api contract.
+      Starts the server.
+    desc: |
+      Starts all dependencies and then the server
+    cmds:
+      - task: bootstrap
+      - mvn spring-boot:run
+
+  up_docker:
+    summary: |
+      Starts all docker compose dependencies.
+      Applies all liquibase migrations.
+      (Re)Generates the open api contract.
+      Starts the server via a docker container.
+    desc: |
+      Starts all dependencies and then the server (via a docker container)
+    cmds:
+      - task: bootstrap
+      - task: docker:build
+      - task: compose:up_all
+
+  fmt:
+    summary: |
+      Applies formatting to all the files.
+    desc: |
+      Applies formatting to all the files.
+    cmds:
+      - mvn spotless:apply
+
+  mvn:
+    summary: |
+      Forwards the CLI args to the maven build.
+      Useful because we automagically load our ./misc/envs/local.env.
+      e.g. task mvn -- test
+    desc: |
+      Usage: task mvn -- test
+    cmds:
+      - mvn -- {{.CLI_ARGS}}
+
+  verify:
+    summary: |
+      Runs all local quality checks including: lint, chekcstyle, test, coverage report. Should be fast - great for pre-commit hooks or PR checks.
+      Does not run the load nor integration tests
+    desc: |
+      The local verify step.
+    cmds:
+      - task: bootstrap
+      - task: openapi:compare_changes_with_main
+      - mvn verify
+
+  bootstrap:
+    summary: |
+      Starts all docker compose dependencies.
+      Applies all liquibase migrations.
+      (Re)Generates the open api contract.
+    desc: |
+      Bootstraps the project for compliation/running/testing
+    cmds:
+      - task: openapi:default
+      - task: compose:default
+      - task: liquibase:default
+      - task: fmt
+
+  init:
+    summary: |
+      Generates the maven wrapper files for the project
+    desc: |
+      Generates the maven wrapper files for the project
+    cmds:
+      - mvn -N wrapper:wrapper

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE suppressions PUBLIC
+        "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+        "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+    <!-- Spring application class must have a constructor -->
+    <suppress files="[/\\]src[/\\].*[/\\]*Application.java" checks="HideUtilityClassConstructor" />
+
+    <!-- Suppress generated code -->
+    <suppress files="[/\\]src[/\\]main[/\\]java[/\\]org[/\\]openapitools[/\\].*.java" checks=".*" />
+
+    <!-- I go back and forth on this one...
+    <suppress files=".*" checks="OneTopLevelClass" />
+    -->
+
+    <!-- Suppress test classes -->
+    <suppress files="[/\\]src[/\\]test[/\\].*[Tt]est(s?).java" checks="Javadoc*" />
+    <suppress files="[/\\]src[/\\]test[/\\].*[Tt]est(s?).java" checks="VisibilityModifier" />
+    <suppress files="[/\\]src[/\\]test[/\\].*[Tt]est(s?).java" checks="BanSystemOut" />
+    <suppress files="[/\\]src[/\\]test[/\\].*[Tt]est(s?).java" checks="BanSystemErr" />
+    <suppress files="[/\\]src[/\\]test[/\\].*[Tt]est(s?).java" checks="IllegalThrows" />
+    <suppress files="[/\\]src[/\\]test[/\\].*[Tt]est(s?).java" checks="OneTopLevelClass" />
+    <suppress files="[/\\]src[/\\]test[/\\].*[Tt]est(s?).java" checks="OuterTypeFilename" />
+
+    <!-- Suppress test resources -->
+    <suppress files="[/\\]src[/\\]test[/\\]resources.*" checks="." />
+
+    <!-- JavadocStyle enforces existence of package-info.java package-level Javadoc; we consider this a bug. -->
+    <suppress files="package-info.java" checks="JavadocStyle" />
+
+    <!-- Generated code should not be subjected to checkstyle. -->
+    <suppress files="[/\\].*[/\\]generated.*[/\\]" checks="." />
+</suppressions>

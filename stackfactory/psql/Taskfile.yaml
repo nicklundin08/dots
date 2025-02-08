@@ -1,0 +1,28 @@
+version: "3"
+tasks:
+  default:
+    summary: |
+      Opens up a PSQL connection to the DB.
+    desc: |
+      Opens up a PSQL connection to the DB.
+    cmds:
+      - PGPASSWORD=${PG_PASS} psql -U ${PG_USER} -h ${PG_HOST} -d ${PG_DB}
+    silent: false
+  display_dbs:
+    summary: |
+      Executes a query on the `postgres` db that displays all databases.
+      This command can be useful to confirm whether the db was created correctly in the docker compose spinup.
+    desc: |
+      Executes a query on the `postgres` db that displays all databases.
+    cmds:
+      - PGPASSWORD=${PG_PASS} psql -U ${PG_USER} -h ${PG_HOST} -f  ./queries/db.sql
+    silent: false
+  display_tables:
+    summary: |
+      Executes a query that displays all the tables in the given db.
+      This command can be useful to confirm whether the tables where created correctly after running liquibase migrations.
+    desc: |
+      Executes a query that displays all the tables in the given db.
+    cmds:
+      - PGPASSWORD=${PG_PASS} psql -U ${PG_USER} -h ${PG_HOST} -d ${PG_DB} -f ./queries/schema.sql
+    silent: false

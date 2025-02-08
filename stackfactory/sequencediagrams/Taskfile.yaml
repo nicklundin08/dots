@@ -1,0 +1,10 @@
+version: "3"
+
+tasks:
+  default:
+    summary: |
+      (WIP) Removes and regenerates all existing plantuml diagrams in the folder using the .txt source files.
+    desc: |
+      (WIP) Removes and regenerates all existing plantuml diagrams in the folder using the .txt source files.
+    cmds:
+      - plantuml sample.txt

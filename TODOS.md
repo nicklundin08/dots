@@ -1,0 +1,23 @@
+# TODOS
+- NVIM port lazy plugins
+  - plenary
+  - blink.cmp
+  - flash.nvim
+  - friendly-snippets ?
+  - gitsigns.nvim
+  - grug-far.nvim
+  - mini.pairs
+  - noice.nvim
+  - nvim-nio
+  - nvim-treesitter
+  - nvim-treesitter-sexp
+  - nvim-treesitter-textobjects
+  - nvim-ts-autotag
+  - todo-comments.nvim
+  - trouble.nvim
+  - ts-comments.nvim
+- NVIM IDE support
+  - JAVA LSP (jdtls and such)
+  - neotest
+- NVIM custom plugins
+  - Harpoon?

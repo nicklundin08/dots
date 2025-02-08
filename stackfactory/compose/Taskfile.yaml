@@ -1,0 +1,38 @@
+version: "3"
+tasks:
+  default:
+    summary: |
+      Starts all docker compose files that end with `.yaml` that have the `deps` profile.
+      A useful trick to omit a file here it to renmae it to `.yml` or to remove the `deps` profile.
+      Containers that are started will not include the service itself.
+    desc: |
+      Starts all docker compose containers except the service. Useful for testing or running the service locally.
+    cmds:
+      - task: up_deps
+  up_all:
+    summary: |
+      Starts all docker compose files that end with `.yaml` that have the `all` profile.
+      A useful trick to omit a file here it to renmae it to `.yml` or to remove the `all` profile.
+    desc: |
+      Starts all docker compose containers.
+    vars:
+      FILES:
+        sh: find . -type f -name "compose.*.yaml" | sed 's/compose/-f compose/g' | sed 's/.\///g' | sed -z 's/\n/ /g'
+        # tr -d ".\" | tr -d 'x' |sed 's/zompose/-f compose/g'
+    cmds:
+      - docker compose -p lazy {{.FILES}} --profile all up -d
+    silent: false
+  up_deps:
+    summary: |
+      Starts all docker compose files that end with `.yaml` that have the `deps` profile.
+      A useful trick to omit a file here it to renmae it to `.yml` or to remove the `deps` profile.
+      Containers that are started will not include the service itself.
+    desc: |
+      Starts all docker compose containers except the service. Useful for testing or running the service locally.
+    vars:
+      FILES:
+        sh: find . -type f -name "compose.*.yaml" | sed 's/compose/-f compose/g' | sed 's/.\///g' | sed -z 's/\n/ /g'
+        # tr -d ".\" | tr -d 'x' |sed 's/zompose/-f compose/g'
+    cmds:
+      - docker compose -p lazy {{.FILES}} --profile deps up -d
+    silent: false

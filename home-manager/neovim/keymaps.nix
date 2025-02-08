@@ -1,0 +1,63 @@
+{
+  programs.nixvim.keymaps = [
+    #####################################
+    # Splits
+    #####################################
+    {
+      action = ":only<CR>";
+      key = "wd";
+      mode = "n";
+    }
+    {
+      action = "<C-W>h";
+      key = "<C-h>";
+      mode = "n";
+    }
+    {
+      action = "<C-W>j";
+      key = "<C-j>";
+      mode = "n";
+    }
+    {
+      action = "<C-W>k";
+      key = "<C-k>";
+      mode = "n";
+    }
+    {
+      action = "<C-W>l";
+      key = "<C-l>";
+      mode = "n";
+    }
+    #####################################
+    # Buffers
+    #####################################
+    {
+      action = ":bprev<CR>";
+      key = "<S-h>";
+      mode = "n";
+    }
+    {
+      action = ":bnext<CR>";
+      key = "<S-l>";
+      mode = "n";
+    }
+    #####################################
+    # Saving
+    #####################################
+    {
+      action = "<C-c>:update<CR>";
+      key = "<C-s>";
+      mode = "v";
+    }
+    {
+      action = "<C-O>:update<CR>";
+      key = "<C-s>";
+      mode = "i";
+    }
+    {
+      action = ":update<CR>";
+      key = "<C-s>";
+      mode = "n";
+    }
+  ];
+}

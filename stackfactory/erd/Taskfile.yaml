@@ -1,0 +1,11 @@
+version: "3"
+
+tasks:
+  default:
+    summary: |
+      Removes and regenerates the ERDs for the database.
+    desc: |
+      Removes and regenerates the ERDs for the database.
+    cmds:
+      - rm -rf dbdoc || true
+      - tbls doc postgres://${PG_USER}:${PG_PASS}@${PG_HOST}:${PG_PORT}/${PG_DB}?sslmode=disable

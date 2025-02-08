@@ -1,0 +1,43 @@
+version: "3"
+tasks:
+  default:
+    summary: |
+      Creates the database (if not exists).
+      Applies all liquibase migrations.
+    desc: |
+      Creates the database (if not exists).
+      Applies all liquibase migrations.
+    cmds:
+      - task: create_db_if_not_exists
+      - task: migrate
+      #- task: doc
+  test:
+    summary: |
+      Tests the connection by selecting 1.
+    desc: |
+      Tests the connection by selecting 1.
+    cmds:
+      - PGPASSWORD=${PG_PASS} psql -U ${PG_USER} -h ${PG_HOST} -d 'postgres' -c 'SELECT 1'
+    silent: false
+  migrate:
+    summary: |
+      Applies the liquibase migrations.
+    desc: |
+      Applies the liquibase migrations.
+    cmds:
+      - liquibase update --defaults-file liquibase.properties --username ${PG_USER} --password ${PG_PASS} --url jdbc:postgresql://${PG_HOST}:${PG_PORT}/${PG_DB}
+    silent: false
+  create_db_if_not_exists:
+    summary: |
+      Creates the db if it does not exist.
+    desc: |
+      Creates the db if it does not exist.
+    cmds:
+      - PGPASSWORD=${PG_PASS} psql -U ${PG_USER} -h ${PG_HOST}  -d 'postgres' -c "CREATE DATABASE ${PG_DB}" || true
+  prune:
+    summary: |
+      !!! WARNING - very destructive!!! Drops the DB
+    desc: |
+      !!! WARNING - very destructive!!! Drops the DB
+    cmds:
+      - PGPASSWORD=${PG_PASS} psql -U ${PG_USER} -h ${PG_HOST}  -d 'postgres'  -c "DROP DATABASE ${PG_DB}" || true

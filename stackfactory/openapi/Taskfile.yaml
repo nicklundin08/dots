@@ -1,0 +1,57 @@
+version: "3"
+tasks:
+  default:
+    summary: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file.
+      Generates the java server stubs from the bundles openapi json file
+    desc: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file.
+      Generates the java server stubs from the bundles openapi json file
+    cmds:
+      - task: bundle_contract
+      - task: generate_spring
+
+  bundle_contract:
+    summary: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file
+      TODO: update this task so it only runs when the `.yaml` files change
+    desc: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file
+    cmds:
+      - redocly bundle --output ./openapi-generated --ext json ./openapi.yaml
+      - rm -rf ../../src/main/resources/static/openapi.json || true
+      - mkdir -p ../../src/main/resources/static
+      - cp ./openapi-generated.json ../../src/main/resources/static/openapi.json
+
+  compare_changes_with_main:
+    ## https://www.youtube.com/watch?v=sNalT1RIF4w
+    # status:
+    #   - test -d ../../.git
+    cmds:
+      - rm -rf ../openapi-main || true
+      - mkdir ../openapi-main
+      - git --work-tree=../openapi-main/ checkout HEAD -- ./misc/openapi/
+      - openapi-changes summary ../openapi-main/misc/openapi/openapi.yaml ./openapi.yaml
+
+
+  ## Customization: https://github.com/OpenAPITools/openapi-generator/blob/master/docs/customization.md
+  ## Spring options: https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/spring.md
+  generate_spring:
+    summary: |
+      Generates the server stubs (interfaces) for the spring boot rest controllers.
+      TODO: update this task so it only runs when the generated json file changes.
+    desc: |
+      Generates the server stubs (interfaces) for the spring boot rest controllers.
+    vars:
+      REL_PATH: ../../src/main/java
+    cmds:
+      - |
+        openapi-generator-cli generate \
+        -i ./openapi-generated.json \
+        -g spring \
+        -o ../../src/main/java \
+        -p interfaceOnly=true,skipDefaultInterface=true,sourceFolder=./,useSpringBoot3=true,useJakartaEe=true,generateSupportingFiles=false
+      - rm -rf {{.REL_PATH}}/pom.xml \
+          {{.REL_PATH}}/.openapi-generator/ \
+          {{.REL_PATH}}/org/README.md \
+          {{.REL_PATH}}/org/openapi-generator-ignore

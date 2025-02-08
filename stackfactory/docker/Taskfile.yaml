@@ -1,0 +1,10 @@
+version: "3"
+
+tasks:
+  build:
+    summary: |
+      Builds the docker image for the spring boot server.
+    desc: |
+      Builds the docker image for the spring boot server.
+    cmds:
+      - docker build -f ./Dockerfile ../../ -t $DOCKER_IMAGE_TAG_NAME
