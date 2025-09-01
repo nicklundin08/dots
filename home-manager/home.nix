@@ -20,8 +20,8 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./neovim
+    ./tmux
     ./git.nix
-    ./tmux.nix
     ./bash.nix
     ./omp.nix
     ./direnv.nix
