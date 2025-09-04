@@ -5,6 +5,7 @@
 }: {
   home.packages = [
     pkgs.hello
+    pkgs.nix-search-cli
     pkgs.tmuxp
     pkgs.gnumake
     pkgs.gcc
