@@ -37,7 +37,7 @@
       #"aarch64-linux"
       #"i686-linux"
       "x86_64-linux"
-      #"aarch64-darwin"
+      "aarch64-darwin"
       #"x86_64-darwin"
     ];
     # This is a function that generates an attribute by calling a function you
@@ -76,7 +76,19 @@
     # Standalone home-manager configuration entrypoint
     # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      # FIXME replace with your username@hostname
+      "nicholaslundin@BL-003.local" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
+        extraSpecialArgs = {
+          inherit inputs outputs;
+          extraSpecialHomeDir = "/Users/nicholaslundin";
+          extraSpecialUser = "nicholaslundin";
+          extraSpecialEmail = "nicholas.lundin@betterlesson.com";
+        };
+        modules = [
+          # > Our main home-manager configuration file <
+          ./home-manager/home.nix
+        ];
+      };
       "nick@MSI" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
         extraSpecialArgs = {
