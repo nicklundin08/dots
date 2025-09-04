@@ -16,7 +16,6 @@
     pkgs.alejandra
     pkgs.go-task
     pkgs.ripgrep
-    pkgs.fzf
     pkgs.gh
     pkgs.lazycli
     pkgs.jq

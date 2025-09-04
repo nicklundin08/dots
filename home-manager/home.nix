@@ -21,12 +21,13 @@
     # You can also split up your configuration and import pieces of it here:
     ./neovim
     ./tmux
-    ./git.nix
-    ./bash.nix
-    ./omp.nix
-    ./direnv.nix
-    ./packages.nix
     ./aliases.nix
+    ./bash.nix
+    ./direnv.nix
+    ./fzf.nix
+    ./git.nix
+    ./omp.nix
+    ./packages.nix
   ];
 
   # programs.nixvim = import ./template/flake.nix { inherit pkgs lib config; };
