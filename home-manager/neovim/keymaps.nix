@@ -5,7 +5,7 @@
     #####################################
     {
       action = ":only<CR>";
-      key = "wd";
+      key = "<leader>wd";
       mode = "n";
     }
     {
