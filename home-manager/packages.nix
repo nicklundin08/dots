@@ -5,6 +5,7 @@
 }: {
   home.packages = [
     pkgs.hello
+    pkgs.tmuxp
     pkgs.gnumake
     pkgs.gcc
     pkgs.curl
