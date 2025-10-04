@@ -41,6 +41,11 @@
       key = "<S-l>";
       mode = "n";
     }
+    {
+      action = ":bdelete<CR>";
+      key = "<leader>bd";
+      mode = "n";
+    }
     #####################################
     # Saving
     #####################################
@@ -55,7 +60,7 @@
       mode = "i";
     }
     {
-      action = ":update<CR>";
+      action = ":w<CR>";
       key = "<C-s>";
       mode = "n";
     }
