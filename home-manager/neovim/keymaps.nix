@@ -1,11 +1,19 @@
 {
   programs.nixvim.keymaps = [
     #####################################
+    # Split explorer
+    #####################################
+    {
+      action = ":Ex<CR>";
+      key = "-";
+      mode = "n";
+    }
+    #####################################
     # Splits
     #####################################
     {
       action = ":only<CR>";
-      key = "<leader>wd";
+      key = "<leader>wo";
       mode = "n";
     }
     {
