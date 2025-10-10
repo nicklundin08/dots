@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  lib,
   ...
 }: {
   home.packages = [
@@ -52,4 +53,5 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
+  programs.yazi.theme = lib.importTOML ./yazi.toml;
 }

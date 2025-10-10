@@ -12,10 +12,11 @@
     ./plugins/dadbod.nix
     ./plugins/lualine.nix
     ./plugins/noice.nix
-    ./plugins/oil.nix
+    #./plugins/oil.nix
     ./plugins/snacks.nix
     ./plugins/telescope.nix
     ./plugins/treesitter.nix
+    ./plugins/yazi.nix
   ];
 
   #home.shellAliases.v = "nvim";
