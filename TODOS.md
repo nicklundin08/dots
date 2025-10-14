@@ -5,7 +5,6 @@
   - flash.nvim
   - friendly-snippets ?
   - gitsigns.nvim
-  - grug-far.nvim
   - mini.pairs
   - noice.nvim
   - nvim-nio

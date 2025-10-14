@@ -1,4 +1,4 @@
-{lib, ...}:{
+{lib, ...}: {
   programs.nixvim.keymaps = [
     #####################################
     # Split explorer

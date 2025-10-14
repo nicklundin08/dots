@@ -177,13 +177,13 @@
     spice-gtk
     spice-protocol
     win-virtio
-    win-spice 
+    win-spice
     #gnome.adwaita-icon-theme
     # Build stuff
     # pkgs.go
     # pkgs.lazygit
     # pkgs.go-task
-    # pkgs.go-task 
+    # pkgs.go-task
     # pkgs.tigervnc
   ];
 
