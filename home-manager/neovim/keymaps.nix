@@ -1,4 +1,4 @@
-{
+{lib, ...}:{
   programs.nixvim.keymaps = [
     #####################################
     # Split explorer
@@ -71,6 +71,17 @@
       action = ":w<CR>";
       key = "<C-s>";
       mode = "n";
+    }
+    #####################################
+    # FAR
+    #####################################
+    {
+      key = "<leader>r";
+      action = lib.generators.mkLuaInline "function() require('grug-far').open({ transient = true }) end";
+      mode = "n";
+      options = {
+        desc = "Search";
+      };
     }
   ];
 }
