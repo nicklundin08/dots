@@ -23,11 +23,19 @@
 
   #home.shellAliases.v = "nvim";
 
+  home.file.".config/nvim/lua/customlua".source = ./customlua;
+
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
-
+    extraConfigLua = ''
+      require("customlua.netrw")
+    '';
     nixpkgs.useGlobalPackages = true;
+
+    # plugins.lsp.enable = true;
+    # plugins.lsp.autoLoad = true;
+    # plugins.lsp.inlayHints = true;
 
     plugins.which-key = {
       enable = true;
