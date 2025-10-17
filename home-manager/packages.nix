@@ -25,6 +25,8 @@
     pkgs.yazi
     pkgs.xsel
     pkgs.pre-commit
+    pkgs.lua
+    pkgs.lua-language-server
     # pkgs.zellij
     # pkgs.libyaml
     # pkgs.ruby

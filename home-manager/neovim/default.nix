@@ -28,6 +28,7 @@
     defaultEditor = true;
     extraConfigLua = ''
       require("customlua.netrw")
+      require("customlua.lsp_luals")
     '';
     nixpkgs.useGlobalPackages = true;
 

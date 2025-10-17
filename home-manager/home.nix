@@ -61,6 +61,10 @@
   home = {
     username = extraSpecialUser;
     homeDirectory = extraSpecialHomeDir;
+
+    sessionVariables = {
+      NVIM_LSP_LUA_ENABLED = "true";
+    };
   };
 
   # Add stuff for your user as you see fit:
