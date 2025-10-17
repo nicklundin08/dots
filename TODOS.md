@@ -20,3 +20,5 @@
   - neotest
 - NVIM custom plugins
   - Harpoon?
+- Migrate to lazy nix? 
+  -  https://breuer.dev/blog/nix-lazy-neovim

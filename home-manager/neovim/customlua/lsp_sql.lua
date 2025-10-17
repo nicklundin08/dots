@@ -1,4 +1,4 @@
-local lsp_enabled = os.getenv("NVIM_LSP_LUA_ENABLED")
+local lsp_enabled = os.getenv("NVIM_LSP_SQL_ENABLED")
 
 if false == lsp_enabled then
   return {}
