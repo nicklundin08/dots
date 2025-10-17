@@ -21,8 +21,6 @@
     #./plugins/yazi.nix
   ];
 
-  #home.shellAliases.v = "nvim";
-
   home.file.".config/nvim/lua/customlua".source = ./customlua;
 
   programs.nixvim = {
@@ -32,10 +30,6 @@
       require("customlua.netrw")
     '';
     nixpkgs.useGlobalPackages = true;
-
-    # plugins.lsp.enable = true;
-    # plugins.lsp.autoLoad = true;
-    # plugins.lsp.inlayHints = true;
 
     plugins.which-key = {
       enable = true;
@@ -70,14 +64,5 @@
 
     viAlias = true;
     vimAlias = true;
-    #colorscheme = "gruvbox";
-    # extraPlugins = [ pkgs.vimPlugins.catppuccin ];
-    # plugins.lightline.enable = true;
-
-    #colorschemes.gruvbox.enable = true;
-    #colorschemes.catppuccin.enable = true;
-    #plugins.lualine.enable = true;
-
-    #luaLoader.enable = true;
   };
 }
