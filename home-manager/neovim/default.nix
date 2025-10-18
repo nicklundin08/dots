@@ -10,7 +10,7 @@
     ./keymaps.nix
     ./plugins/catppuccin.nix
     ./plugins/dadbod.nix
-    ./plugins/grug-far.nix
+    # ./plugins/grug-far.nix
     ./plugins/lualine.nix
     ./plugins/netrw.nix
     ./plugins/noice.nix
