@@ -32,7 +32,10 @@
     # pkgs.ruby
 
     ## TODO: remove these and move them to project specific flakes
-    # pkgs.lombok
+    pkgs.lombok
+    pkgs.jdt-language-server
+    pkgs.jdk23
+    pkgs.maven
     # pkgs.clojure
     # pkgs.clojure-lsp
     # pkgs.leiningen
