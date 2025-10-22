@@ -15,6 +15,8 @@
       # breakindent = true;
       # undofile = true;
       swapfile = false;
+      ## Sign column - putting this to always on so LSP generating an error doesnt shift the entire buffer when drawing the gutter in
+      scl = "yes";
       # signcolumn = "yes";
       # autoformat = false;
       timeoutlen = 300;
