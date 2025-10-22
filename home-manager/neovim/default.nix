@@ -17,9 +17,6 @@
   programs.nixvim = {
     enable = true;
     defaultEditor = true;
-    extraConfigLua = ''
-      require("customlua.netrw")
-    '';
     nixpkgs.useGlobalPackages = true;
 
     viAlias = true;
