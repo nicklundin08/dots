@@ -4,9 +4,9 @@
       enable = true;
     };
 
-    mini-icons = {
-      enable = true;
-    };
+    # mini-icons = {
+    #   enable = true;
+    # };
 
     noice = {
       enable = true;
