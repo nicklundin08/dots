@@ -1,8 +1,7 @@
-{
+{pkgs, ...}: {
   programs.nixvim.plugins = {
-    noice = {
+    lint = {
       enable = true;
-      autoLoad = true;
     };
   };
 }

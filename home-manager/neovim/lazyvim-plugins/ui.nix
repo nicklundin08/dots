@@ -1,5 +1,22 @@
-{
+{pkgs, ...}: {
   programs.nixvim.plugins = {
+    lualine = {
+      enable = true;
+    };
+
+    mini-icons = {
+      enable = true;
+    };
+
+    noice = {
+      enable = true;
+      autoLoad = true;
+    };
+
+    nui = {
+      enable = true;
+    };
+
     snacks = {
       enable = true;
       autoLoad = true;
