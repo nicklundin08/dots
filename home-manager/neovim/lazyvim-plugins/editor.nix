@@ -18,22 +18,24 @@
         delay = 0;
         spec = [
           {
+            __unkeyed-1 = "<leader>b";
+            group = "buffer";
+          }
+          {
+            __unkeyed-1 = "<leader>c";
+            group = "code";
+          }
+          {
             __unkeyed-1 = "<leader>s";
-            group = "[S]earch";
+            group = "search";
           }
           {
-            __unkeyed-1 = "<leader>t";
-            group = "[T]oggle";
+            __unkeyed-1 = "<leader>u";
+            group = "ui";
           }
           {
-            __unkeyed-1 = "<leader>h";
-            group = "Git [H]unk";
-            mode = [
-              "n"
-              "v"
-              "o"
-              "x"
-            ];
+            __unkeyed-1 = "<leader>x";
+            group = "diagnostics";
           }
         ];
       };
