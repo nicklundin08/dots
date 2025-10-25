@@ -20,6 +20,10 @@
     extraFiles = {
       "after/ftplugin/java.lua".source = ./jdtls.lua;
     };
+
+    plugins.neotest = {
+      settings.adapters = ["gradle"];
+    };
   };
   # programs.nixvim.plugins.lspconfig.servers.jdtls.enable = true;
 
