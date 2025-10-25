@@ -1,14 +1,14 @@
-{pkgs, ...}: {
-  programs.nixvim.plugins = {
+{pkgs, lib, ...}: {
+  programs.nixvim = {
     # grug-far = {
     #   enable = true;
     # };
 
-    flash = {
+    plugins.flash = {
       enable = true;
     };
 
-    which-key = {
+    plugins.which-key = {
       enable = true;
 
       # Document existing key chains
@@ -30,6 +30,10 @@
             group = "search";
           }
           {
+            __unkeyed-1 = "<leader>sn";
+            group = "noice";
+          }
+          {
             __unkeyed-1 = "<leader>u";
             group = "ui";
           }
@@ -41,15 +45,16 @@
       };
     };
 
-    gitsigns = {
+
+    plugins.gitsigns = {
       enable = true;
     };
 
-    trouble = {
+    plugins.trouble = {
       enable = true;
     };
 
-    todo-comments = {
+    plugins.todo-comments = {
       enable = true;
     };
   };

@@ -1,6 +1,6 @@
-{pkgs, ...}: {
-  programs.nixvim.plugins = {
-    lualine = {
+{pkgs, lib, ...}: {
+  programs.nixvim = {
+    plugins.lualine = {
       enable = true;
     };
 
@@ -8,16 +8,28 @@
     #   enable = true;
     # };
 
-    noice = {
+    plugins.noice = {
       enable = true;
       autoLoad = true;
     };
 
-    nui = {
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>snh";
+      	action = lib.generators.mkLuaInline "function() require('noice').cmd('history') end";
+        options = {
+          desc = "Noice History";
+        };
+      }
+    ];
+
+
+    plugins.nui = {
       enable = true;
     };
 
-    snacks = {
+    plugins.snacks = {
       enable = true;
       autoLoad = true;
       settings.input.enabled = true;
