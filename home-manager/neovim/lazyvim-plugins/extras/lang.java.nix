@@ -18,7 +18,7 @@
     ];
 
     extraFiles = {
-      "after/ftplugin/jdtls.lua".source = ./jdtls.lua;
+      "after/ftplugin/java.lua".source = ./jdtls.lua;
     };
   };
   # programs.nixvim.plugins.lspconfig.servers.jdtls.enable = true;
