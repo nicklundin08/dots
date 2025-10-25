@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.nixvim = {
     # grug-far = {
     #   enable = true;
@@ -44,7 +48,6 @@
         ];
       };
     };
-
 
     plugins.gitsigns = {
       enable = true;

@@ -1,4 +1,8 @@
-{pkgs, lib, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   programs.nixvim = {
     plugins.lualine = {
       enable = true;
@@ -17,13 +21,12 @@
       {
         mode = "n";
         key = "<leader>snh";
-      	action = lib.generators.mkLuaInline "function() require('noice').cmd('history') end";
+        action = lib.generators.mkLuaInline "function() require('noice').cmd('history') end";
         options = {
           desc = "Noice History";
         };
       }
     ];
-
 
     plugins.nui = {
       enable = true;
