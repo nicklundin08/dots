@@ -17,9 +17,9 @@
       })
     ];
 
-    extraConfigLua = ''
-      require('customlua.jdtls')
-    '';
+    extraFiles = {
+      "after/ftplugin/jdtls.lua".source = ./jdtls.lua;
+    };
   };
   # programs.nixvim.plugins.lspconfig.servers.jdtls.enable = true;
 
