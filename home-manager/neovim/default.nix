@@ -8,7 +8,7 @@
     ./extra-plugins
   ];
 
-  #home.file.".config/nvim/lua/customlua".source = ./customlua;
+  home.file.".config/nvim/lua/customlua".source = ./customlua;
 
   programs.nixvim = {
     enable = true;
