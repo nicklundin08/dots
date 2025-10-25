@@ -1,4 +1,17 @@
 # TODOS
+- Nvim LSP underlines
+- Neotest
+- JDTLS cmp extra sources?
+- JDTLS cmp keybinds? 
+- More lang setups
+    - TS 
+        - VTSLS
+        - CMP and such
+        - Neotest
+    - Ruby
+        - Neotest
+- Add snippets
+- Layzvim Keyamps 
 - NVIM port lazy plugins
   - plenary
   - blink.cmp
