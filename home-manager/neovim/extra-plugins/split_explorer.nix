@@ -68,6 +68,7 @@
         settings.watch_for_changes = true;
         settings.keymaps = {
           "<C-s>" = false;
+          "<C-h>" = false;
         };
       };
     };
