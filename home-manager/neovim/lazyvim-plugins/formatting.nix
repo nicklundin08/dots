@@ -22,7 +22,7 @@
   };
   programs.nixvim.keymaps = [
     {
-      key = "<leader>cF";
+      key = "<leader>cf";
       #action = lib.generators.mkLuaInline "function() require('conform').format({ formatters = { 'injected' }, timeout_ms = 3000 }) end";
       action = lib.generators.mkLuaInline "function() require('conform').format() end";
       mode = "n";
