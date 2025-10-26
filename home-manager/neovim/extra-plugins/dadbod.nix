@@ -5,12 +5,12 @@
     vim-dadbod-completion.enable = true;
   };
 
-  programs.nixvim.keymaps = [
-    {
-      mode = "n";
-      key = "<leader>db";
-      options.silent = true;
-      action = "<CMD>DBUIToggle<CR>";
-    }
-  ];
+  # programs.nixvim.keymaps = [
+  #   {
+  #     mode = "n";
+  #     key = "<leader>db";
+  #     options.silent = true;
+  #     action = "<CMD>DBUIToggle<CR>";
+  #   }
+  # ];
 }
