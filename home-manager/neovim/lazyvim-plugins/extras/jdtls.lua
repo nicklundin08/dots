@@ -1,8 +1,8 @@
 -- https://github.com/mfussenegger/nvim-jdtls/wiki/Sample-Configurations
 -- See `:help vim.lsp.start` for an overview of the supported `config` options.
+local lombok_jar_path = os.getenv("LOMBOK_JAR_PATH")
 local config = {
   name = "jdtls",
-
 
   -- `cmd` defines the executable to launch eclipse.jdt.ls.
   -- `jdtls` must be available in $PATH and you must have Python3.9 for this to work.
@@ -10,7 +10,10 @@ local config = {
   -- As alternative you could also avoid the `jdtls` wrapper and launch
   -- eclipse.jdt.ls via the `java` executable
   -- See: https://github.com/eclipse/eclipse.jdt.ls#running-from-the-command-line
-  cmd = {"jdtls"},
+  cmd = {
+	  "jdtls",
+	  "--jvm-arg=-javaagent:" .. lombok_jar_path,
+  },
 
 
   -- `root_dir` must point to the root of your project.

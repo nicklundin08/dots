@@ -4,10 +4,16 @@
     pkgs.jdt-language-server
   ];
 
+  home.sessionVariables = {
+    JDTLS_PATH = "${pkgs.jdt-language-server}";
+    LOMBOK_PATH = "${pkgs.lombok}";
+    LOMBOK_JAR_PATH = "${pkgs.lombok}/share/java/lombok.jar";
+  };
+
   programs.nixvim = {
     extraPlugins = [
       (pkgs.vimUtils.buildVimPlugin {
-        name = "netrw.nvim";
+        name = "nvim-jdtls";
         src = pkgs.fetchFromGitHub {
           owner = "mfussenegger";
           repo = "nvim-jdtls";
@@ -17,12 +23,21 @@
       })
     ];
 
+    plugins.treesitter = {
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        java
+      ];
+    };
+
     extraFiles = {
       "after/ftplugin/java.lua".source = ./jdtls.lua;
     };
 
     plugins.neotest = {
-      settings.adapters = ["gradle"];
+      settings.adapters = [
+        "gradle"
+        #"java"
+      ];
     };
   };
   # programs.nixvim.plugins.lspconfig.servers.jdtls.enable = true;

@@ -3,7 +3,6 @@
     enable = true;
 
     grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-      java
       bash
       json
       lua
