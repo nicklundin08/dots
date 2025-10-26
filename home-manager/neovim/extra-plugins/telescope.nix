@@ -8,23 +8,27 @@
       enable = true;
     };
   };
+
   programs.nixvim.keymaps = [
     {
       mode = "n";
       key = "<leader>sk";
       options.silent = true;
+      options.desc = "Search Keymaps";
       action = "<cmd>Telescope keymaps<cr>";
     }
     {
       mode = "n";
-      key = "<leader>/";
+      key = "<leader>sg";
       options.silent = true;
+      options.desc = "Search grep";
       action = "<cmd>Telescope live_grep<cr>";
     }
     {
       mode = "n";
-      key = "<leader><space>";
+      key = "<leader>sf";
       options.silent = true;
+      options.desc = "Search files";
       action = "<cmd>Telescope find_files<cr>";
     }
   ];
