@@ -1,18 +1,28 @@
 # TODOS
-- Nvim LSP underlines
-- Neotest
-- JDTLS cmp extra sources?
-- JDTLS cmp keybinds? 
-- More lang setups
-    - TS 
-        - VTSLS
-        - CMP and such
+- LSP -> underlines instead of gutter symbols
+- Lang
+    - java
         - Neotest
+        - Conform 
+        - cmp extra sources
+        - cmp keybinds (c-n c-p not working? tab?)
     - Ruby
-        - Neotest
-- Add snippets
-- Layzvim Keyamps 
-- NVIM port lazy plugins
+        - LSP working
+        - Conform
+        - neotest
+        - Rails console keybind/plugin?
+    - TS
+        - LSP working
+        - Conform
+        - neotest
+        - REPL keybind/plugin?
+- Dashboard to see all plugins? Checkhealth?
+- Workflow (or plugin) for quickfix
+
+
+
+
+- NVIM port lazy plugins?
   - plenary
   - blink.cmp
   - flash.nvim
@@ -28,8 +38,3 @@
   - todo-comments.nvim
   - trouble.nvim
   - ts-comments.nvim
-- NVIM IDE support
-  - JAVA LSP (jdtls and such)
-  - neotest
-- NVIM custom plugins
-  - Harpoon?
