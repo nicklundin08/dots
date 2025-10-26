@@ -1,5 +1,4 @@
 # TODOS
-- Shift J/K keybinds to move line up and down
 - Nvim LSP underlines
 - Neotest
 - JDTLS cmp extra sources?
