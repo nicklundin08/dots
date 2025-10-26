@@ -39,6 +39,10 @@
         #"java"
       ];
     };
+
+    plugins.conform-nvim = {
+      settings.formatters_by_ft.java = ["google-java-format"];
+    };
   };
   # programs.nixvim.plugins.lspconfig.servers.jdtls.enable = true;
 

@@ -3,7 +3,6 @@
 - Lang
     - java
         - Neotest
-        - Conform 
         - cmp extra sources
         - cmp keybinds (c-n c-p not working? tab?)
     - Ruby
