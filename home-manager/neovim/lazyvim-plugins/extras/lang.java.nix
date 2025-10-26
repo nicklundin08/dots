@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = [
     pkgs.lombok
     pkgs.jdt-language-server
@@ -43,14 +47,14 @@
     plugins.conform-nvim = {
       settings.formatters_by_ft.java = ["google-java-format"];
     };
-  };
-  # programs.nixvim.plugins.lspconfig.servers.jdtls.enable = true;
 
-  # keymaps = [
-  #   {
-  #     action = ":Ex<CR>";
-  #     key = "-";
-  #     mode = "n";
-  #   }
-  # ];
+    keymaps = [
+      {
+        action = lib.generators.mkLuaInline "function() require('jdtls').jshell() end";
+        key = "<leader>ls";
+        mode = "n";
+        options.desc = "Shell";
+      }
+    ];
+  };
 }
