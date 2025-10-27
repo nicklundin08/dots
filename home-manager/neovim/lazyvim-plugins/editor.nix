@@ -41,6 +41,10 @@
             group = "search";
           }
           {
+            __unkeyed-1 = "<leader>t";
+            group = "test";
+          }
+          {
             __unkeyed-1 = "<leader>sn";
             group = "noice";
           }
