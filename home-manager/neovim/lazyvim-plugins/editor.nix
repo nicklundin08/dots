@@ -4,9 +4,9 @@
   ...
 }: {
   programs.nixvim = {
-    plugins.grug-far = {
-      enable = true;
-    };
+    # plugins.grug-far = {
+    #   enable = true;
+    # };
 
     plugins.flash = {
       enable = true;

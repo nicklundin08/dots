@@ -14,16 +14,16 @@
     LOMBOK_JAR_PATH = "${pkgs.lombok}/share/java/lombok.jar";
   };
 
-  let
-      myJar = pkgs.fetchurl {
-        url = "https://example.com/path/to/your/application.jar"; # Replace with your JAR URL
-        sha256 = "sha256-of-your-jar"; # Replace with the actual SHA256 hash
-      };
-    in
-    pkgs.writeScriptBin "run-my-app" ''
-      #!${pkgs.bash}/bin/bash
-      exec ${pkgs.jdk}/bin/java -jar ${myJar} "$@"
-    ''
+  # let
+  #     myJar = pkgs.fetchurl {
+  #       url = "https://example.com/path/to/your/application.jar"; # Replace with your JAR URL
+  #       sha256 = "sha256-of-your-jar"; # Replace with the actual SHA256 hash
+  #     };
+  #   in
+  #   pkgs.writeScriptBin "run-my-app" ''
+  #     #!${pkgs.bash}/bin/bash
+  #     exec ${pkgs.jdk}/bin/java -jar ${myJar} "$@"
+  #   ''
 
   programs.nixvim = {
     extraPlugins = [
