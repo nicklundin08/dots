@@ -1,5 +1,7 @@
 {
   home.shellAliases = {
+    ssh_nix_tower = "ssh nick@10.0.0.134";
+    show_ip = "ip -br addr show";
     nxs = "git add . && sudo nixos-rebuild switch --flake .";
     hms = "git add . && home-manager switch --flake .";
     tux = "tmuxp load .";
