@@ -60,6 +60,11 @@
 
   services.xrdp.enable = true;
 
+  services.xserver = {
+    enable = true;
+    xkbOptions = "ctrl:swapcaps";
+  };
+
   services.openssh.enable = true;
   services.openssh.permitRootLogin = "no";
   services.openssh.passwordAuthentication = true;
@@ -67,9 +72,6 @@
   # services.openssh.protocol = "2";
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
