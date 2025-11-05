@@ -86,7 +86,7 @@
     {
       mode = "n";
       key = "<leader>cd";
-      action = "vim.diagnostic.open_float";
+      action = "<cmd>lua vim.diagnostic.open_float()<CR>";
       options = {
         desc = "Line Diagnostics";
       };
