@@ -22,7 +22,6 @@
     pkgs.jq
     pkgs.stylua
     pkgs.devenv
-    pkgs.yazi
     pkgs.xsel
     pkgs.pre-commit
 
@@ -39,5 +38,4 @@
     #   echo "Hello, ${config.home.username}!"
     # '')
   ];
-  programs.yazi.theme = lib.importTOML ./yazi.toml;
 }
