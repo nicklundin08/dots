@@ -83,6 +83,7 @@
           extraSpecialHomeDir = "/Users/nicholaslundin";
           extraSpecialUser = "nicholaslundin";
           extraSpecialEmail = "nicholas.lundin@betterlesson.com";
+	  extraSpecialModuleDevEnable = true;
         };
         modules = [
           # > Our main home-manager configuration file <

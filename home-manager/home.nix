@@ -8,6 +8,7 @@
   pkgs,
   extraSpecialUser,
   extraSpecialHomeDir,
+  extraSpecialModuleDevEnable,
   ...
 }: {
   # You can import other home-manager modules here
@@ -20,6 +21,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     ./neovim
+    outputs.homeManagerModules.dev
     ./tmux
     ./aliases.nix
     ./bash.nix
@@ -29,6 +31,9 @@
     ./omp.nix
     ./packages.nix
   ];
+
+  ## Module options
+  dev.enable = extraSpecialModuleDevEnable;
 
   # programs.nixvim = import ./template/flake.nix { inherit pkgs lib config; };
 
