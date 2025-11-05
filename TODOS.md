@@ -14,8 +14,6 @@
         - neotest
         - Rails console keybind/plugin?
     - TS
-        - LSP working
-        - Conform
         - neotest
         - REPL keybind/plugin?
 - Dashboard to see all plugins? Checkhealth?

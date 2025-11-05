@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.vtsls];
+  home.packages = [
+    pkgs.vtsls
+    pkgs.prettierd
+  ];
   programs.nixvim = {
     plugins = {
       lsp.servers.vtsls = {
@@ -23,6 +26,31 @@
           tsx
           typescript
         ];
+      };
+
+      conform-nvim = {
+        settings.formatters_by_ft = {
+          typescriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          typescript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          javascriptreact = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+          javascript = {
+            __unkeyed-1 = "prettierd";
+            __unkeyed-2 = "prettier";
+            stop_after_first = true;
+          };
+        };
       };
     };
   };
