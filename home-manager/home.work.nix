@@ -1,12 +1,6 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
-{
-  outputs,
-  extraSpecialUser,
-  extraSpecialHomeDir,
-  extraSpecialModuleDevEnable,
-  ...
-}: {
+{outputs, ...}: {
   # You can import other home-manager modules here
   imports = [
     # If you want to use modules your own flake exports (from modules/home-manager):
@@ -18,6 +12,10 @@
     # You can also split up your configuration and import pieces of it here:
     outputs.homeManagerModules.tde
   ];
+
+  home.homeDirectory = "/Users/nicholaslundin";
+  home.username = "nicholaslundin";
+  programs.git.userEmail = "nicholas.lundin@betterlesson.com";
 
   ## Module options
   #dev.enable = extraSpecialModuleDevEnable;
@@ -47,12 +45,6 @@
       # Disable if you don't want unfree packages
       allowUnfree = true;
     };
-  };
-
-  # TODO: Set your username
-  home = {
-    username = extraSpecialUser;
-    homeDirectory = extraSpecialHomeDir;
   };
 
   # Add stuff for your user as you see fit:

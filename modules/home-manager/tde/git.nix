@@ -1,8 +1,8 @@
-{extraSpecialEmail, ...}: {
+{
   programs = {
     git = {
       userName = "Nick Lundin";
-      userEmail = extraSpecialEmail;
+      #userEmail = extraSpecialEmail;
       enable = true;
       extraConfig = {
         core.editor = "nvim";
