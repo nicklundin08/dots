@@ -68,7 +68,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./nixos/configuration.nix
+          ./hosts.nixos/tower/configuration.nix
         ];
       };
     };
@@ -83,7 +83,7 @@
         };
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.work.nix
+          ./hosts.home-manager/home.work.nix
         ];
       };
       "nick@MSI" = home-manager.lib.homeManagerConfiguration {
@@ -93,7 +93,7 @@
         };
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.default.nix
+          ./hosts.home-manager/home.default.nix
         ];
       };
       "nick@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -103,7 +103,7 @@
         };
         modules = [
           # > Our main home-manager configuration file <
-          ./home-manager/home.default.nix
+          ./hosts.home-manager/home.default.nix
         ];
       };
     };
