@@ -1,11 +1,7 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
-  inputs,
   outputs,
-  lib,
-  config,
-  pkgs,
   extraSpecialUser,
   extraSpecialHomeDir,
   extraSpecialModuleDevEnable,
@@ -20,20 +16,11 @@
     # inputs.nix-colors.homeManagerModules.default
 
     # You can also split up your configuration and import pieces of it here:
-    ./neovim
-    outputs.homeManagerModules.dev
-    ./tmux
-    ./aliases.nix
-    ./bash.nix
-    ./direnv.nix
-    ./fzf.nix
-    ./git.nix
-    ./omp.nix
-    ./packages.nix
+    outputs.homeManagerModules.tde
   ];
 
   ## Module options
-  dev.enable = extraSpecialModuleDevEnable;
+  #dev.enable = extraSpecialModuleDevEnable;
 
   # programs.nixvim = import ./template/flake.nix { inherit pkgs lib config; };
 
