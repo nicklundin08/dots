@@ -23,7 +23,6 @@
     };
   };
 }
-
 # vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 #   vim.lsp.diagnostic.on_publish_diagnostics, {
 #     virtual_text = true, -- Display diagnostic messages as virtual text
@@ -33,3 +32,4 @@
 #     severity_limit = "Hint", -- Set the minimum severity level to display (e.g., "Error", "Warning", "Info", "Hint")
 #   }
 # )
+

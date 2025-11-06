@@ -4,8 +4,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./options.nix
     ./keymaps.nix
-    ./lazyvim-plugins
-    ./extra-plugins
+    ./plugins
   ];
 
   #home.file.".config/nvim/lua/customlua".source = ./customlua;

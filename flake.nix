@@ -83,7 +83,7 @@
           extraSpecialHomeDir = "/Users/nicholaslundin";
           extraSpecialUser = "nicholaslundin";
           extraSpecialEmail = "nicholas.lundin@betterlesson.com";
-	  extraSpecialModuleDevEnable = true;
+          extraSpecialModuleDevEnable = true;
         };
         modules = [
           # > Our main home-manager configuration file <
@@ -110,6 +110,7 @@
           extraSpecialHomeDir = "/home/nick";
           extraSpecialUser = "nick";
           extraSpecialEmail = "nick@moontower.net";
+          extraSpecialModuleDevEnable = false;
         };
         modules = [
           # > Our main home-manager configuration file <
