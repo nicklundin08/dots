@@ -1,9 +1,9 @@
 {
   imports = [
+    ./lang.java
     ./lang.sql
-    ./lang.java.nix
-    ./lang.nix.nix
-    ./lang.ts.nix
+    ./lang.nix
+    ./lang.ts
     ./test.nix
   ];
 }
