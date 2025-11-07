@@ -1,8 +1,9 @@
 {
   imports = [
+    ./lang.haskell
     ./lang.java
-    ./lang.sql
     ./lang.nix
+    ./lang.sql
     ./lang.ts
     ./test.nix
   ];
