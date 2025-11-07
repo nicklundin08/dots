@@ -33,6 +33,10 @@
           #{ __unkeyed-1 = "<leader>dp"; group = "profiler";}
           #{ __unkeyed-1 = "<leader>f"; group = "file/find";}
           {
+            __unkeyed-1 = "<leader>C";
+            group = "[C]hecks";
+          }
+          {
             __unkeyed-1 = "<leader>l";
             group = "lang";
           }

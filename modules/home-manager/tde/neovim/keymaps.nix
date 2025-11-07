@@ -7,9 +7,7 @@
       key = "<leader>qq";
       action = ":qa<CR>";
       mode = "n";
-      options = {
-        desc = "Quit all";
-      };
+      options.desc = "Quit all";
     }
     {
       key = "<Escape>";
@@ -87,22 +85,38 @@
       mode = "n";
       key = "<leader>cd";
       action = "<cmd>lua vim.diagnostic.open_float()<CR>";
-      options = {
-        desc = "Line Diagnostics";
-      };
+      options.desc = "Line Diagnostics";
     }
     #####################################
     # Text
     #####################################
+    # {
+    #   mode = "v";
+    #   key = "J";
+    #   action = ":m '>+1<CR>gv=gv";
+    # }
+    # {
+    #   mode = "v";
+    #   key = "K";
+    #   action = ":m '<-2<CR>gv=gv";
+    # }
+    #####################################
+    # Edits
+    #####################################
     {
-      mode = "v";
-      key = "J";
-      action = ":m '>+1<CR>gv=gv";
+      mode = "n";
+      key = "<leader>eL";
+      action = "<cmd>e ~/.local/state/nvim/lsp.log<CR>";
+      options.desc = "[e]dit [L]SP log";
     }
+    #####################################
+    # Checks
+    #####################################
     {
-      mode = "v";
-      key = "K";
-      action = ":m '<-2<CR>gv=gv";
+      mode = "n";
+      key = "<leader>CL";
+      action = "<cmd>checkhealth vim.lsp<CR>";
+      options.desc = "[C]heck [L]SP health";
     }
   ];
 }

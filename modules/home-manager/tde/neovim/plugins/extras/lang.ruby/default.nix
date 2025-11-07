@@ -5,6 +5,7 @@
 }: {
   home.packages = [
     # pkgs.ruby_3_4
+    # pkgs.rubyPackages_3_4.solargraph
     # pkgs.rubyPackages_3_4.rubocop
     # pkgs.rubyPackages_3_4.ruby-lsp
   ];
@@ -16,10 +17,6 @@
       ];
     };
 
-    # extraFiles = {
-    #   "after/ftplugin/rb.lua".source = ./rb.lua;
-    # };
-
     plugins.neotest = {
       adapters.rspec = {
         enable = true;
@@ -29,42 +26,65 @@
         };
       };
     };
-    lsp.servers.rubocop = {
+
+    #########################################
+    # Solargraph
+    #########################################
+    lsp.servers.solargraph = {
       enable = true;
       settings = {
-        cmd = [
-          "bundle"
-          "exec"
-          "rubocop"
-          "--lsp"
+        filetypes = [
+          "ruby"
         ];
+        root_markers = [
+          "Gemfile"
+        ];
+        # settings = {
+        #   cmd = [
+        #     "bundle"
+        #     "exec"
+        #     "rubocop"
+        #     "--lsp"
+        #   ];
+        # };
       };
-
-      # filetypes = [
-      #   "javascript"
-      #   "javascriptreact"
-      #   "javascript.jsx"
-      #   "typescript"
-      #   "typescriptreact"
-      #   "typescript.tsx"
-      # ];
     };
 
     plugins.conform-nvim = {
       settings.formatters_by_ft.ruby = ["rubocop"];
       settings.formatters_by_ft.rb = ["rubocop"];
       settings.formatters.rubocop = {
-      	command = "bundle exec rubocop";
+        command = "bundle exec rubocop";
       };
     };
 
-    # keymaps = [
-    #   {
-    #     action = "<cmd>Telescope hoogle<cr>";
-    #     key = "<leader>sh";
-    #     mode = "n";
-    #     options.desc = "[s]earch [h]oogle";
-    #   }
+    #########################################
+    # Rubocop
+    #########################################
+    # home.packages = [
+    #   # pkgs.ruby_3_4
+    #   pkgs.rubyPackages_3_4.solargraph
+    #   # pkgs.rubyPackages_3_4.rubocop
+    #   # pkgs.rubyPackages_3_4.ruby-lsp
     # ];
+    # lsp.servers.rubocop = {
+    #   enable = true;
+    #   settings = {
+    #     cmd = [
+    #       "bundle"
+    #       "exec"
+    #       "rubocop"
+    #       "--lsp"
+    #     ];
+    #   };
+    # };
+
+    # plugins.conform-nvim = {
+    #   settings.formatters_by_ft.ruby = ["rubocop"];
+    #   settings.formatters_by_ft.rb = ["rubocop"];
+    #   settings.formatters.rubocop = {
+    #     command = "bundle exec rubocop";
+    #   };
+    # };
   };
 }

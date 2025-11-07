@@ -13,10 +13,12 @@
           {
             key = "gd";
             action.__raw = "require('telescope.builtin').lsp_definitions";
+            options.desc = "[g]o to [d]efinition";
           }
           {
             key = "ca";
             action = "vim.lsp.buf.code_action()";
+            options.desc = "[c]ode [a]ction";
           }
         ];
       };
