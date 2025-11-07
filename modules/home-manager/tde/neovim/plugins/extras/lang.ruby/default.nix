@@ -16,9 +16,9 @@
       ];
     };
 
-    extraFiles = {
-      "after/ftplugin/ruby.lua".source = ./ruby.lua;
-    };
+    # extraFiles = {
+    #   "after/ftplugin/rb.lua".source = ./rb.lua;
+    # };
 
     plugins.neotest = {
       adapters.rspec = {
@@ -31,6 +31,15 @@
     };
     lsp.servers.rubocop = {
       enable = true;
+      settings = {
+        cmd = [
+          "bundle"
+          "exec"
+          "rubocop"
+          "--lsp"
+        ];
+      };
+
       # filetypes = [
       #   "javascript"
       #   "javascriptreact"
@@ -43,6 +52,10 @@
 
     plugins.conform-nvim = {
       settings.formatters_by_ft.ruby = ["rubocop"];
+      settings.formatters_by_ft.rb = ["rubocop"];
+      settings.formatters.rubocop = {
+      	command = "bundle exec rubocop";
+      };
     };
 
     # keymaps = [
