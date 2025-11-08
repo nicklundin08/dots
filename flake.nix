@@ -3,26 +3,13 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    # Home manager
     home-manager.url = "github:nix-community/home-manager/release-25.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
-    # Nixpkgs
-    #nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
-    # You can access packages and modules from different nixpkgs revs
-    # at the same time. Here's an working example:
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
 
-    # Home manager
-    #home-manager.url = "github:nix-community/home-manager/release-23.11";
-    #home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # If using a stable channel you can use `url = "github:nix-community/nixvim/nixos-<version>"`
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    nixvim.url = "github:nix-community/nixvim";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -55,10 +42,10 @@
     overlays = import ./overlays {inherit inputs;};
     # Reusable nixos modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
-    nixosModules = import ./modules/nixos;
+    nixosModules = import ./nixos/modules;
     # Reusable home-manager modules you might want to export
     # These are usually stuff you would upstream into home-manager
-    homeManagerModules = import ./modules/home-manager;
+    homeManagerModules = import ./home-manager/modules;
 
     # NixOS configuration entrypoint
     # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -68,7 +55,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # > Our main nixos configuration file <
-          ./hosts.nixos/tower/configuration.nix
+          ./nixos/host.tower/configuration.nix
         ];
       };
     };
@@ -83,7 +70,7 @@
         };
         modules = [
           # > Our main home-manager configuration file <
-          ./hosts.home-manager/home.work.nix
+          ./home-manager/home.work.nix
         ];
       };
       "nick@MSI" = home-manager.lib.homeManagerConfiguration {
@@ -93,7 +80,7 @@
         };
         modules = [
           # > Our main home-manager configuration file <
-          ./hosts.home-manager/home.default.nix
+          ./home-manager/home.default.nix
         ];
       };
       "nick@nixos" = home-manager.lib.homeManagerConfiguration {
@@ -103,7 +90,7 @@
         };
         modules = [
           # > Our main home-manager configuration file <
-          ./hosts.home-manager/home.default.nix
+          ./home-manager/home.default.nix
         ];
       };
     };
