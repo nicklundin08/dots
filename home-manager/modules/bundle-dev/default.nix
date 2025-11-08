@@ -1,7 +1,7 @@
 {
   imports = [
-    ./neovim
-    ./tmux
+    ../nicksvim
+    ../tmux
     ./aliases.nix
     ./bash.nix
     ./direnv.nix
