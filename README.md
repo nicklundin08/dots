@@ -13,5 +13,8 @@ Lazygit
 
 You get the idea...
 
+# Neovim setup
+See my vim setup as a module [here](./home-manager/modules/nicksvim)
+
 # Special thanks
 - Forked from this [repo](https://github.com/Misterio77/nix-starter-configs) (standard version)
