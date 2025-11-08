@@ -9,7 +9,7 @@
     "hm.create_branch_for_host" = "git branch $(hm.show_host_for_git)";
 
     ## TODO: dont hardcode bash reload here?
-    "hm.increment" = "pre-commit && git commit -a && home-manager switch --flake . && git switch $(hm.show_host_for_git) && git reset --hard main && git switch main && exec bash";
+    "hm.increment" = "pre-commit && git add . && cz commit && hm.switch && git switch $(hm.show_host_for_git) && git reset --hard main && git switch main && exec bash";
 
     ########################################
     # Nix
