@@ -1,0 +1,16 @@
+title = "home hosts"
+
+[[hosts]]
+name = "nicholaslundin@BL-003.local"
+module = "/home-manager/home.work.nix"
+system = "aarch64-darwin"
+
+[[hosts]]
+name = "nick@MSI"
+module = "/home-manager/home.default.nix"
+system = "x86_64-linux"
+
+[[hosts]]
+name = "nick@nixos"
+module = "/home-manager/home.default.nix"
+system = "x86_64-linux"

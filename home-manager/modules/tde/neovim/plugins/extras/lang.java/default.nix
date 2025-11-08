@@ -6,7 +6,7 @@
   imports = [
     ./junit.nix
   ];
-	
+
   home.packages = [
     pkgs.lombok
     pkgs.jdt-language-server

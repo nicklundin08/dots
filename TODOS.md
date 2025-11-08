@@ -1,5 +1,4 @@
 # TODOS
-- Nix - update flake to intelligently select hm / nix dir based on hostname (with default value)
 - Lazygit + tmux -> hotkey to open file in nvim pane?
 - LSP -> underlines instead of gutter symbols
 - Lang

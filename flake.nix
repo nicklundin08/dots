@@ -30,69 +30,47 @@
     # This is a function that generates an attribute by calling a function you
     # pass to it, with each system as an argument
     forAllSystems = nixpkgs.lib.genAttrs systems;
+
+    # Helper function to transform an array of attr sets into a single attr set
+    reduceAttrsList = builtins.foldl' (a: b: a // b) {};
+
+    # Helper function that makes a home manager hosts from the toml entry
+    mkHomeHost = host: {
+      ${host.name} = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.${host.system};
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [(./. + builtins.toPath host.module)];
+      };
+    };
+
+    mkNixosHost = host: {
+      ${host.name} = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [(./. builtins.toPath host.module)];
+      };
+    };
+
+    homeHosts = (builtins.fromTOML (builtins.readFile ./home-manager/hosts.toml)).hosts;
+    nixosHosts = (builtins.fromTOML (builtins.readFile ./nixos/hosts.toml)).hosts;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
     packages = forAllSystems (system: import ./pkgs nixpkgs.legacyPackages.${system});
+
     # Formatter for your nix files, available through 'nix fmt'
     # Other options beside 'alejandra' include 'nixpkgs-fmt'
     formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
 
     # Your custom packages and modifications, exported as overlays
     overlays = import ./overlays {inherit inputs;};
-    # Reusable nixos modules you might want to export
+
+    # Reusable nixos/homemanager modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
     nixosModules = import ./nixos/modules;
-    # Reusable home-manager modules you might want to export
-    # These are usually stuff you would upstream into home-manager
     homeManagerModules = import ./home-manager/modules;
 
-    # NixOS configuration entrypoint
-    # Available through 'nixos-rebuild --flake .#your-hostname'
-    nixosConfigurations = {
-      # FIXME replace with your hostname
-      "nixos" = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [
-          # > Our main nixos configuration file <
-          ./nixos/host.tower/configuration.nix
-        ];
-      };
-    };
-
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
-    homeConfigurations = {
-      "nicholaslundin@BL-003.local" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.aarch64-darwin; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {
-          inherit inputs outputs;
-        };
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/home.work.nix
-        ];
-      };
-      "nick@MSI" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {
-          inherit inputs outputs;
-        };
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/home.default.nix
-        ];
-      };
-      "nick@nixos" = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux; # Home-manager requires 'pkgs' instance
-        extraSpecialArgs = {
-          inherit inputs outputs;
-        };
-        modules = [
-          # > Our main home-manager configuration file <
-          ./home-manager/home.default.nix
-        ];
-      };
-    };
+    # Final configuration
+    homeConfigurations = reduceAttrsList (builtins.map mkHomeHost homeHosts);
+    nixosConfigurations = reduceAttrsList (builtins.map mkNixosHost nixosHosts);
   };
 }

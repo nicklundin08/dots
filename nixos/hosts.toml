@@ -1,0 +1,5 @@
+title = "home hosts"
+
+[[hosts]]
+name = "nixos"
+module = "/nixos/host.tower/configuration.nix"
