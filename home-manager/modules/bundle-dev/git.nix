@@ -47,6 +47,26 @@
             command = "pre-commit";
             description = "Runs pre-commit";
           }
+          {
+            key = "<C-c>";
+            context = "files";
+            command = "git cz";
+            description = "Committizen";
+          }
+          # {
+          #   key = "<C-i>";
+          #   context = "Local branches";
+          #   # This is a custom script. See aliases file
+          #   command = "hm.increment";
+          #   description = "Home manager increment";
+          # }
+          # {
+          #   key = "<C-n>";
+          #   context = "Local branches";
+          #   # This is a custom script. See aliases file
+          #   command = "nix.increment";
+          #   description = "Nixos increment";
+          # }
         ];
       };
     };
