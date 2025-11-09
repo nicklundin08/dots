@@ -1,12 +1,12 @@
 {
   programs = {
     git = {
-      userName = "Nick Lundin";
-      #userEmail = extraSpecialEmail;
+      # userName = "Nick Lundin";
+      # userEmail = "nick@moontwer.net";
       enable = true;
       extraConfig = {
         core.editor = "nvim";
-        github.user = "nicklundin08";
+        # github.user = "nicklundin08";
         mergetool.prompt = false;
         pull.rebase = false;
         init.defaultBranch = "main";
@@ -42,31 +42,17 @@
         };
         customCommands = [
           {
-            key = "<C-space>";
+            key = "<c-p>";
             context = "global";
             command = "pre-commit";
             description = "Runs pre-commit";
           }
           {
-            key = "<C-c>";
-            context = "files";
+            key = "<c-c>";
+            context = "global";
             command = "git cz";
             description = "Committizen";
           }
-          # {
-          #   key = "<C-i>";
-          #   context = "Local branches";
-          #   # This is a custom script. See aliases file
-          #   command = "hm.increment";
-          #   description = "Home manager increment";
-          # }
-          # {
-          #   key = "<C-n>";
-          #   context = "Local branches";
-          #   # This is a custom script. See aliases file
-          #   command = "nix.increment";
-          #   description = "Nixos increment";
-          # }
         ];
       };
     };
