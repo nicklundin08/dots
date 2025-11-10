@@ -9,5 +9,6 @@
     ./git.nix
     ./omp.nix
     ./packages.nix
+    ./scripts.nix
   ];
 }
