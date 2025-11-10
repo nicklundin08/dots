@@ -1,17 +1,6 @@
 {
   home.shellAliases = {
     ########################################
-    # Home manager
-    ########################################
-    "hm.switch" = "git add . && home-manager switch --flake .";
-    "hm.show_host_for_nix" = "echo \"$(whoami)@$(hostname)\"";
-    "hm.show_host_for_git" = "echo \"hm/$(whoami)-$(hostname)\""; #git dont like @ symbols
-    "hm.create_branch_for_host" = "git branch $(hm.show_host_for_git)";
-
-    ## TODO: dont hardcode bash reload here?
-    "hm.increment" = "pre-commit && git add . && cz commit && hm.switch && git switch $(hm.show_host_for_git) && git reset --hard main && git switch main && exec bash";
-
-    ########################################
     # Nix
     ########################################
     "nix.switch" = "git add . && sudo nixos-rebuild switch --flake .";
