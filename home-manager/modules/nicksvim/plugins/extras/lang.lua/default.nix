@@ -1,85 +1,17 @@
 {pkgs, ...}: {
   home.packages = [
-    pkgs.vtsls
-    pkgs.prettierd
+    pkgs.stylua
   ];
+
   programs.nixvim = {
-    plugins = {
-      lsp.servers.vtsls = {
-        enable = true;
-        filetypes = [
-          "javascript"
-          "javascriptreact"
-          "javascript.jsx"
-          "typescript"
-          "typescriptreact"
-          "typescript.tsx"
-        ];
+    plugins.treesitter = {
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        lua
+      ];
+    };
 
-        settings = {
-          complete_function_calls = true;
-          vtsls = {
-            enableMoveToFileCodeAction = true;
-            autoUseWorkspaceTsdk = true;
-            experimental = {
-              maxInlayHintLength = 30;
-              completion = {
-                enableServerSideFuzzyMatch = true;
-              };
-            };
-          };
-          typescript = {
-            updateImportsOnFileMove = {enabled = "always";};
-            suggest = {
-              completeFunctionCalls = true;
-            };
-            inlayHints = {
-              enumMemberValues = {enabled = true;};
-              functionLikeReturnTypes = {enabled = true;};
-              parameterNames = {enabled = "literals";};
-              parameterTypes = {enabled = true;};
-              propertyDeclarationTypes = {enabled = true;};
-              variableTypes = {enabled = false;};
-            };
-          };
-        };
-      };
-
-      treesitter = {
-        grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-          javascript
-          jsdoc
-          json
-          jsonc
-          tsx
-          typescript
-        ];
-      };
-
-      conform-nvim = {
-        settings.formatters_by_ft = {
-          typescriptreact = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
-          };
-          typescript = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
-          };
-          javascriptreact = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
-          };
-          javascript = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
-          };
-        };
-      };
+    plugins.conform-nvim = {
+      settings.formatters_by_ft.lua = ["stylua"];
     };
   };
 }
