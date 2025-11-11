@@ -15,5 +15,7 @@
     nixpkgs.useGlobalPackages = true;
     viAlias = true;
     vimAlias = true;
+
+    extraConfigLua = builtins.readFile ./autocmd.lua;
   };
 }
