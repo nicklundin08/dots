@@ -36,5 +36,18 @@ local config = {
 	init_options = {
 		bundles = {},
 	},
+
+	capabilities = {
+		workspace = {
+			configuration = true,
+		},
+		textDocument = {
+			completion = {
+				completionItem = {
+					snippentSupport = true,
+				},
+			},
+		},
+	},
 }
 require("jdtls").start_or_attach(config)

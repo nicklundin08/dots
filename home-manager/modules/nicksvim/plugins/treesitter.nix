@@ -5,7 +5,6 @@
     grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
       bash
       json
-      lua
       make
       markdown
       nix
