@@ -19,19 +19,11 @@
 - NVIM port lazy plugins?
   - plenary
   - blink.cmp
-  - flash.nvim
   - friendly-snippets ?
-  - gitsigns.nvim
-  - mini.pairs
-  - noice.nvim
   - nvim-nio
-  - nvim-treesitter
   - nvim-treesitter-sexp
   - nvim-treesitter-textobjects
   - nvim-ts-autotag
-  - todo-comments.nvim
-  - trouble.nvim
-  - ts-comments.nvim
 
 
 ruby_lsp error
