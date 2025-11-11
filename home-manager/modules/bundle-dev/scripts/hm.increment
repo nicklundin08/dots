@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 
-git switch $(hm.show_host_for_git) && \
-	pre-commit && \
+pre-commit && \
 	git add . && \
 	cz commit && \
 	hm.switch && \
 	git push && \
-	git switch main && \
-	git merge --ff $(hm.show_host_for_git) && \
+	git switch $(hm.show_host_for_git) && \
+	git merge --ff main && \
 	git push && \
+	git switch main && \
 	exec bash
