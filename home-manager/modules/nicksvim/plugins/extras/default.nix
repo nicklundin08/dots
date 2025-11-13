@@ -6,6 +6,7 @@
     ./lang.ruby
     ./lang.sql
     ./lang.ts
+    ./newfile.nix
     ./test.nix
   ];
 }
