@@ -17,7 +17,7 @@
           }
           {
             key = "ca";
-            action = "vim.lsp.buf.code_action()";
+            action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
             options.desc = "[c]ode [a]ction";
           }
         ];
