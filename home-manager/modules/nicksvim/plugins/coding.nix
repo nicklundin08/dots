@@ -23,6 +23,14 @@
       #{ name = "path"; }
       #{ name = "buffer"; }
     ];
+
+    settings.formatting.format = ''
+      function(entry, vim_item)
+        -- Set the 'menu' field of the vim_item to the source name
+        vim_item.menu = entry.source.name
+        return vim_item
+      end
+    '';
     settings. mapping = {
       # "<C-d>" = "cmp.mapping.scroll_docs(-4)";
       # "<C-f>" = "cmp.mapping.scroll_docs(4)";
