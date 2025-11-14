@@ -46,7 +46,7 @@
     mkNixosHost = host: {
       ${host.name} = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
-        modules = [(./. builtins.toPath host.module)];
+        modules = [(./. + builtins.toPath host.module)];
       };
     };
 
