@@ -15,8 +15,8 @@ repos:
         entry: alejandra .
         language: system
         #files: \.(py|js|sh)$ # Regex to match files to run the hook on
-  - repo: https://github.com/JohnnyMorganz/StyLua
-    rev: v0.19.0 # Use the latest stable version
-    hooks:
-      - id: stylua
-        # args: [--check] # Use --check to only report issues, remove for auto-formatting
+  # - repo: https://github.com/JohnnyMorganz/StyLua
+  #   rev: v0.19.0 # Use the latest stable version
+  #   hooks:
+  #     - id: stylua
+  #       # args: [--check] # Use --check to only report issues, remove for auto-formatting
