@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 git branch $(hm.show_host_for_git)
-git push -u origin/$(hm.show_host_for_git)
+git push -u origin $(hm.show_host_for_git)
