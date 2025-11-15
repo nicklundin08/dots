@@ -4,7 +4,7 @@
 pre-commit && \
 	git add . && \
 	cz commit && \
-	hm.switch && \
+	hm.rebuild && \
 	git push && \
 	git switch $(hm.show_host_for_git) && \
 	git merge --ff main && \
