@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+git branch $(nix.show_host_for_git)

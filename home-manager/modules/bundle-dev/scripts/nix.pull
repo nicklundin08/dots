@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+
+git switch $(nix.show_host_for_git) && \
+	git merge --ff main && \
+	nix.rebuild && \
+	git push && \
+	git switch main && \
+	exec bash

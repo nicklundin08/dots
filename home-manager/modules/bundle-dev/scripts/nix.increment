@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+pre-commit && \
+	git add . && \
+	cz commit && \
+	nix.rebuild && \
+	git push && \
+	git switch $(nix.show_host_for_git) && \
+	git merge --ff main && \
+	git push && \
+	git switch main && \
+	exec bash
