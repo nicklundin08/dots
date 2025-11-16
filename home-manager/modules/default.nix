@@ -4,5 +4,6 @@
   # List your module files here
   nicksvim = import ./nicksvim;
   tmux = import ./tmux;
+  stackbuilder = import ./stackbuilder;
   bundle-dev = import ./bundle-dev;
 }

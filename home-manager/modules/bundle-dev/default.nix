@@ -2,6 +2,7 @@
   imports = [
     ../nicksvim
     ../tmux
+    ../stackbuilder
     ./aliases.nix
     ./bash.nix
     ./direnv.nix

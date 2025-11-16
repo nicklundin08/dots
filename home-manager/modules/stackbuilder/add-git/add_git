@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+## Initialize git repo
+git init
+
+## If there are no commits, add an empty commit
+if git rev-list -n 1 --all > /dev/null 2>&1; then
+  git commit --allow-empty -m "Init"
+fi
+
+
+## Install pre-commit
+pre-commit install
+pre-commit sample-config > .pre-commit-config.yaml
+
+
+## Install committizen
+cz init
