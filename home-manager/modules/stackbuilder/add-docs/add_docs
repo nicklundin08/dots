@@ -28,13 +28,13 @@ cat << EOF >> docs/DEV_SETUP.md
 - https://nixos.org/download/
 - https://direnv.net/
 
-```
+\`\`\`
 // NOTE: you must be in a git repo with the flake file tracked for this to work! Make sure to run git init...
 
 direnv allow
 
 direnv reload
-```
+\`\`\`
 EOF
 
 cat << EOF >> docs/LEARNING_RESOURCES.md
