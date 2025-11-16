@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   scriptsDir = ./.;
-  fileName = "add_git";
+  fileName = "add_docs";
   filePath = "${scriptsDir}/${fileName}";
   fileContents = builtins.readFile filePath;
 in {

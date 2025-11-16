@@ -1,0 +1,54 @@
+#!/usr/bin/env bash
+
+cat << EOF >> README.md
+See [docs](./docs) directory
+EOF
+
+
+mkdir docs || true
+
+
+cat << EOF >> docs/BRANCHING_STRATEGY.md
+[Trunk based development](https://trunkbaseddevelopment.com/)
+EOF
+
+cat << EOF >> docs/CONTRIBUTING.md
+Add your docs here
+EOF
+
+cat << EOF >> docs/DEPLOYMENTS.md
+Add your docs here
+EOF
+
+cat << EOF >> docs/DEV_SETUP.md
+# DEV_SETUP
+
+### (If not already installed) Install nix and dev env
+
+- https://nixos.org/download/
+- https://direnv.net/
+
+```
+// NOTE: you must be in a git repo with the flake file tracked for this to work! Make sure to run git init...
+
+direnv allow
+
+direnv reload
+```
+EOF
+
+cat << EOF >> docs/LEARNING_RESOURCES.md
+Add your docs here
+EOF
+
+cat << EOF >> docs/PATTERNS.md
+Add your docs here
+EOF
+
+cat << EOF >> docs/RUNBOOKS.md
+Add your docs here
+EOF
+
+cat << EOF >> docs/TODOS.md
+Add your docs here
+EOF
