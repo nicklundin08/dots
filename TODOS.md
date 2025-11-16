@@ -4,7 +4,6 @@
 - Lang
     - java
         - cmp extra sources
-        - cmp keybinds (c-n c-p not working? tab?)
     - Ruby
         - LSP working
         - Conform
