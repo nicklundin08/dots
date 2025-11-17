@@ -19,19 +19,19 @@
     #   { "<leader>tw", function() require("neotest").watch.toggle(vim.fn.expand("%")) end, desc = "Toggle Watch (Neotest)" },
     # },
     {
-      key = "<leader>tt";
+      key = "<leader>tf";
       mode = "n";
       action = lib.generators.mkLuaInline "function() require('neotest').run.run(vim.fn.expand('%')) end";
       options.desc = "Test file";
     }
     {
-      key = "<leader>tr";
+      key = "<leader>tt";
       mode = "n";
       action = lib.generators.mkLuaInline "function() require('neotest').run.run() end";
       options.desc = "Test nearest";
     }
     {
-      key = "<leader>tT";
+      key = "<leader>ta";
       mode = "n";
       action = lib.generators.mkLuaInline "function() require('neotest').run.run(vim.uv.cwd()) end";
       options.desc = "Test all";
