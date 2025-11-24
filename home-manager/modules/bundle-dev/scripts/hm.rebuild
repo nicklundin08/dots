@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-git add . && home-manager switch --flake .
+git add .
+home-manager switch --flake .
+source ~/.bashrc

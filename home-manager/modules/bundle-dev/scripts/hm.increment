@@ -9,5 +9,4 @@ pre-commit && \
 	git switch $(hm.show_host_for_git) && \
 	git merge --ff main && \
 	git push && \
-	git switch main && \
-	exec bash
+	git switch main
