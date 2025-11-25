@@ -6,6 +6,7 @@
 }: {
   home.packages = [
     pkgs.cowsay
+    pkgs.htop
     pkgs.hello
     pkgs.nix-search-cli
     pkgs.tmuxp
