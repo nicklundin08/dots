@@ -1,32 +1,37 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [
+    # misc
     pkgs.cowsay
-    pkgs.htop
     pkgs.hello
     pkgs.nix-search-cli
+
+    # dashboards and such
+    pkgs.htop
+
+    # formatters
+    pkgs.alejandra
+    pkgs.xq-xml
+    pkgs.jq
+    pkgs.stylua
+
+    # dev tools
     pkgs.tmuxp
-    pkgs.gnumake
-    pkgs.gcc
-    pkgs.curl
     pkgs.lazydocker
     pkgs.lazysql
     pkgs.tmux
-    pkgs.alejandra
     pkgs.go-task
-    pkgs.ripgrep
-    pkgs.gh
     pkgs.lazycli
-    pkgs.jq
-    pkgs.stylua
-    pkgs.devenv
-    pkgs.xsel
     pkgs.pre-commit
     pkgs.commitizen
+    pkgs.devenv
+    pkgs.xsel
+    pkgs.gh
+
+    # build tools and transitives
+    pkgs.gnumake
+    pkgs.gcc
+    pkgs.curl
+    pkgs.ripgrep
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
