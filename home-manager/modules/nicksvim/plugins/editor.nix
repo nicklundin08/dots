@@ -37,6 +37,10 @@
             group = "[C]hecks";
           }
           {
+            __unkeyed-1 = "<leader>k";
+            group = "quickfix";
+          }
+          {
             __unkeyed-1 = "<leader>l";
             group = "lang";
           }
@@ -59,6 +63,10 @@
           {
             __unkeyed-1 = "<leader>x";
             group = "diagnostics/quickfix";
+          }
+          {
+            __unkeyed-1 = "<leader>z";
+            group = "project specific";
           }
           {
             __unkeyed-1 = "[";
