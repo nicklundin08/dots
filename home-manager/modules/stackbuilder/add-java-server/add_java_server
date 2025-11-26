@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+GROUP_ID="com.company"
+mvn archetype:generate \
+	-DgroupId=$GROUP_ID \
+	-DartifactId=server-java \
+ 	-DinteractiveMode=false
+
+cd server-java/
+# Add packaging type pom
+xq -i -x '.project.packaging ="pom"' pom.xml
+
+rm -rf src
+
+mvn archetype:generate \
+	-DgroupId=$GROUP_ID \
+	-DartifactId=core \
+ 	-DinteractiveMode=false
+
+mvn archetype:generate \
+	-DgroupId=$GROUP_ID \
+	-DartifactId=web \
+ 	-DinteractiveMode=false
+
+cat > .gitignore <<EOF
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# OS generated files
+.DS_Store
+Thumbs.db
+EOF
+
+mvn package

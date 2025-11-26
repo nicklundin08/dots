@@ -10,8 +10,9 @@
 
     # formatters
     pkgs.alejandra
-    pkgs.xq-xml
-    pkgs.jq
+    #pkgs.xq-xml
+    #pkgs.jq
+    pkgs.yq
     pkgs.stylua
 
     # dev tools
@@ -26,6 +27,9 @@
     pkgs.devenv
     pkgs.xsel
     pkgs.gh
+
+    pkgs.maven
+    pkgs.quarkus
 
     # build tools and transitives
     pkgs.gnumake
