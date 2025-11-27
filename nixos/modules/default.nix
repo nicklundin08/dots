@@ -3,4 +3,5 @@
 {
   # List your module files here
   ssh = import ./ssh;
+  media-server = import ./media-server;
 }
