@@ -10,8 +10,9 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    inputs.home-manager.nixosModules.home-manager
     ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.home-manager
+    outputs.nixosModules.ssh
   ];
 
   home-manager = {
@@ -123,22 +124,7 @@
 
   # List services that you want to enable:
 
-  # Enable the OpenSSH daemon.
-
   networking.hostName = "tower"; # Define your hostname.
-  programs.ssh.startAgent = true;
-  services.openssh.enable = true;
-  services.openssh.permitRootLogin = "yes";
-  services.openssh.passwordAuthentication = true;
-  # services.openssh.port = 22;
-  # services.openssh.protocol = "2";
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [22];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
