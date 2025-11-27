@@ -5,5 +5,5 @@ title = "home hosts"
 # module = "/nixos/host.tower/configuration.nix"
 
 [[hosts]]
-name = "nixos"
+name = "tower"
 module = "/nixos/host.tower2/configuration.nix"
