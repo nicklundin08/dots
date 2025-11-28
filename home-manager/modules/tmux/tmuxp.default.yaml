@@ -1,4 +1,5 @@
-session_name: dots
+session_name: ${TUX_SESSION_NAME}
+start_directory: ${TUX_START_DIR}
 windows:
   - window_name: git
     layout: tiled
@@ -11,4 +12,4 @@ windows:
   - window_name: shell
     layout: tiled
     panes:
-      - echo "Hi, I'm Paul!"
+      - null

@@ -16,4 +16,10 @@
       }
     ];
   };
+
+  xdg.configFile."tmuxp/default.yaml".source = ./tmuxp.default.yaml;
+
+  home.shellAliases = {
+    "tux.dots" = "TUX_SESSION_NAME=dots TUX_START_DIR=~/dots tmuxp load default";
+  };
 }
