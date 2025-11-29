@@ -12,14 +12,14 @@
   home.shellAliases = {
     "stackbuilder.add_liquibase" = ''
       mkdir -p scripts/ || true
-      mkdir liquibase
+      mkdir db.liquibase
 
       cd scripts
       cp -r ${config.xdg.configHome}/stackbuilder/scripts.liquibase/* ./
 
 
-      cd ../liquibase
-      cp -r ${config.xdg.configHome}/stackbuilder/liquibase/* ./
+      cd ../db.liquibase
+      cp -r ${config.xdg.configHome}/stackbuilder/db.liquibase/* ./
 
       cd ..
     '';
