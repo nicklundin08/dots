@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - includeAll:
+      path: ./logs/
+  - includeAll:
+      path: ./users/
+  - includeAll:
+      path: ./pets/
