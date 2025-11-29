@@ -16,7 +16,7 @@
             options.desc = "[g]o to [d]efinition";
           }
           {
-            key = "ca";
+            key = "<leader>ca";
             action = "<cmd>lua vim.lsp.buf.code_action()<CR>";
             options.desc = "[c]ode [a]ction";
           }
