@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = [
     pkgs.gopls
+    pkgs.gofumpt
   ];
   programs.nixvim = {
     plugins = {
