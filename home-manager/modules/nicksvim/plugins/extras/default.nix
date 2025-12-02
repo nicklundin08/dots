@@ -1,5 +1,6 @@
 {
   imports = [
+    ./lang.golang
     ./lang.haskell
     ./lang.java
     ./lang.nix
