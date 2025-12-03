@@ -3,6 +3,7 @@
     pkgs.gopls
     pkgs.go
     pkgs.gofumpt
+    pkgs.gotestfmt
   ];
   programs.nixvim = {
     plugins = {
