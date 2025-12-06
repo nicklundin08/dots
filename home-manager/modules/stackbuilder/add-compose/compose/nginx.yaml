@@ -1,0 +1,23 @@
+services:
+  nginx:
+    container_name: nginx
+    profiles: [all, deps]
+    image: nginx
+    #command: cd app && lein ring server-headless 3000
+    # command: sleep infinity
+    command: nginx
+    volumes:
+      - ../local.nginx/nginx/:/etc/nginx/
+      - ../local.nginx/www/data/:/www/data/
+      - ../service.spring/target/site/:/www/site/
+    ports:
+      - 80:80
+#    environment:
+#      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+#      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+#    healthcheck:
+#      test: [ "CMD-SHELL", "pg_isready -d postgres" ]
+#      interval: 30s
+#      timeout: 10s
+#      retries: 5
+#    command: /bin/bash -c "until pg_isready -U ${POSTGRES_USER} -p 5432; do sleep 1; done; psql -U ${POSTGRES_USER} -c 'CREATE DATABASE bank;'"

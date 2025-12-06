@@ -38,7 +38,7 @@ direnv reload
 EOF
 
 cat << EOF >> docs/LEARNING_RESOURCES.md
-Add your docs here
+[12 factor apps](https://12factor.net/)
 EOF
 
 cat << EOF >> docs/PATTERNS.md
@@ -50,5 +50,6 @@ Add your docs here
 EOF
 
 cat << EOF >> docs/TODOS.md
+# DB
 Add your docs here
 EOF

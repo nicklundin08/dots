@@ -1,12 +1,12 @@
 {config, ...}: {
-  xdg.configFile."stackbuilder/queries" = {
+  xdg.configFile."stackbuilder/db.queries" = {
     enable = true;
     source = ./queries;
   };
 
   xdg.configFile."stackbuilder/scripts.queries" = {
     enable = true;
-    source = ./queries;
+    source = ./scripts;
   };
 
   home.shellAliases = {
@@ -16,12 +16,13 @@
 
       cd scripts
       cp -r ${config.xdg.configHome}/stackbuilder/scripts.queries/* ./
-
-
-      cd ../db.queries
-      cp -r ${config.xdg.configHome}/stackbuilder/db.queries/* ./
-
       cd ..
+
+
+      cd db.queries
+      cp -r ${config.xdg.configHome}/stackbuilder/db.queries/* ./
+      cd ..
+
     '';
   };
 }

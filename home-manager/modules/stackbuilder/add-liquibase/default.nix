@@ -1,5 +1,5 @@
 {config, ...}: {
-  xdg.configFile."stackbuilder/liquibase" = {
+  xdg.configFile."stackbuilder/db.liquibase" = {
     enable = true;
     source = ./liquibase;
   };
@@ -16,9 +16,10 @@
 
       cd scripts
       cp -r ${config.xdg.configHome}/stackbuilder/scripts.liquibase/* ./
+      cd ..
 
 
-      cd ../db.liquibase
+      cd db.liquibase
       cp -r ${config.xdg.configHome}/stackbuilder/db.liquibase/* ./
 
       cd ..

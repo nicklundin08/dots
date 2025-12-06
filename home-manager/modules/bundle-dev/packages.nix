@@ -28,6 +28,7 @@
     pkgs.xsel
     pkgs.gh
 
+    pkgs.nodejs_24
     pkgs.maven
     pkgs.quarkus
 
