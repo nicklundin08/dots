@@ -50,6 +50,32 @@ Add your docs here
 EOF
 
 cat << EOF >> docs/TODOS.md
-# DB
-Add your docs here
+# TODOS
+Add your TODOS here! Here are some thoughts to get your started
+
+## Scripts
+- CICD wrappers (quality check, build, deploy)
+
+## Golang server
+- Set up tests, linting, formatting, coverage
+- Set up archunit
+- Set up SQLC
+- Set up structured logging / SLOG
+
+## Typescript app
+- Set up tests, linting, formatting, coverage
+- Set up archunit
+
+## OpenAPI
+- Manage openapi directly
+- Generate gin server from definition
+- Generate typescript client from definition
+
+## Testing
+- Add newman tests
+- Add playwright tests
+
+## MISC
+- Static analysis / sonar scanning
+- Add IAC modules (e.g. TF, HELM, etc)
 EOF
