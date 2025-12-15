@@ -19,6 +19,7 @@
     # dev tools
     pkgs.tmuxp
     pkgs.lazydocker
+    pkgs.docker
     pkgs.lazysql
     pkgs.tmux
     pkgs.go-task
@@ -28,6 +29,7 @@
     pkgs.devenv
     pkgs.xsel
     pkgs.gh
+    pkgs.kubectl
 
     pkgs.nodejs_24
     pkgs.maven
