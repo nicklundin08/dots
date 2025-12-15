@@ -12,7 +12,8 @@
     pkgs.alejandra
     #pkgs.xq-xml
     #pkgs.jq
-    pkgs.yq
+    pkgs.jq
+    pkgs.yq-go
     pkgs.stylua
 
     # dev tools
