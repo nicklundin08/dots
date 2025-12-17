@@ -15,9 +15,11 @@
 
   home.homeDirectory = "/home/nick";
   home.username = "nick";
-  programs.git.userEmail = "nick@moontower.net";
-  programs.git.userName = "Nick Lundin";
-  programs.git.extraConfig.github.user = "nicklundin08";
+  programs.git.settings = {
+    user.email = "nick@moontower.net";
+    user.name = "Nick Lundin";
+    extraConfig.github.user = "nicklundin08";
+  };
 
   ## Module options
   #dev.enable = extraSpecialModuleDevEnable;

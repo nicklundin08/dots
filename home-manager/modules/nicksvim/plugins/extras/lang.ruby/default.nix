@@ -32,7 +32,7 @@
     #########################################
     lsp.servers.solargraph = {
       enable = true;
-      settings = {
+      config = {
         filetypes = [
           "ruby"
         ];

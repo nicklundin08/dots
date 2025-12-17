@@ -4,7 +4,7 @@
       # userName = "Nick Lundin";
       # userEmail = "nick@moontwer.net";
       enable = true;
-      extraConfig = {
+      settings.extraConfig = {
         core.editor = "nvim";
         # github.user = "nicklundin08";
         mergetool.prompt = false;
