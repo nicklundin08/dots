@@ -67,7 +67,7 @@
     # Reusable nixos/homemanager modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
     nixosModules = import ./nixos/modules;
-    homeManagerModules = import ./home-manager/modules;
+    homeModules = import ./home-manager/modules;
 
     # Final configuration
     homeConfigurations = reduceAttrsList (builtins.map mkHomeHost homeHosts);

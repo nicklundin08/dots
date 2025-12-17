@@ -54,11 +54,11 @@ outputs = {
 {outputs, ...}:{
   imports = [
     # Choose which module you want to import
-    outputs.nicksdots.homeManagerModules.nicksvim
-    outputs.nicksdots.homeManagerModules.tmux
+    outputs.nicksdots.homeModules.nicksvim
+    outputs.nicksdots.homeModules.tmux
 
     # Bundle dev is a combination of nickvim + tmux + some other packages
-    outputs.nicksdots.homeManagerModules.bundle-dev
+    outputs.nicksdots.homeModules.bundle-dev
   ];
 }
 ```
