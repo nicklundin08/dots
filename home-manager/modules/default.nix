@@ -3,6 +3,7 @@
 {
   # List your module files here
   nixvim = import ./nixvim;
+  nicksvim = import ./nicksvim;
   tmux = import ./tmux;
   stackbuilder = import ./stackbuilder;
   bundle-dev = import ./bundle-dev;
