@@ -1,6 +1,6 @@
 {
   imports = [
-    ../nicksvim
+    ../nixvim
     ../tmux
     ../stackbuilder
     ./aliases.nix

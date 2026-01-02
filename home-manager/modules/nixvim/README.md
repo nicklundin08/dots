@@ -1,4 +1,4 @@
-# Nicksvim (nixvim?)
+# Nixvim
 
 A lazyvim inspired neovim setup
 
@@ -54,10 +54,10 @@ outputs = {
 {outputs, ...}:{
   imports = [
     # Choose which module you want to import
-    outputs.nicksdots.homeModules.nicksvim
+    outputs.nicksdots.homeModules.nixvim
     outputs.nicksdots.homeModules.tmux
 
-    # Bundle dev is a combination of nickvim + tmux + some other packages
+    # Bundle dev is a combination of nixvim + tmux + some other packages
     outputs.nicksdots.homeModules.bundle-dev
   ];
 }
