@@ -7,3 +7,7 @@ title = "home hosts"
 [[hosts]]
 name = "tower"
 module = "/nixos/host.tower2/configuration.nix"
+
+[[hosts]]
+name = "nixos"
+module = "/nixos/host.laptop/configuration.nix"
