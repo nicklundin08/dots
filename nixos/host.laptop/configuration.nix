@@ -13,6 +13,8 @@
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.home-manager
     inputs.xremap.nixosModules.default
+    outputs.nixosModules.gaming
+    outputs.nixosModules.desktop-apps
   ];
 
   home-manager = {

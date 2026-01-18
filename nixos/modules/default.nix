@@ -3,5 +3,7 @@
 {
   # List your module files here
   ssh = import ./ssh;
+  gaming = import ./gaming;
   media-server = import ./media-server;
+  desktop-apps = import ./desktop-app;
 }
