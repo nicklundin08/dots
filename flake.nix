@@ -10,6 +10,9 @@
 
     nixvim.url = "github:nix-community/nixvim/nixos-25.11";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
+    xremap.url = "github:xremap/nix-flake";
+    xremap.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
