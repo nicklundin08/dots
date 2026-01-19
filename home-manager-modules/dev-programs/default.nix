@@ -10,7 +10,7 @@
 
   # Custom options
   bash.enable = lib.mkDefault true;
-  dots.enable = lib.mkDefault false; 
+  dots.enable = lib.mkDefault false;
   git.enable = lib.mkDefault true;
   nicksvim.enable = lib.mkDefault true;
   nicksvim.alias_to_vim = lib.mkDefault true;

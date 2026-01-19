@@ -3,8 +3,7 @@
   pkgs,
   config,
   ...
-}:
-{
+}: {
   options = {
     ssh.enable = lib.mkEnableOption "Enables ssh";
   };

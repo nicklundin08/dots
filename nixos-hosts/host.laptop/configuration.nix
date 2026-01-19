@@ -22,7 +22,7 @@
   nixpkgs.config.allowUnfree = true;
   time.timeZone = "America/Phoenix";
   programs.firefox.enable = true;
-  networking.hostName = "nixos"; 
+  networking.hostName = "nixos";
   environment.systemPackages = with pkgs; [];
 
   # Home lab

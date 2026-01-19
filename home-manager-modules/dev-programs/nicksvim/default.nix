@@ -2,9 +2,9 @@
   lib,
   config,
   ...
-}: let 
+}: let
   cfg = config.nicksvim;
-in{
+in {
   options.nicksvim = {
     enable = lib.mkEnableOption "Enables nicksvim program";
 
