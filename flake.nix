@@ -53,8 +53,8 @@
       };
     };
 
-    homeHosts = (builtins.fromTOML (builtins.readFile ./home-manager/hosts.toml)).hosts;
-    nixosHosts = (builtins.fromTOML (builtins.readFile ./nixos/hosts.toml)).hosts;
+    homeHosts = (builtins.fromTOML (builtins.readFile ./home-manager-hosts/hosts.toml)).hosts;
+    nixosHosts = (builtins.fromTOML (builtins.readFile ./nixos-hosts/hosts.toml)).hosts;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -69,8 +69,8 @@
 
     # Reusable nixos/homemanager modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
-    nixosModules = import ./nixos/modules;
-    homeModules = import ./home-manager/modules;
+    nixosModules = import ./nixos-modules;
+    homeModules = import ./home-manager-modules;
 
     # Final configuration
     homeConfigurations = reduceAttrsList (builtins.map mkHomeHost homeHosts);

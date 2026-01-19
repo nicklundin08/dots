@@ -1,9 +1,6 @@
-[submodule "home-manager/modules/nicksvim/lua/pack/letieu/start/btw.nvim"]
-	path = home-manager/modules/nicksvim/lua/pack/letieu/start/btw.nvim
+[submodule "home-manager-modules/nicksvim/lua/pack/letieu/start/btw.nvim"]
+	path = home-manager-modules/nicksvim/lua/pack/letieu/start/btw.nvim
 	url = https://github.com/letieu/btw.nvim
-[submodule "home-manager/modules/nicksvim/lua/pack/stevearc/start/oil.nvim"]
-	path = home-manager/modules/nicksvim/lua/pack/stevearc/start/oil.nvim
+[submodule "home-manager-modules/nicksvim/lua/pack/stevearc/start/oil.nvim"]
+	path = home-manager-modules/nicksvim/lua/pack/stevearc/start/oil.nvim
 	url = git@github.com:stevearc/oil.nvim.git
-[submodule "/home/nick/dots/home-manager/modules/nicksvim/lua/pack/catppuccin/start/nvim"]
-	path = /home/nick/dots/home-manager/modules/nicksvim/lua/pack/catppuccin/start/nvim
-	url = https://github.com/catppuccin/nvim
