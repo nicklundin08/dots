@@ -13,7 +13,7 @@ in {
   options.${user-name-user} = {
     enable = lib.mkOption {
       type = lib.types.bool;
-      default = true;
+      default = false;
       description = "Enables ${user-name} user";
     };
 
@@ -22,9 +22,7 @@ in {
       default = true;
       description = "Enables home-manager configuration (as nixos module) for ${user-name} user.";
     };
-    home-configuration-key = lib.mkOption {
-      #type = lib.types.string;
-      default = "${user-name}@${config.networking.hostName}";
+    home-configuration = lib.mkOption {
       description = "home-manager configuration to use";
     };
   };
@@ -46,7 +44,7 @@ in {
     home-manager = lib.mkIf cfg.enable-home-manager {
       extraSpecialArgs = {inherit inputs outputs;};
       users = {
-        ${user-name} = builtins.getAttr cfg.home-configuration-key outputs.homeConfigurations;
+        ${user-name} = cfg.home-configuration;
       };
     };
 

@@ -5,6 +5,6 @@
   ];
 
   # Custom options
-  plex.enable = lib.mkDefault true;
-  ssh.enable = lib.mkDefault true;
+  # plex.enable = lib.mkDefault true;
+  # ssh.enable = lib.mkDefault true;
 }
