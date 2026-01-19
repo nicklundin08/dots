@@ -10,7 +10,7 @@
     # inputs.nix-colors.homeModules.default
 
     # You can also split up your configuration and import pieces of it here:
-    outputs.homeModules.terminal-programs
+    outputs.homeModules.dev-programs
   ];
 
   nixpkgs = {

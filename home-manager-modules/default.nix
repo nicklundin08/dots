@@ -1,5 +1,5 @@
 {
   # List your module files here
-  terminal-programs = import ./terminal-programs;
+  dev-programs = import ./dev-programs;
   #gui-programs = import ./gui-programs;
 }
