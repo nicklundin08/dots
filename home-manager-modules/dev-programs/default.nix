@@ -10,7 +10,7 @@
 
   # Custom options
   bash.enable = lib.mkDefault true;
-  dots.enable = lib.mkDefault false; # TODO: turn this one once I figure out whats wrong with the mapping fn
+  dots.enable = lib.mkDefault false; 
   git.enable = lib.mkDefault true;
   nicksvim.enable = lib.mkDefault true;
   nicksvim.alias_to_vim = lib.mkDefault true;

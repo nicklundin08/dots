@@ -1,7 +1,5 @@
 {lib, ...}: {
   imports = [
-    ./nick
+    ./nick-user
   ];
-
-  nick.enable = lib.mkDefault true;
 }
