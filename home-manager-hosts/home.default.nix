@@ -10,19 +10,8 @@
     # inputs.nix-colors.homeModules.default
 
     # You can also split up your configuration and import pieces of it here:
-    outputs.homeModules.bundle-dev
+    outputs.homeModules.terminal-programs
   ];
-
-  home.homeDirectory = "/home/nick";
-  home.username = "nick";
-  programs.git.settings = {
-    user.email = "nick@moontower.net";
-    user.name = "Nick Lundin";
-    extraConfig.github.user = "nicklundin08";
-  };
-
-  ## Module options
-  #dev.enable = extraSpecialModuleDevEnable;
 
   # programs.nixvim = import ./template/flake.nix { inherit pkgs lib config; };
 

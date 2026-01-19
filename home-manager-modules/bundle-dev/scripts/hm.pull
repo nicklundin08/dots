@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-
-git switch $(hm.show_host_for_git) && \
-	git merge --ff main && \
-	hm.rebuild && \
-	git push && \
-	git switch main && \
-	exec bash
