@@ -16,5 +16,14 @@
       dedicatedServer.openFirewall = true; # Open ports for Source Dedicated Server hosting
       # Other general flags if available can be set here.
     };
+
+    environment.systemPackages = with pkgs; [
+      protonup-ng
+    ];
+
+    environment.sessionVariables = {
+        STEAM_EXTRA_COMPAT_TOOLS_PATHS =
+          "\${HOME}/.steam/root/compatibilitytools.d";
+    };
   };
 }
