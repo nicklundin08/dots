@@ -13,8 +13,6 @@
     outputs.homeModules.terminal-programs
   ];
 
-  # programs.nixvim = import ./template/flake.nix { inherit pkgs lib config; };
-
   nixpkgs = {
     # You can add overlays here
     overlays = [

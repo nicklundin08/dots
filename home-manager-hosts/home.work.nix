@@ -24,8 +24,6 @@
   ## Module options
   #dev.enable = extraSpecialModuleDevEnable;
 
-  # programs.nixvim = import ./template/flake.nix { inherit pkgs lib config; };
-
   nixpkgs = {
     # You can add overlays here
     overlays = [
