@@ -30,6 +30,7 @@
   ssh.enable = false;
 
   # Games
+  sunshine.enable = true;
 
   # Users
   nick-user.enable = true;

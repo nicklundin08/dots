@@ -1,6 +1,7 @@
 {lib, ...}: {
   imports = [
     ./steam
+    ./sunshine
   ];
 
   # Custom options
