@@ -1,0 +1,11 @@
+version: '3'
+
+includes:
+  neovim: ./tasks/Taskfile.neovim.yaml
+  nix: ./tasks/Taskfile.nixos.yaml
+  hm: ./tasks/Taskfile.home-manager.yaml
+
+tasks:
+  default:
+    cmds:
+      - task --list-all
