@@ -14,8 +14,8 @@ vim.keymap.set('n', '<C-l>', '<C-W>l')
 -- ----------------------------------------
 -- -- Buffers
 -- ----------------------------------------
-vim.keymap.set('v', '<S-h>', ':bprev<CR>')
-vim.keymap.set('i', '<S-l>', ':bnext<CR>')
+vim.keymap.set('n', '<S-h>', ':bprev<CR>')
+vim.keymap.set('n', '<S-l>', ':bnext<CR>')
 vim.keymap.set('n', '<leader>bd', ':bdelete<CR>')
 ----------------------------------------
 -- Saving
@@ -36,4 +36,4 @@ vim.keymap.set('n', '-', ':Ex<CR>')
 --       action = "<cmd>lua vim.diagnostic.open_float()<CR>";
 --       options.desc = "Line Diagnostics";
 --     }
--- 
+--
