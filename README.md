@@ -12,7 +12,6 @@ Not associated with the [delicious, buttery preztel snacks](https://en.wikipedia
 # TODOS
 neovim
 - Plugins
-    - Oil
     - Colorscheme
     - Formatter
 - Modules

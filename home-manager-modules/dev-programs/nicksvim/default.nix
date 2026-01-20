@@ -1,28 +1,32 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }: let
+  mkPluginFromJsonEntry = jsonEntry:
+    pkgs.vimUtils.buildVimPlugin {
+      name = jsonEntry.name;
+      src = pkgs.fetchFromGitHub {
+        owner = jsonEntry.name;
+        repo = jsonEntry.name;
+        rev = jsonEntry.rev;
+        hash = jsonEntry.hash;
+      };
+    };
+  start-plugins = builtins.map mkPluginFromJsonEntry (builtins.fromJSON (builtins.readFile ./plugins.start.json));
   cfg = config.nicksvim;
 in {
   options.nicksvim = {
     enable = lib.mkEnableOption "Enables nicksvim program";
-
-    alias_to_vim = lib.mkOption {
-      type = lib.types.bool;
-      default = true;
-      description = "Whether to alias nvim to nicksvim";
-    };
   };
 
   config = lib.mkIf cfg.enable {
     programs.neovim = {
       enable = true;
+      plugins = start-plugins;
     };
 
-    xdg.configFile."nicksvim".source = ./xdg-config-nicksvim;
-    home.shellAliases = lib.mkIf cfg.alias_to_vim {
-      "nvim" = "NVIM_APPNAME=nicksvim nvim";
-    };
+    xdg.configFile."nvim".source = ./xdg-config-nvim;
   };
 }

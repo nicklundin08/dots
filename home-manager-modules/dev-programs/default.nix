@@ -11,7 +11,6 @@
   bash.enable = lib.mkDefault true;
   git.enable = lib.mkDefault true;
   nicksvim.enable = lib.mkDefault true;
-  nicksvim.alias_to_vim = lib.mkDefault true;
   tmux.enable = lib.mkDefault true;
 
   # Home-manager options
