@@ -9,3 +9,7 @@ tasks:
   default:
     cmds:
       - task --list-all
+
+  repl:
+    cmds:
+      - nix repl --extra-experimental-features 'flakes repl-flake' nixpkgs
