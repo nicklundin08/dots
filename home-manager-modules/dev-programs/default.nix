@@ -1,5 +1,6 @@
 {lib, ...}: {
   imports = [
+    ./alacritty
     ./bash
     ./git
     ./misc-packages
@@ -21,4 +22,6 @@
     user.name = lib.mkDefault "Nick Lundin";
     extraConfig.github.user = lib.mkDefault "nicklundin08";
   };
+
+  alac.enable = true;
 }
