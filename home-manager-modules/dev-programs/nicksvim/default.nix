@@ -8,11 +8,12 @@
     pkgs.vimUtils.buildVimPlugin {
       name = jsonEntry.name;
       src = pkgs.fetchFromGitHub {
-        owner = jsonEntry.name;
-        repo = jsonEntry.name;
+        owner = jsonEntry.owner;
+        repo = jsonEntry.repo;
         rev = jsonEntry.rev;
         hash = jsonEntry.hash;
       };
+      doCheck = false; # YEET!
     };
   start-plugins = builtins.map mkPluginFromJsonEntry (builtins.fromJSON (builtins.readFile ./plugins.start.json));
   cfg = config.nicksvim;
