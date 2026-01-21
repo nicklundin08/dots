@@ -10,13 +10,19 @@ repos:
       - id: check-added-large-files
   - repo: local
     hooks:
-      - id: alejandra
-        name: alejandra
+      - id: fmt:json
+        name: fmt:json
         entry: alejandra .
         language: system
-      - id: stylua
-        name: stylua
+      - id: fmt:lua
+        name: fmt:lua
         entry: stylua
         language: system
         pass_filenames: true
         files: \.lua$ # Regex to match files to run the hook on
+      - id: fmt:json
+        name: fmt:json
+        entry: task fmt:json:file --
+        language: system
+        pass_filenames: true
+        files: \.json$ # Regex to match files to run the hook on

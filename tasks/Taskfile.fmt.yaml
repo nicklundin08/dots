@@ -1,0 +1,10 @@
+version: '3'
+
+tasks:
+  json:all:
+    cmds:
+      - prettier './**.json' --write
+
+  json:file:
+    cmds:
+      - prettier {{.CLI_ARGS}} --write

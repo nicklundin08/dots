@@ -40,5 +40,7 @@
     pkgs.gcc
     pkgs.curl
     pkgs.ripgrep
+    pkgs.prettierd
+    pkgs.prettier
   ];
 }
