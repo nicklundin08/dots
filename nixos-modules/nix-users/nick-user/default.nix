@@ -36,7 +36,7 @@ in {
         packages = with pkgs; [
           discord-ptb
           signal-desktop
-          #  thunderbird
+          alacritty
         ];
       };
     };
