@@ -1,6 +1,6 @@
 version: '3'
 
 tasks:
-  hello:
+  rebuild:
     cmds:
-      - echo "Hello from nixos taskfile"
+      - sudo nixos-rebuild switch --flake .
