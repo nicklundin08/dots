@@ -16,6 +16,6 @@ in {
   config = lib.mkIf cfg.enable {
     programs.alacritty.enable = true;
     catppuccin.alacritty.enable = true;
-    catppuccin.alacritty.flavor = "frappe";
+    catppuccin.alacritty.flavor = "mocha";
   };
 }
