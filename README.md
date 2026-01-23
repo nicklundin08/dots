@@ -28,6 +28,10 @@ dots
 
 Gaming
 - WoW
+    - 1 follower dunegon on rogue
+    - 1 follower dunegon on rogue on steam deck
+    - 1 follower dunegon on healer
+    - 1 follower dunegon on healer on steam deck
 
 HomeLab
 - Sunshine/moonlight
