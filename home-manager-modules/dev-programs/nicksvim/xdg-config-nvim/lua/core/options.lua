@@ -1,5 +1,9 @@
 -- updatetime = 100
 
+vim.o.shell = "/usr/bin/env bash"
+
+vim.o.exrc = true
+
 vim.o.fileencoding = "utf-8"
 
 vim.o.number = true
@@ -48,3 +52,4 @@ vim.opt.fillchars = { eob = " " }
 -- cursorline = true
 
 -- scrolloff = 8
+--
