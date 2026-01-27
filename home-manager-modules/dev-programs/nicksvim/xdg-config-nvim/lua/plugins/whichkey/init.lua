@@ -1,0 +1,21 @@
+local wk = require("which-key")
+wk.add({
+	{ "<leader>b", group = "buffer" },
+	{ "<leader>c", group = "code" },
+	{ "<leader>d", group = "debug" },
+	{ "<leader>dp", group = "profiler" },
+	{ "<leader>f", group = "file/find" },
+	{ "<leader>g", group = "goto" },
+	{ "<leader>gs", group = "surround" },
+	{ "<leader>C", group = "Checks" },
+	{ "<leader>k", group = "quickfix" },
+	{ "<leader>l", group = "lang" },
+	{ "<leader>s", group = "search" },
+	{ "<leader>t", group = "test" },
+	{ "<leader>sn", group = "noice" },
+	{ "<leader>u", group = "ui" },
+	{ "<leader>x", group = "diagnostics/quickfix" },
+	{ "<leader>z", group = "project specific" },
+	{ "[", group = "prev" },
+	{ "]", group = "next" },
+})
