@@ -1,15 +1,33 @@
 version: '3'
 
+
 includes:
   fmt: ./tasks/Taskfile.fmt.yaml
   nix: ./tasks/Taskfile.nixos.yaml
   hm: ./tasks/Taskfile.home-manager.yaml
+
+vars:
+  DOTS:
+    sh: |
+      if command -v home-manager >/dev/null 2>&1; then
+          echo "hm"
+      else
+          echo "nix"
+      fi
 
 tasks:
   default:
     cmds:
       - task --list-all
 
+  print-vars:
+    cmds:
+      - echo {{.DOTS}}
+
   repl:
     cmds:
       - nix repl --extra-experimental-features 'flakes repl-flake' nixpkgs
+
+  rebuild:
+    cmds:
+      - task {{.DOTS}}:rebuild
