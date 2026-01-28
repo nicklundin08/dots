@@ -7,6 +7,13 @@
     "hash": "sha256-eMruZSMi72A74LqtSsyJSI3WY595aKO9n2XxJ3Du/9Y="
   },
   {
+    "name": "nvim-treesitter",
+    "owner": "nvim-treesitter",
+    "repo": "nvim-treesitter",
+    "rev": "f8bbc3177d929dc86e272c41cc15219f0a7aa1ac",
+    "hash": "sha256-9GI22/cwoJWOO7jvRpW67s/x6IoahNZkMpBb58rO31k="
+  },
+  {
     "name": "conform.nvim",
     "owner": "stevearc",
     "repo": "conform.nvim",

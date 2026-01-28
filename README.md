@@ -11,7 +11,6 @@ Not associated with the [delicious, buttery preztel snacks](https://en.wikipedia
 
 # TODOS
 neovim
-- treesitter
 - lspconfig
     - ruby
     - java
