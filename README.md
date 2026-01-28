@@ -11,17 +11,35 @@ Not associated with the [delicious, buttery preztel snacks](https://en.wikipedia
 
 # TODOS
 neovim
-- Plugins
-    - Formatter
-- Modules
-    - lang.java
-
-site/bookmarks
-- Create?
+- conform.nvim
+    - ruby
+    - java
+    - typescript
+- treesitter
+- lspconfig
+    - ruby
+    - java
+    - typescript
+- jdtls.nvim
+- neotest.nvim
+- neogit + cz script?
+- other plugins
+    - lualine
+    - noice
+    - nui
+    - snacks
+    - flash
+    - gitsigns
+    - trouble
+    - todocomments
+    - dadbod
+    - mini-pairs
+    - mini-ai
+    - mini-ts-comments
+    - lazy-dev
+    - cmp
 
 dots
-- dots taskfiles
-- terminal
 - Nerdfonts
 - Wallpaper
 - Password manager/SOPS?
@@ -34,6 +52,7 @@ Gaming
     - 1 follower dunegon on healer on steam deck
 
 HomeLab
+- Dashboard
 - Sunshine/moonlight
 - SSH server
 - VPN server
