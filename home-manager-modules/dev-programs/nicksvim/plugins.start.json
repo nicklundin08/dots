@@ -7,6 +7,13 @@
     "hash": "sha256-eMruZSMi72A74LqtSsyJSI3WY595aKO9n2XxJ3Du/9Y="
   },
   {
+    "name": "conform.nvim",
+    "owner": "stevearc",
+    "repo": "conform.nvim",
+    "rev": "c2526f1cde528a66e086ab1668e996d162c75f4f",
+    "hash": "sha256-M2mGNF8iARiQ6MzIFSSE/2BRDSj1+XEP/C44dwg8MQ8="
+  },
+  {
     "name": "plenary.nvim",
     "owner": "nvim-lua",
     "repo": "plenary.nvim",
