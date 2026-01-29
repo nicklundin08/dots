@@ -26,6 +26,7 @@ tasks:
 
   repl:
     cmds:
+      - echo "type :q to exit"
       - nix repl --extra-experimental-features 'flakes repl-flake' nixpkgs
 
   rebuild:
