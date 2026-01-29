@@ -1,33 +1,37 @@
 {
+  inputs,
   lib,
-  pkgs,
+  options,
   config,
   ...
 }: let
-  mkPluginFromJsonEntry = jsonEntry:
-    pkgs.vimUtils.buildVimPlugin {
-      name = jsonEntry.name;
-      src = pkgs.fetchFromGitHub {
-        owner = jsonEntry.owner;
-        repo = jsonEntry.repo;
-        rev = jsonEntry.rev;
-        hash = jsonEntry.hash;
-      };
-      doCheck = false; # YEET!
-    };
-  start-plugins = builtins.map mkPluginFromJsonEntry (builtins.fromJSON (builtins.readFile ./plugins.start.json));
-  cfg = config.nicksvim;
+  luaDir = ./lua;
+  files = builtins.attrNames (builtins.readDir luaDir);
+  readFile = file: builtins.readFile "${luaDir}/${file}";
+  fileContents = builtins.map readFile files;
+  extraLua = lib.strings.concatStrings fileContents;
 in {
-  options.nicksvim = {
-    enable = lib.mkEnableOption "Enables nicksvim program";
+  imports = [
+    inputs.nixvim.homeModules.nixvim
+    ./options.nix
+    ./keymaps.nix
+    ./plugins
+  ];
+  options = {
+    nicksvim.enable = lib.mkEnableOption "Enables nicksvim";
   };
 
-  config = lib.mkIf cfg.enable {
-    programs.neovim = {
-      enable = true;
-      plugins = start-plugins;
-    };
+  config = lib.mkIf config.nicksvim.enable {
+    #home.file.".config/nvim/lua/customlua".source = ./customlua;
 
-    xdg.configFile."nvim".source = ./xdg-config-nvim;
+    programs.nixvim = {
+      enable = true;
+      defaultEditor = true;
+      nixpkgs.useGlobalPackages = true;
+      viAlias = true;
+      vimAlias = true;
+      #extraConfigLua = builtins.readFile ./autocmd.lua;
+      extraConfigLua = extraLua;
+    };
   };
 }

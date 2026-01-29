@@ -8,6 +8,9 @@
     home-manager.url = "github:nix-community/home-manager/release-25.11";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    nixvim.url = "github:nix-community/nixvim/nixos-25.11";
+    nixvim.inputs.nixpkgs.follows = "nixpkgs";
+
     catppuccin.url = "github:catppuccin/nix/release-25.11";
     catppuccin.inputs.nixpkgs.follows = "nixpkgs";
 

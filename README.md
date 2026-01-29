@@ -10,29 +10,6 @@ Not associated with the [delicious, buttery preztel snacks](https://en.wikipedia
 - K8s dashboard
 
 # TODOS
-neovim
-- lspconfig
-    - ruby
-    - java
-    - typescript
-- jdtls.nvim
-- neotest.nvim
-- neogit + cz script?
-- other plugins
-    - lualine
-    - noice
-    - nui
-    - snacks
-    - flash
-    - gitsigns
-    - trouble
-    - todocomments
-    - dadbod
-    - mini-pairs
-    - mini-ai
-    - mini-ts-comments
-    - lazy-dev
-    - cmp
 
 dots
 - Nerdfonts
