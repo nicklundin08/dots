@@ -8,3 +8,7 @@ tasks:
   gc:
     cmds:
       - nix-collect-garbage
+
+  service:xremap:restart:
+    cmds:
+      - systemctl --user restart xremap.service
