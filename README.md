@@ -12,23 +12,16 @@ Not associated with the [delicious, buttery preztel snacks](https://en.wikipedia
 # TODOS
 
 dots
-- Nerdfonts
-- Wallpaper
-- Password manager/SOPS?
-
-Gaming
-- WoW
-    - 1 follower dunegon on rogue
-    - 1 follower dunegon on rogue on steam deck
-    - 1 follower dunegon on healer
-    - 1 follower dunegon on healer on steam deck
-
-HomeLab
+- Task helpers (gc, increment...)
+- Tiling window manager
+- VPN server
+- Open port
 - Dashboard
 - Sunshine/moonlight
 - SSH server
-- VPN server
 - NGinx
 - K3s
-- Sign in to plex
+- Plex/Jellyfin
 - Change pw on sunshine
+- Wallpaper
+- Password manager/SOPS?

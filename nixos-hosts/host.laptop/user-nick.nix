@@ -1,4 +1,5 @@
 {
+  lib,
   inputs,
   outputs,
   pkgs,
@@ -25,7 +26,13 @@
     packages = with pkgs; [
       discord-ptb
       signal-desktop
-      alacritty
     ];
   };
+
+  # fonts.packages = ["JetBrains Mono"] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  # fonts.packages = ["JetBrains Mono"] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  # fonts.packages = with pkgs; [
+  #   nerd-fonts.fira-code
+  #   nerd-fonts.droid-sans-mono
+  # ];
 }
