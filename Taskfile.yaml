@@ -71,6 +71,7 @@ tasks:
       - git merge --ff main
       - git push
       - git switch main
+      - lazygit
 
   increment:
     cmds:
