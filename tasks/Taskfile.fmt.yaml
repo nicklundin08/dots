@@ -1,6 +1,20 @@
 version: '3'
 
 tasks:
+  all:
+    cmds:
+      - task: json:all
+      - task: lua:all
+      - task: nix:all
+
+  nix:all:
+    cmds:
+      - alejandra .
+
+  lua:all:
+    cmds:
+      - stylua .
+
   json:all:
     cmds:
       - prettier './**.json' --write

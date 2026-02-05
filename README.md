@@ -12,7 +12,6 @@ Not associated with the [delicious, buttery preztel snacks](https://en.wikipedia
 # TODOS
 
 dots
-- Task helpers (gc, increment...)
 - Tiling window manager
 - VPN server
 - Open port

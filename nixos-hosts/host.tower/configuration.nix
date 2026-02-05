@@ -17,7 +17,7 @@
     ./xserver.nix
   ];
 
-  networking.hostName = "tower"; 
+  networking.hostName = "tower";
   time.timeZone = "America/Denver";
   networking.networkmanager.enable = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];

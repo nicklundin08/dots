@@ -14,6 +14,14 @@ vars:
       else
           echo "nix"
       fi
+  BRANCH_NAME:
+    sh: |
+      if command -v home-manager >/dev/null 2>&1; then
+          echo "hm/$(whoami)-$(hostname)"
+      else
+          echo "nix/$(whoami)-$(hostname)"
+      fi
+
 
 tasks:
   default:
@@ -23,6 +31,7 @@ tasks:
   print-vars:
     cmds:
       - echo {{.DOTS}}
+      - echo {{.BRANCH_NAME}}
 
   repl:
     cmds:
@@ -32,3 +41,34 @@ tasks:
   rebuild:
     cmds:
       - task {{.DOTS}}:rebuild
+
+  branch:show:
+    cmds:
+      - echo {{.BRANCH_NAME}}
+
+  branch:create:
+    cmds:
+      - git switch -c {{.BRANCH_NAME}} || true
+      - git switch {{.BRANCH_NAME}}
+      - git push -u origin {{.BRANCH_NAME}}
+      - git switch main
+
+  branch:pull:
+    cmds:
+      - git switch {{.BRANCH_NAME}}
+      - git merge --ff main
+      - task: rebuild
+      - git push
+      - git switch main
+      - exec bash
+
+  increment:
+    cmds:
+      - lazygit
+      - cz commit
+      - task: rebuild
+      - git push
+      - git switch {{.BRANCH_NAME}}
+      - git merge --ff main
+      - git push
+      - git switch main

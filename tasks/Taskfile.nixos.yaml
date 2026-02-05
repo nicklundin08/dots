@@ -1,9 +1,5 @@
 version: '3'
 
-vars:
-  BRANCH_NAME:
-    sh: echo "nix/$(whoami)-$(hostname)"
-
 tasks:
   rebuild:
     cmds:
@@ -12,35 +8,3 @@ tasks:
   gc:
     cmds:
       - nix-collect-garbage
-
-  branch:show:
-    cmds:
-      - echo {{.BRANCH_NAME}}
-
-  branch:create:
-    cmds:
-      - git switch -c {{.BRANCH_NAME}} || true
-      - git switch {{.BRANCH_NAME}}
-      - git push -u origin {{.BRANCH_NAME}}
-      - git switch main
-
-  branch:pull:
-    cmds:
-      - git switch {{.BRANCH_NAME}}
-      - git merge --ff main
-      - task: rebuild
-      - git push
-      - git switch main
-      - exec bash
-
-  increment:
-    cmds:
-      - pre-commit
-      - lazygit
-      - cz commit
-      - task: rebuild
-      - git push
-      - git switch {{.BRANCH_NAME}}
-      - git merge --ff main
-      - git push
-      - git switch main
