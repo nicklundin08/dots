@@ -38,9 +38,6 @@ tasks:
       - echo "type :q to exit"
       - nix repl --extra-experimental-features 'flakes repl-flake' nixpkgs
 
-  rebuild:
-    cmds:
-      - task {{.DOTS}}:rebuild
 
   branch:show:
     cmds:
@@ -62,13 +59,21 @@ tasks:
       - git switch main
       - exec bash
 
-  increment:
+  rebuild:
     cmds:
-      - lazygit
-      - cz commit
+      - task {{.DOTS}}:rebuild
+
+  rebuild-and-push:
+    cmds:
       - task: rebuild
       - git push
       - git switch {{.BRANCH_NAME}}
       - git merge --ff main
       - git push
       - git switch main
+
+  increment:
+    cmds:
+      - lazygit
+      - cz commit
+      - task: rebuild-and-push
