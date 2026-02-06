@@ -20,17 +20,20 @@ in {
       settings = {
         font = {
           normal = {
-            family = "JetBrainsMono Nerd Font";
+            #family = "JetBrainsMono Nerd Font";
+            family = "ComicMono";
             #family = "FiraCode Nerd Font";
             style = "Regular";
           };
           bold = {
-            family = "JetBrainsMono Nerd Font";
+            # family = "JetBrainsMono Nerd Font";
+            family = "ComicMono";
             #family = "FiraCode Nerd Font";
             style = "Bold";
           };
           italic = {
-            family = "JetBrainsMono Nerd Font";
+            # family = "JetBrainsMono Nerd Font";
+            family = "ComicMono";
             #family = "FiraCode Nerd Font";
             style = "Italic";
           };
@@ -45,6 +48,7 @@ in {
       # Run `fc-cache -rv` if changing stuff wrt fonts!
       nerd-fonts.jetbrains-mono
       nerd-fonts.fira-code
+      comic-mono
     ];
   };
 }
