@@ -11,8 +11,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./hyprland.nix
+    #./hyprland.nix
     ./i18n.nix
+    ./lutris.nix
     ./nvidia.nix
     ./ssh.nix
     ./steam.nix

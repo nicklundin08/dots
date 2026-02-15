@@ -20,20 +20,20 @@ in {
       settings = {
         font = {
           normal = {
-            #family = "JetBrainsMono Nerd Font";
-            family = "ComicMono";
+            family = "JetBrainsMono Nerd Font";
+            # family = "ComicMono";
             #family = "FiraCode Nerd Font";
             style = "Regular";
           };
           bold = {
-            # family = "JetBrainsMono Nerd Font";
-            family = "ComicMono";
+            family = "JetBrainsMono Nerd Font";
+            # family = "ComicMono";
             #family = "FiraCode Nerd Font";
             style = "Bold";
           };
           italic = {
-            # family = "JetBrainsMono Nerd Font";
-            family = "ComicMono";
+            family = "JetBrainsMono Nerd Font";
+            # family = "ComicMono";
             #family = "FiraCode Nerd Font";
             style = "Italic";
           };

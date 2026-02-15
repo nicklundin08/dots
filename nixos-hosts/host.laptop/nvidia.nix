@@ -33,14 +33,19 @@
 
     prime = {
       sync.enable = true;
-
-      # nix shell --extra-experimental-features 'nix-command flakes' nixpkgs#pciutils -c lspci | grep ' VGA '
+      # offload = {
+      #   enable = true;
+      #   enableOffloadCmd = true; # Lets you use `nvidia-offload %command%` in steam
+      # };
+      #
+      # nix shell  nixpkgs#pciutils -c lspci | grep ' VGA '
+      # https://medium.com/@notquitethereyet_/gaming-on-nixos-%EF%B8%8F-f98506351a24
       # integrated
-      intelBusId = "PCI:0:2:0";
+      intelBusId = "PCI:00:02:0";
       # amdgpuBusId = "PCI:6:0:0";
 
       # dedicated
-      nvidiaBusId = "PCI:1:0:0";
+      nvidiaBusId = "PCI:01:00:0";
     };
   };
 }
