@@ -2,6 +2,7 @@ version: '3'
 
 
 includes:
+  ssh: ./tasks/Taskfile.ssh.yaml
   fmt: ./tasks/Taskfile.fmt.yaml
   nix: ./tasks/Taskfile.nixos.yaml
   hm: ./tasks/Taskfile.home-manager.yaml

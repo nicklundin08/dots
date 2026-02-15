@@ -1,0 +1,6 @@
+version: '3'
+
+tasks:
+  tower:
+    cmds:
+      - ssh nick@10.0.0.134
