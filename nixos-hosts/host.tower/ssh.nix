@@ -1,8 +1,10 @@
 {...}: {
   #programs.ssh.startAgent = true;
-  services.openssh.enable = true;
-  services.openssh.permitRootLogin = "yes";
-  services.openssh.passwordAuthentication = true;
-  # services.openssh.port = 22;
-  # services.openssh.protocol = "2";
+  services.openssh = {
+    enable = true;
+    permitRootLogin = "yes";
+    passwordAuthentication = true;
+    # port = 22;
+    # protocol = "2";
+  };
 }

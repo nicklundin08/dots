@@ -25,5 +25,11 @@
     packages = with pkgs; [
       #  thunderbird
     ];
+    openssh.authorizedKeys.keys = [
+      # content of authorized_keys file
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGqxiC1euyE5Co96HAUX4GedI0aPgn/Mr2CsKIB3BOma nick@moontower.net"
+      # note: ssh-copy-id will add user@your-machine after the public key
+      # but we can remove the "@your-machine" part
+    ];
   };
 }
