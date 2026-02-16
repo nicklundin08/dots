@@ -19,6 +19,7 @@
     ./steam.nix
     ./sunshine.nix
     ./system-packages.nix
+    ./tailscale.nix
     ./user-nick.nix
     ./xremap.nix
     ./xserver.nix

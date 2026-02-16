@@ -9,6 +9,10 @@ tasks:
     cmds:
       - nix-collect-garbage
 
+  show_ip:
+    cmds:
+      - hostname -I
+
   service:xremap:restart:
     cmds:
       - systemctl --user restart xremap.service
