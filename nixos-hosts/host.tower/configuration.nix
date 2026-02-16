@@ -12,7 +12,10 @@
     ./hardware-configuration.nix
     ./ssh.nix
     ./i18n.nix
+    ./jellyfin.nix
+    ./nginx.nix
     ./system-packages.nix
+    ./tailscale.nix
     ./user-nick.nix
     ./xserver.nix
   ];
