@@ -5,10 +5,6 @@ tasks:
     cmds:
       - sudo nixos-rebuild switch --flake .
 
-  gc:
-    cmds:
-      - nix-collect-garbage
-
   show_ip:
     cmds:
       - hostname -I

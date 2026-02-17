@@ -64,8 +64,14 @@ tasks:
     cmds:
       - task {{.DOTS}}:rebuild
 
-  rebuild-and-push:
+  gc:
     cmds:
+      - nix-collect-garbage
+
+  rebase-rebuild-push:
+    cmds:
+      - git checkout main
+      - git pull --rebase
       - task: rebuild
       - git push
       - git switch {{.BRANCH_NAME}}
@@ -78,4 +84,4 @@ tasks:
     cmds:
       - lazygit
       - cz commit
-      - task: rebuild-and-push
+      - task: rebase-rebuild-push
