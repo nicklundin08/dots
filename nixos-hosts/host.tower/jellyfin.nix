@@ -9,7 +9,7 @@
 }: {
   services.jellyfin = {
     enable = true;
-    openFirewall = false;
+    openFirewall = true;
   };
   environment.systemPackages = [
     pkgs.jellyfin
