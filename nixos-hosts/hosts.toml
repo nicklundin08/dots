@@ -7,3 +7,7 @@ module = "/nixos-hosts/host.tower/configuration.nix"
 [[hosts]]
 name = "nixos"
 module = "/nixos-hosts/host.laptop/configuration.nix"
+
+[[hosts]]
+name = "dell"
+module = "/nixos-hosts/host.dell/configuration.nix"

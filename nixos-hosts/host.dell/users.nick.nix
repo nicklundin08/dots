@@ -25,9 +25,5 @@
     packages = with pkgs; [
       #  thunderbird
     ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGqxiC1euyE5Co96HAUX4GedI0aPgn/Mr2CsKIB3BOma nick@moontower.net"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIDYuZfADxjv4WCB9ZWRmOO6Eyp1PkoFuW6nrqKm9vuK nick@dell"
-    ];
   };
 }
