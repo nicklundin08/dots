@@ -6,6 +6,7 @@ includes:
   fmt: ./tasks/Taskfile.fmt.yaml
   nix: ./tasks/Taskfile.nixos.yaml
   hm: ./tasks/Taskfile.home-manager.yaml
+  wg: ./tasks/Taskfile.wg.yaml
 
 vars:
   DOTS:

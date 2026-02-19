@@ -1,0 +1,12 @@
+version: '3'
+
+tasks:
+  gen-keys:
+    cmds:
+      - sudo mkdir -p /etc/wireguard/
+      - umask 077 && wg genkey > /etc/wireguard/privatekey
+      - wg pubkey < ~/.wireguard/privatekey > /etc/wireguard/publickey
+
+  show:
+    cmds:
+      - sudo wg show wg0

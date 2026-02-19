@@ -18,6 +18,7 @@
     ./tailscale.nix
     ./user-nick.nix
     ./xserver.nix
+    ./wireguard.nix
   ];
 
   networking.hostName = "tower";
