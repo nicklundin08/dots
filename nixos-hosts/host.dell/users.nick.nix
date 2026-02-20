@@ -23,7 +23,7 @@
     description = "Nick";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      #  thunderbird
+      wireguard-tools
     ];
   };
 }

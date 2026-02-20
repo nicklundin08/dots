@@ -10,6 +10,8 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./users.nick.nix
+    #./wireguard.nix
+    #./wgquick.nix
     ./xremap.nix
   ];
 

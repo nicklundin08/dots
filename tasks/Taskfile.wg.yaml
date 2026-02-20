@@ -3,10 +3,21 @@ version: '3'
 tasks:
   gen-keys:
     cmds:
-      - sudo mkdir -p /etc/wireguard/
-      - umask 077 && wg genkey > /etc/wireguard/privatekey
-      - wg pubkey < ~/.wireguard/privatekey > /etc/wireguard/publickey
+      - mkdir -p /tmp/wireguard/
+      - umask 077 && wg genkey > /tmp/wireguard/privatekey
+      - wg pubkey < /tmp/wireguard/privatekey > /tmp/wireguard/publickey
+      - sudo cp /tmp/wireguard/privatekey /etc/wireguard/privatekey
+      - sudo cp /tmp/wireguard/publickey /etc/wireguard/publickey
+      - sudo rm -rf /tmp/wireguard
 
   show:
     cmds:
       - sudo wg show wg0
+
+  connect:
+    cmds:
+      - sudo wg-quick up wg0
+
+  disconnect:
+    cmds:
+      - sudo wg-quick down wg0
