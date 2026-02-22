@@ -5,6 +5,7 @@
     ./lang.java
     ./lang.nix
     ./lang.ruby
+    ./lang.scala
     ./lang.sql
     ./lang.ts
     ./quickfix
