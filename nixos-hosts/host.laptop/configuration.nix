@@ -10,6 +10,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
+    ./docker.nix
     ./hardware-configuration.nix
     #./hyprland.nix
     ./i18n.nix
@@ -19,7 +20,7 @@
     ./steam.nix
     ./sunshine.nix
     ./system-packages.nix
-    ./tailscale.nix
+    # ./tailscale.nix
     ./user-nick.nix
     ./xremap.nix
     ./xserver.nix
