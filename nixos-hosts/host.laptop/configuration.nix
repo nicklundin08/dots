@@ -16,6 +16,7 @@
     ./i18n.nix
     ./lutris.nix
     ./nvidia.nix
+    ./spotify.nix
     ./ssh.nix
     ./steam.nix
     ./sunshine.nix
