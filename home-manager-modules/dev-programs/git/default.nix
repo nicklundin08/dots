@@ -69,7 +69,7 @@
 
     home.shellAliases = {
       lg = "lazygit";
-      tux = "TUX_SESSION_NAME=$(pwd | xargs basename) TUX_START_DIR=$(pwd) tmuxp load ~/.config/tmuxp/default.yaml";
+      tux = "TUX_SESSION_NAME=$(pwd | xargs basename | tr '.' '_') TUX_START_DIR=$(pwd) tmuxp load ~/.config/tmuxp/default.yaml";
       # gfu = "git fetch upstream";
       # gfo = "git fetch origin";
       # gpc = "gh pr checkout";
