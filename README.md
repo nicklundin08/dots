@@ -12,15 +12,12 @@ Not associated with the [delicious, buttery preztel snacks](https://en.wikipedia
 # TODOS
 
 dots
+- multiple users on MSI
+- Move lastpass -> Bitwarden
 - Tiling window manager
-- VPN server
-- Open port
-- Dashboard
-- Sunshine/moonlight
-- SSH server
-- NGinx
-- K3s
-- Plex/Jellyfin
-- Change pw on sunshine
 - Wallpaper
-- Password manager/SOPS?
+- tower
+    - VPN/Tailscale
+    - open port on router
+    - Jellyfin
+    - NGINX + web server
