@@ -14,7 +14,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      nick = import ../../home-manager-hosts/home.wfh.nix;
+      work = import ../../home-manager-hosts/home.wfh.nix;
     };
   };
 
