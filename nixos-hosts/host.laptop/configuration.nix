@@ -11,6 +11,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./docker.nix
+    ./dots-file.nix
     ./hardware-configuration.nix
     #./hyprland.nix
     ./i18n.nix

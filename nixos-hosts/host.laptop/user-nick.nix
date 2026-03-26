@@ -22,7 +22,7 @@
   users.users.nick = {
     isNormalUser = true;
     description = "Nick";
-    extraGroups = ["networkmanager" "wheel" "docker"];
+    extraGroups = ["networkmanager" "wheel" "docker" "dots"];
     packages = with pkgs; [
       discord-ptb
       signal-desktop
