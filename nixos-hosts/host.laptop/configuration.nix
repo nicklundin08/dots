@@ -24,6 +24,7 @@
     ./system-packages.nix
     # ./tailscale.nix
     ./user-nick.nix
+    ./user-work.nix
     ./xremap.nix
     ./xserver.nix
   ];
