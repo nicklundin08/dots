@@ -3,7 +3,7 @@ version: '3'
 tasks:
   rebuild:
     cmds:
-      - sudo nixos-rebuild switch --flake .
+      - sudo nixos-rebuild switch --flake . --impure
 
   show_ip:
     cmds:

@@ -7,8 +7,23 @@
   pkgs,
   ...
 }: {
+  networking.firewall.allowedTCPPorts = [80 443];
+
   services.nginx = {
     enable = true;
+    virtualHosts."10.0.0.134" = {
+      locations."/test" = {
+        return = "200 '<html><body>It works!!</body></html>'";
+        extraConfig = ''
+          default_type text/html;
+        '';
+      };
+      forceSSL = true;
+      enableACME = false;
+      sslCertificate = /lab/ssl-certs/localhost.pem;
+      sslCertificateKey = /lab/ssl-certs/localhost-key.pem;
+    };
+
     # https://login.tailscale.com/admin/machines
     virtualHosts."tower.tail3394a4.ts.net" = {
       # Use Tailscale certs (if enabled in Tailscale admin panel)
