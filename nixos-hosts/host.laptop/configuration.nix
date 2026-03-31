@@ -30,7 +30,7 @@
   ];
 
   networking.hostName = "nixos";
-  time.timeZone = "America/Phoenix";
+  time.timeZone = "US/Mountain";
   networking.networkmanager.enable = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
