@@ -1,12 +1,15 @@
 # TODOS
 
 dots
-- multiple users on MSI
-- Move lastpass -> Bitwarden
-- Tiling window manager
-- Wallpaper
+- Misc
+    - Different browser?
+    - Different search?
+    - New email?
+- MSI
+    - xremap for all users
+    - Tiling window manager
+    - Wallpaper
 - tower
-    - VPN/Tailscale
-    - open port on router
-    - Jellyfin
-    - NGINX + web server
+    - Connect to headscale from outside network
+    - Move ssl certs to sopswarden
+    - PiHole?
