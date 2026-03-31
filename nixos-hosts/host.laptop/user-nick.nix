@@ -25,6 +25,7 @@
     extraGroups = ["networkmanager" "wheel" "docker" "dots"];
     packages = with pkgs; [
       discord-ptb
+      zoom-us
       signal-desktop
     ];
   };
