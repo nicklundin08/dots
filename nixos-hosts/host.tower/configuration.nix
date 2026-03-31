@@ -10,6 +10,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./docker.nix
+    ./headscale.nix
     ./hardware-configuration.nix
     ./ssh.nix
     ./i18n.nix
