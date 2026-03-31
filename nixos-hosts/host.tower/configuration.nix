@@ -9,6 +9,7 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
+    ./docker.nix
     ./hardware-configuration.nix
     ./ssh.nix
     ./i18n.nix

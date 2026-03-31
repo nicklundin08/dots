@@ -21,7 +21,7 @@
   users.users.nick = {
     isNormalUser = true;
     description = "Nick";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     packages = with pkgs; [
       bitwarden-cli
       wireguard-tools
