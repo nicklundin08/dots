@@ -6,7 +6,6 @@ dots
     - Different search?
     - New email?
 - MSI
-    - xremap for all users
     - Tiling window manager
     - Wallpaper
 - tower
