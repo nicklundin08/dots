@@ -11,4 +11,4 @@ tasks:
 
   service:xremap:restart:
     cmds:
-      - systemctl --user restart xremap.service
+      - systemctl restart xremap.service
