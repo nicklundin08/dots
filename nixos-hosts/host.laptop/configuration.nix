@@ -22,7 +22,7 @@
     ./steam.nix
     ./sunshine.nix
     ./system-packages.nix
-    # ./tailscale.nix
+    ./tailscale.nix
     ./user-nick.nix
     ./user-work.nix
     ./xremap.nix
