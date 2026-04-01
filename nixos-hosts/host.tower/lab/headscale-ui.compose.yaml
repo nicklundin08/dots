@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+ # headscale:
+  #   image: headscale/headscale:stable
+  #   container_name: headscale
+  #   volumes:
+  #     - ./container-config:/etc/headscale
+  #     - ./container-data/data:/var/lib/headscale
+  #   # ports:
+  #     # - 27896:8080
+  #   command: serve
+  #   restart: unless-stopped
+  headscale-ui:
+    image: ghcr.io/gurucomputing/headscale-ui:latest
+    restart: unless-stopped
+    container_name: headscale-ui
+    ports:
+      - 8443:8443
+      - 8081:8080
