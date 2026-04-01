@@ -9,18 +9,13 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
+    ./lab
     ./docker.nix
-    ./headscale.nix
     ./hardware-configuration.nix
-    ./ssh.nix
     ./i18n.nix
-    ./jellyfin.nix
-    ./nginx.nix
     ./system-packages.nix
-    ./tailscale.nix
     ./user-nick.nix
     ./xserver.nix
-    ./wireguard.nix
   ];
 
   networking.hostName = "tower";
