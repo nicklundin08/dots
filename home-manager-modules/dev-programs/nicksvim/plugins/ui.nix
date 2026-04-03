@@ -26,6 +26,18 @@
           desc = "Noice History";
         };
       }
+
+      #####################################
+      # Git
+      #####################################
+      {
+        mode = "n";
+        key = "<leader>gpl";
+        action = lib.generators.mkLuaInline "function() Snacks.picker.gh_pr() end";
+        options = {
+          desc = "[g]ithub [p]ull-request [l]ist";
+        };
+      }
     ];
 
     plugins.nui = {
