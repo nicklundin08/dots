@@ -1,0 +1,13 @@
+title = "home hosts"
+
+[[hosts]]
+name = "tower"
+module = "/nix/nixos-hosts/host.tower/configuration.nix"
+
+[[hosts]]
+name = "nixos"
+module = "/nix/nixos-hosts/host.laptop/configuration.nix"
+
+[[hosts]]
+name = "dell"
+module = "/nix/nixos-hosts/host.dell/configuration.nix"

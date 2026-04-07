@@ -2,15 +2,15 @@ title = "home hosts"
 
 [[hosts]]
 name = "nicholaslundin@BL-003.local"
-module = "/home-manager-hosts/home.work.nix"
+module = "/nix/home-manager-hosts/home.work.nix"
 system = "aarch64-darwin"
 
 [[hosts]]
 name = "nick@MSI"
-module = "/home-manager-hosts/home.default.nix"
+module = "/nix/home-manager-hosts/home.default.nix"
 system = "x86_64-linux"
 
 [[hosts]]
 name = "nick@nixos"
-module = "/home-manager-hosts/home.default.nix"
+module = "/nix/home-manager-hosts/home.default.nix"
 system = "x86_64-linux"
