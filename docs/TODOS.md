@@ -10,6 +10,10 @@ dots
     - Wallpaper
 - tower
     - Sopswarden
+    - Services
+        - Postgres
+        - Keycloak
+        - PG backup
     - Headplane container nixified with secrets from sops (delete gitignore)
     - Headplane container on reverse proxy
     - firewall audit
