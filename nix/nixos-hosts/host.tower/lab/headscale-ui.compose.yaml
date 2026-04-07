@@ -1,19 +1,11 @@
 version: '3.5'
 services:
- # headscale:
-  #   image: headscale/headscale:stable
-  #   container_name: headscale
-  #   volumes:
-  #     - ./container-config:/etc/headscale
-  #     - ./container-data/data:/var/lib/headscale
-  #   # ports:
-  #     # - 27896:8080
-  #   command: serve
-  #   restart: unless-stopped
-  headscale-ui:
-    image: ghcr.io/gurucomputing/headscale-ui:latest
+  headplane:
+    image: ghcr.io/tale/headplane:latest
+    container_name: headplane
     restart: unless-stopped
-    container_name: headscale-ui
     ports:
-      - 8443:8443
-      - 8081:8080
+      - "3000:3000"
+    volumes:
+      - "./config.yaml:/etc/headplane/config.yaml"
+      - "./headplane-data:/var/lib/headplane"
