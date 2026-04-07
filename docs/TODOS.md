@@ -9,8 +9,11 @@ dots
     - Tiling window manager
     - Wallpaper
 - tower
-    - Connect to headscale from outside network
-    - Tailscale terraform?
+    - Sopswarden
+    - Headplane container nixified with secrets from sops (delete gitignore)
+    - Headplane container on reverse proxy
+    - firewall audit
+    - Move SSL certs to sopswarden
     - SSL certs that arent self signed
-    - Move ssl certs to sopswarden
+    - Tailscale terraform?
     - PiHole?
