@@ -9,7 +9,9 @@
 }: {
   imports = [
     # Include the results of the hardware scan.
-    ./lab
+    ./nginx
+    ./services
+    ./tailnet
     ./docker.nix
     ./hardware-configuration.nix
     ./i18n.nix
