@@ -1,5 +1,6 @@
 {
   imports = [
+    ./lang.clj
     ./lang.golang
     ./lang.haskell
     ./lang.java
