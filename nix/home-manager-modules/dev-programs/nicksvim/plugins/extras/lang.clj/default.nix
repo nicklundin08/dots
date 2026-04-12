@@ -8,6 +8,9 @@
 
   programs.nixvim = {
     plugins = {
+      lsp.servers.clojure_lsp = {
+        enable = true;
+      };
       conjure = {
         enable = true;
       };
