@@ -16,6 +16,9 @@
 
     xremap.url = "github:xremap/nix-flake";
     xremap.inputs.nixpkgs.follows = "nixpkgs";
+
+    sopswarden.url = "github:pfassina/sopswarden/main";
+    sopswarden.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {

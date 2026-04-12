@@ -7,6 +7,7 @@ includes:
   nix: ./tasks/Taskfile.nixos.yaml
   hm: ./tasks/Taskfile.home-manager.yaml
   wg: ./tasks/Taskfile.wg.yaml
+  secrets: ./tasks/Taskfile.secrets.yaml
 
 vars:
   DOTS:

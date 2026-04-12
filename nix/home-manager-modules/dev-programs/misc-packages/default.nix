@@ -42,5 +42,11 @@
     pkgs.ripgrep
     pkgs.prettierd
     pkgs.prettier
+
+    # Secrets
+    pkgs.age
+    # pkgs.rbw
+    pkgs.pinentry-all
+    # pkgs.bitwarden-cli
   ];
 }
