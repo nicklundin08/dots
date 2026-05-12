@@ -6,6 +6,11 @@ module = "/nix/home-manager-hosts/home.work.nix"
 system = "aarch64-darwin"
 
 [[hosts]]
+name = "nick@ARM-MRY5H99C3Y.local"
+module = "/nix/home-manager-hosts/home.work.nix"
+system = "aarch64-darwin"
+
+[[hosts]]
 name = "nick@MSI"
 module = "/nix/home-manager-hosts/home.default.nix"
 system = "x86_64-linux"

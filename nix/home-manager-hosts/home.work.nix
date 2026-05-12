@@ -13,10 +13,10 @@
     outputs.homeModules.dev-programs
   ];
 
-  home.homeDirectory = "/Users/nicholaslundin";
-  home.username = "nicholaslundin";
+  home.homeDirectory = "/Users/nick";
+  home.username = "nick";
   programs.git.settings = {
-    user.email = "nicholas.lundin@betterlesson.com";
+    user.email = "nlundin@armlend.com";
     user.name = "Nick Lundin";
     extraConfig.github.user = "nicklundin08";
   };
