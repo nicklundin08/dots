@@ -12,7 +12,7 @@
     programs.tmux = {
       enable = true;
       #defaultShell = "bash";
-      prefix = "C-t";
+      prefix = "M-t";
       #shell = "${pkgs.bash}/bin/bash";
       terminal = "tmux-256color";
       extraConfig = builtins.readFile ./tmux.conf;
