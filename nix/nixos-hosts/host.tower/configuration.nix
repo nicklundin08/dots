@@ -15,6 +15,8 @@
     ./docker.nix
     ./hardware-configuration.nix
     ./i18n.nix
+    ./k3s.nix
+    #./k8s.nix
     ./system-packages.nix
     ./user-nick.nix
     ./xserver.nix
