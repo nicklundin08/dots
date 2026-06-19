@@ -19,6 +19,8 @@
 
     xremap.url = "github:xremap/nix-flake";
     xremap.inputs.nixpkgs.follows = "nixpkgs";
+
+    nixpkgs-dotnet.url = "github:NixOS/nixpkgs/24fc2a4b9c795eb463ed32398ff3bf595c99387b";
   };
 
   outputs = {
@@ -26,6 +28,7 @@
     nixpkgs,
     home-manager,
     nix-darwin,
+    nixpkgs-dotnet,
     ...
   } @ inputs: let
     inherit (self) outputs;

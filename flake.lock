@@ -179,6 +179,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-dotnet": {
+      "locked": {
+        "lastModified": 1777912996,
+        "narHash": "sha256-nGG4mJKansKr/9fZrUO6aZLfHZ/NUm33a7w6Pd74HHM=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "24fc2a4b9c795eb463ed32398ff3bf595c99387b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "24fc2a4b9c795eb463ed32398ff3bf595c99387b",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1765674936,
@@ -263,6 +279,7 @@
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-dotnet": "nixpkgs-dotnet",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixvim": "nixvim",
         "xremap": "xremap"

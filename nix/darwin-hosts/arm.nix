@@ -2,6 +2,7 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   pkgs,
+#	dotnet-patch-pkgs,
   inputs,
   outputs,
   ...
@@ -11,6 +12,8 @@
   ];
   environment.systemPackages = [
     # pkgs.sl
+
+    # dotnet-patch-pkgs.legacyPackages.aarch64-darwin.my-pkg   # From the specific commit
   ];
   # programs.firefox.enable = true;
 

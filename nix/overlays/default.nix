@@ -6,7 +6,8 @@
   # This one contains whatever you want to overlay
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
-  modifications = final: prev: {
+  modifications = final: _prev: {
+    dotnet-sdk_10 = inputs.nixpkgs-dotnet.legacyPackages.${final.system}.dotnet-sdk_10;
     # example = prev.example.overrideAttrs (oldAttrs: rec {
     # ...
     # });
