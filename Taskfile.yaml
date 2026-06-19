@@ -2,6 +2,7 @@ version: '3'
 
 
 includes:
+  darwin: ./tasks/Taskfile.darwin.yaml
   ssh: ./tasks/Taskfile.ssh.yaml
   fmt: ./tasks/Taskfile.fmt.yaml
   nix: ./tasks/Taskfile.nixos.yaml
@@ -11,14 +12,18 @@ includes:
 vars:
   DOTS:
     sh: |
-      if command -v home-manager >/dev/null 2>&1; then
+      if command -v darwin-rebuild >/dev/null 2>&1; then
+          echo "darwin"
+      elif command -v home-manager >/dev/null 2>&1; then
           echo "hm"
       else
           echo "nix"
       fi
   BRANCH_NAME:
     sh: |
-      if command -v home-manager >/dev/null 2>&1; then
+      if command -v darwin-rebuild >/dev/null 2>&1; then
+          echo "darwin/$(whoami)-$(hostname | sed 's/\..*//')"
+      elif command -v home-manager >/dev/null 2>&1; then
           echo "hm/$(whoami)-$(hostname)"
       else
           echo "nix/$(whoami)-$(hostname)"

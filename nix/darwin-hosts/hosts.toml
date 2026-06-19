@@ -1,0 +1,5 @@
+title = "darwin hosts"
+
+[[hosts]]
+name = "ARM-MRY5H99C3Y"
+module = "/nix/darwin-hosts/arm.nix"
