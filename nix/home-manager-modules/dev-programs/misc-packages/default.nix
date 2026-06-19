@@ -42,5 +42,6 @@
     pkgs.ripgrep
     pkgs.prettierd
     pkgs.prettier
+    pkgs.sl
   ];
 }

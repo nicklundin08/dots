@@ -2,12 +2,36 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   pkgs,
+  inputs,
   outputs,
   ...
 }: {
-  environment.systemPackages = [
-    pkgs.sl
+  imports = [
+    inputs.home-manager.darwinModules.home-manager
   ];
+  environment.systemPackages = [
+    # pkgs.sl
+  ];
+  # programs.firefox.enable = true;
+
+  home-manager = {
+    extraSpecialArgs = {inherit inputs outputs;};
+    users = {
+      # Import your home-manager configuration
+      nick = import ../home-manager-hosts/home.work.nix;
+    };
+  };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.nick = {
+    home = "/Users/nick";
+    # isNormalUser = true;
+    description = "Nick";
+    # extraGroups = ["networkmanager" "wheel"];
+    packages = with pkgs; [
+      # wireguard-tools
+    ];
+  };
 
   # Necessary for using flakes on this system.
   nix.settings.experimental-features = "nix-command flakes";
