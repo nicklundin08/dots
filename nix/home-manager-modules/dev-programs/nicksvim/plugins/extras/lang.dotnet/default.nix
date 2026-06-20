@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  mkneotestVstest = import ./neotest-vstest.nix;
+  neotest-vstest = mkneotestVstest pkgs;
+in {
   home.packages = [
     pkgs.omnisharp-roslyn
   ];
@@ -13,7 +16,18 @@
           tostring(vim.fn.getpid()),
         },
       })
+
+      require("neotest").setup({
+        adapters = {
+          require("neotest-vstest"),
+        },
+      })
     '';
+
+    extraPlugins = [
+      neotest-vstest
+    ];
+
     plugins = {
       lsp.servers.omnisharp = {
         # :LspInfo
@@ -48,14 +62,6 @@
         ];
       };
 
-      # neotest = {
-      #   adapters.dotnet = {
-      #     enable = true;
-      #
-      #     settings = {
-      #     };
-      #   };
-      # };
       treesitter = {
         grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
           c_sharp
