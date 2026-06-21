@@ -9,21 +9,27 @@
   programs.nixvim.plugins = {
     conform-nvim = {
       enable = true;
-      settings.formatters_by_ft = {
-        yaml = ["yamlfmt"];
-        # Conform will run multiple formatters sequentially
-        # python = ["isort" "black"];
-        # # Use stop_after_first to run only the first available formatter
-        # javascript = {
-        #   __unkeyed-1 = "prettierd";
-        #   __unkeyed-2 = "prettier";
-        #   stop_after_first = true;
-        # };
-        # Use the "*" filetype to run formatters on all filetypes.
-        "*" = ["codespell"];
-        # Use the "_" filetype to run formatters on filetypes that don't
-        # have other formatters configured.
-        "_" = ["trim_whitespace"];
+      settings = {
+        format_on_save = {
+          lsp_fallback = "fallback"; # or lspFallback = true;
+          timeout_ms = 500; # or timeoutMs = 500;
+        };
+        formatters_by_ft = {
+          yaml = ["yamlfmt"];
+          # Conform will run multiple formatters sequentially
+          # python = ["isort" "black"];
+          # # Use stop_after_first to run only the first available formatter
+          # javascript = {
+          #   __unkeyed-1 = "prettierd";
+          #   __unkeyed-2 = "prettier";
+          #   stop_after_first = true;
+          # };
+          # Use the "*" filetype to run formatters on all filetypes.
+          "*" = ["codespell"];
+          # Use the "_" filetype to run formatters on filetypes that don't
+          # have other formatters configured.
+          "_" = ["trim_whitespace"];
+        };
       };
     };
   };

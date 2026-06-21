@@ -2,6 +2,20 @@
   programs.nixvim.plugins = {
     telescope = {
       enable = true;
+
+      settings = {
+        defaults = {
+          sorting_strategy = "ascending";
+          layout_config = {
+            horizontal = {
+              prompt_position = "top";
+            };
+            vertical = {
+              prompt_position = "top";
+            };
+          };
+        };
+      };
     };
 
     web-devicons = {
