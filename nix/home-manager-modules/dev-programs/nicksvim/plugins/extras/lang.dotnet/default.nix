@@ -1,67 +1,31 @@
 {pkgs, ...}: let
-  mkneotestVstest = import ./neotest-vstest.nix;
-  neotest-vstest = mkneotestVstest pkgs;
+  neotest-vstest = (import ./neotest-vstest.nix) pkgs;
+  roslyn-ls = (import ./roslyn-ls.nix) pkgs;
+  neotestLua = builtins.readFile ./neotest-vstest.lua;
+  roslynLsLua = builtins.readFile ./roslyn-ls.lua;
+  extraConfigLua = neotestLua + roslynLsLua;
 in {
   home.packages = [
     pkgs.omnisharp-roslyn
   ];
 
   programs.nixvim = {
-    extraConfigLua = ''
-      vim.lsp.config('omnisharp', {
-        cmd = {
-          'OmniSharp',
-          '--languageserver',
-          '--hostPID',
-          tostring(vim.fn.getpid()),
-        },
-      })
-
-      require("neotest").setup({
-        adapters = {
-          require("neotest-vstest"),
-        },
-      })
-    '';
+    extraConfigLua = extraConfigLua;
 
     extraPlugins = [
       neotest-vstest
+      roslyn-ls
     ];
 
-    plugins = {
-      lsp.servers.omnisharp = {
-        # :LspInfo
-        # :LspLog
-        # :lua vim.lsp.set_log_level("debug")
-
-        # Force start
-        # :lua vim.lsp.enable("omnisharp")
-
-        # Check if enabled
-        # :lua print(vim.inspect(vim.lsp.is_enabled("omnisharp")))
-
-        # :lua print(vim.inspect(vim.lsp.get_clients()))
-        # :lua require("lspconfig").omnisharp.manager.try_add()
-        # :lua vim.lsp.start({name = "omnisharp",cmd = {"omnisharp"},root_dir = vim.fn.getcwd()})
-        # :lua print(vim.inspect(vim.lsp.start({name = "omnisharp",cmd = {"OmniSharp"},root_dir = vim.fn.getcwd()})))
-        # :lua print(vim.lsp.get_client_by_id(1).initialized)
-        # :lua print(vim.inspect(vim.lsp.get_client_by_id(1)))
-        # :lua print(vim.inspect(vim.lsp.get_client_by_id(1)))
-
-        # :lua print(vim.inspect(vim.lsp.config.omnisharp.root_dir(vim.fn.expand("%:p"))))
-        # :lua print(vim.inspect(vim.lsp.get_client_by_id(1)))
-
-        enable = true;
-        # filetypes = [
-        #   "cs"
-        #   "sln"
-        #   "csproj"
-        # ];
-        rootMarkers = [
-          ".git"
-        ];
+    filetype = {
+      extension = {
+        cs = "cs";
+        cshtml = "razor";
+        razor = "razor";
       };
+    };
 
+    plugins = {
       treesitter = {
         grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
           c_sharp
