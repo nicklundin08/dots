@@ -10,7 +10,7 @@
     inputs.home-manager.darwinModules.home-manager
   ];
   environment.systemPackages = [
-    # pkgs.sl
+    pkgs.k9s
   ];
   # programs.firefox.enable = true;
 
