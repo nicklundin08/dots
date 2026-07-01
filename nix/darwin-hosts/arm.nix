@@ -5,12 +5,22 @@
   inputs,
   outputs,
   ...
-}: {
+}: let
+  azWithExtensions = pkgs.azure-cli.withExtensions [
+    # pkgs.azure-cli-extensions.terraform
+    # pkgs.azure-cli-extensions.aks-preview
+    pkgs.azure-cli-extensions.azure-devops
+  ];
+in {
   imports = [
     inputs.home-manager.darwinModules.home-manager
   ];
   environment.systemPackages = [
     pkgs.k9s
+    pkgs.k6
+    pkgs.wireguard-tools
+    pkgs.postgresql
+    azWithExtensions
   ];
   # programs.firefox.enable = true;
 
