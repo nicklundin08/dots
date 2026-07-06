@@ -12,6 +12,7 @@
     gcc
     # tree-sitter-cli
     neovim
+    vimPlugins.lazy-nvim
   ];
 
   shellHook = ''
