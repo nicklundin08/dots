@@ -1,0 +1,12 @@
+version: '3'
+tasks:
+  up:
+    cmds:
+      - docker container rm -f dot_box || true
+      - |
+        docker run -it \
+        --name dot_box \
+        -v ../:/root/dots \
+        -v dotbox-nix-store:/nix/store/ \
+        nixos/nix:latest \
+        nix --extra-experimental-features nix-command --extra-experimental-features flakes develop /root/dots

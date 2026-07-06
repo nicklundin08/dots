@@ -31,7 +31,7 @@
     inherit (self) outputs;
     # Supported systems for your flake packages, shell, etc.
     systems = [
-      #"aarch64-linux"
+      "aarch64-linux"
       #"i686-linux"
       "x86_64-linux"
       "aarch64-darwin"
@@ -67,9 +67,18 @@
       };
     };
 
+    mkDevShell = shell: let
+      pkgs = nixpkgs.legacyPackages.${shell.system};
+      devShellFn = import ./nix/dev-shells/default.nix;
+      devShell = devShellFn pkgs;
+    in {
+      ${shell.system}.${shell.name} = pkgs.mkShellNoCC devShell;
+    };
+
     homeHosts = (builtins.fromTOML (builtins.readFile ./nix/home-manager-hosts/hosts.toml)).hosts;
     nixosHosts = (builtins.fromTOML (builtins.readFile ./nix/nixos-hosts/hosts.toml)).hosts;
     darwinHosts = (builtins.fromTOML (builtins.readFile ./nix/darwin-hosts/hosts.toml)).hosts;
+    devShellHosts = (builtins.fromTOML (builtins.readFile ./nix/dev-shells/shells.toml)).shells;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -91,5 +100,6 @@
     homeConfigurations = reduceAttrsList (builtins.map mkHomeHost homeHosts);
     nixosConfigurations = reduceAttrsList (builtins.map mkNixosHost nixosHosts);
     darwinConfigurations = reduceAttrsList (builtins.map mkDarwinHost darwinHosts);
+    devShells = reduceAttrsList (builtins.map mkDevShell devShellHosts);
   };
 }
