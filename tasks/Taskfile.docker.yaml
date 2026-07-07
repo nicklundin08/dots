@@ -1,33 +1,10 @@
 version: '3'
 tasks:
-  hm:
+  build:
     cmds:
-      - docker build -f hm.Dockerfile . -t dot_box
-      - docker container rm -f dot_box || true
-      - |
-        docker run \
-          -it \
-          --name dot_box \
-          -v ../:/root/dots \
-          -v dotbox-nix-store:/nix/store/ \
-          -v dotbox-local:/root/.local/ \
-          -v dotbox-cache:/root/.cache/ \
-          -e XDG_CONFIG_HOME="/root/dots/xdg-config/" \
-        dot_box
-  up:
+      # - cd 01.drip-coffee && docker build . -t drip-coffee --no-cache
+      - cd 02.iced-chai && docker build . -t iced-chai --no-cache
+  run:
     cmds:
       - docker container rm -f dot_box || true
-      - |
-        docker run \
-          -it \
-          --name dot_box \
-          -v ../:/root/dots \
-          -v dotbox-nix-store:/nix/store/ \
-          -v dotbox-local:/root/.local/ \
-          -v dotbox-cache:/root/.cache/ \
-          -e XDG_CONFIG_HOME="/root/dots/xdg-config/" \
-        nixos/nix:latest \
-        nix \
-          --extra-experimental-features nix-command \
-          --extra-experimental-features flakes \
-        develop /root/dots -c bash
+      - docker compose run dot_box

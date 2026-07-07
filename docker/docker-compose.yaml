@@ -1,0 +1,16 @@
+services:
+  dot_box:
+    # image: dot_box
+    build:
+      context: ./02.iced-chai/
+      # context: ./01.drip-coffee/
+    container_name: dot_box
+    restart: unless-stopped
+    stdin_open: true
+    tty: true
+    working_dir: /home/nixuser/dots
+    volumes:
+      # - ./nix/store:/nix/store/
+      - ../:/home/nixuser/dots
+volumes:
+  nix-store:
