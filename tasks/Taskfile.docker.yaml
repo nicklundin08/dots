@@ -1,10 +1,7 @@
 version: '3'
 tasks:
-  build:
-    cmds:
-      # - cd 01.drip-coffee && docker build . -t drip-coffee --no-cache
-      - cd 02.iced-chai && docker build . -t iced-chai --no-cache
   run:
     cmds:
       - docker container rm -f dot_box || true
+      - docker compose build dot_box
       - docker compose run dot_box

@@ -1,12 +1,10 @@
-#! /bin/bash
+#! /bin/sh
 
 set -e
 echo "Starting nix daemon"
 sudo /nix/var/nix/profiles/default/bin/nix-daemon &
 echo "Nix daemon started"
 
-for arg in "$@"
-do
-    $arg
-done
-
+echo "Try it out"
+echo "\tnix-shell -p cowsay"
+/bin/bash

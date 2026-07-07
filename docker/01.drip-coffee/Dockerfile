@@ -9,7 +9,7 @@ RUN apt-get update && \
 # Add a user to simulate multi-user setup
 RUN useradd -m -s /bin/bash nixuser && echo "nixuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-COPY *.sh /drip-coffee/
+COPY install.nix.sh /drip-coffee/install.nix.sh
 RUN chmod +x -R /drip-coffee/
 
 # Switch to the nixuser
@@ -18,7 +18,9 @@ WORKDIR /home/nixuser
 
 # Install Nix (Multi-User)
 RUN /drip-coffee/install.nix.sh
-# RUN sudo /drip-coffee/add-flakes-support.sh
+
+COPY entrypoint*sh /drip-coffee/
+RUN sudo chmod +x -R /drip-coffee/
 
 ENTRYPOINT ["/drip-coffee/entrypoint.sh"]
 

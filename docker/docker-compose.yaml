@@ -2,15 +2,30 @@ services:
   dot_box:
     # image: dot_box
     build:
-      context: ./02.iced-chai/
-      # context: ./01.drip-coffee/
+      # context: ./02.iced-chai/
+      context: ./01.drip-coffee/
     container_name: dot_box
     restart: unless-stopped
+    command: [
+      # Additional cmds here are scripts that provide context
+      "/drip-coffee/entrypoint.try_it_out.sh",
+      # last cmd is what your entrypoint is effectively
+      # "/bin/bash",
+      # "exec bash",
+      # "nix-shell -p cowsay",
+      "echo or try this",
+      # 
+      "echo \tnix run home-manager/master -- switch -b backup --flake .#nixuser",
+      # 
+      "exec bash"]
+    environment:
+      NIX_CONFIG: "extra-experimental-features = flakes nix-command"
+      USER: "nixuser"
     stdin_open: true
     tty: true
     working_dir: /home/nixuser/dots
     volumes:
       # - ./nix/store:/nix/store/
       - ../:/home/nixuser/dots
-volumes:
-  nix-store:
+# volumes:
+#   nix-store:
