@@ -80,5 +80,5 @@ tasks:
   increment:
     cmds:
       - lazygit
-      - git commit
+      - cz commit
       - task: rebase-rebuild-push
