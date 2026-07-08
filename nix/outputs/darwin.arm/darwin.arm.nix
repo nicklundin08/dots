@@ -28,7 +28,7 @@ in {
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      nick = import ../home-manager-hosts/home.work.nix;
+      nick = import ../home-manager.arm/home.arm.nix;
     };
   };
 

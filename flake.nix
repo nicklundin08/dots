@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "NicksOS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
@@ -74,11 +74,11 @@
     in {
       ${shell.system}.${shell.name} = pkgs.mkShellNoCC devShell;
     };
-
-    homeHosts = (builtins.fromTOML (builtins.readFile ./nix/home-manager-hosts/hosts.toml)).hosts;
-    nixosHosts = (builtins.fromTOML (builtins.readFile ./nix/nixos-hosts/hosts.toml)).hosts;
-    darwinHosts = (builtins.fromTOML (builtins.readFile ./nix/darwin-hosts/hosts.toml)).hosts;
-    devShellHosts = (builtins.fromTOML (builtins.readFile ./nix/dev-shells/shells.toml)).shells;
+    outputsToml = builtins.fromTOML (builtins.readFile ./nix/outputs/outputs.toml);
+    homeManagerHosts = outputsToml.home-manager-hosts;
+    nixosHosts = outputsToml.nixos-hosts;
+    darwinHosts = outputsToml.darwin-hosts;
+    devShells = outputsToml.devShells;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -93,13 +93,13 @@
 
     # Reusable nixos/homemanager modules you might want to export
     # These are usually stuff you would upstream into nixpkgs
-    nixosModules = import ./nix/nixos-modules;
-    homeModules = import ./nix/home-manager-modules;
+    nixosModules = import ./nix/modules.nixos;
+    homeModules = import ./nix/modules.home-manager;
 
     # Final configuration
-    homeConfigurations = reduceAttrsList (builtins.map mkHomeHost homeHosts);
+    homeConfigurations = reduceAttrsList (builtins.map mkHomeHost homeManagerHosts);
     nixosConfigurations = reduceAttrsList (builtins.map mkNixosHost nixosHosts);
     darwinConfigurations = reduceAttrsList (builtins.map mkDarwinHost darwinHosts);
-    devShells = reduceAttrsList (builtins.map mkDevShell devShellHosts);
+    devShells = reduceAttrsList (builtins.map mkDevShell devShells);
   };
 }

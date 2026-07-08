@@ -1,7 +1,8 @@
 {lib, ...}: {
   imports = [
-    ./alacritty
+    # ./alacritty
     ./bash
+    ./fonts
     ./git
     ./misc-packages
     ./nicksvim
@@ -23,5 +24,5 @@
     extraConfig.github.user = lib.mkDefault "nicklundin08";
   };
 
-  alac.enable = true;
+  # alac.enable = true;
 }

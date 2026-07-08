@@ -1,7 +1,0 @@
-title = "home hosts"
-
-[[shells]]
-name = "default"
-module = "/nix/dev-shells/default.nix"
-system = "aarch64-linux"
-
