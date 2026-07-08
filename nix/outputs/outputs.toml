@@ -14,6 +14,11 @@ module = "/nix/dev-shells/default.nix"
 system = "aarch64-linux"
 
 [[home-manager-hosts]]
+name = "nixuser"
+module = "/nix/outputs/home-manager.docker/home.docker.nix"
+system = "aarch64-linux"
+
+[[home-manager-hosts]]
 name = "nicholaslundin@BL-003.local"
 module = "/nix/home-manager-hosts/home.work.nix"
 system = "aarch64-darwin"

@@ -70,7 +70,10 @@
     mkDevShell = shell: let
       pkgs = nixpkgs.legacyPackages.${shell.system};
       devShellFn = import ./nix/dev-shells/default.nix;
-      devShell = devShellFn pkgs;
+      devShell = devShellFn {
+        inherit pkgs;
+        inherit inputs;
+      };
     in {
       ${shell.system}.${shell.name} = pkgs.mkShellNoCC devShell;
     };
