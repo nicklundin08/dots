@@ -1,57 +1,28 @@
 version: '3'
 includes:
-  darwin: ./tasks/Taskfile.darwin.yaml
   docker:
     taskfile: ./tasks/Taskfile.docker.yaml
     dir: ./docker/
   ssh: ./tasks/Taskfile.ssh.yaml
   fmt: ./tasks/Taskfile.fmt.yaml
-  nix: ./tasks/Taskfile.nixos.yaml
-  hm: ./tasks/Taskfile.home-manager.yaml
   wg: ./tasks/Taskfile.wg.yaml
-vars:
-  DOTS:
-    sh: |
-      if command -v darwin-rebuild >/dev/null 2>&1; then
-          echo "darwin"
-      elif command -v home-manager >/dev/null 2>&1; then
-          echo "hm"
-      else
-          echo "nix"
-      fi
-  BRANCH_NAME:
-    sh: |
-      if command -v darwin-rebuild >/dev/null 2>&1; then
-          echo "darwin/$(whoami)-$(hostname | sed 's/\..*//')"
-      elif command -v home-manager >/dev/null 2>&1; then
-          echo "hm/$(whoami)-$(hostname)"
-      else
-          echo "nix/$(whoami)-$(hostname)"
-      fi
 tasks:
   default:
     cmds:
       - task --list-all
-  print-vars:
-    cmds:
-      - echo {{.DOTS}}
-      - echo {{.BRANCH_NAME}}
   repl:
     cmds:
       - echo "type :q to exit"
       - nix repl --extra-experimental-features 'flakes repl-flake' nixpkgs
-  branch:show:
-    cmds:
-      - echo {{.BRANCH_NAME}}
   branch:create:
     cmds:
-      - git switch -c {{.BRANCH_NAME}} || true
-      - git switch {{.BRANCH_NAME}}
-      - git push -u origin {{.BRANCH_NAME}}
+      - git switch -c $DOTS_BRANCH_NAME || true
+      - git switch $DOTS_BRANCH_NAME
+      - git push -u origin $DOTS_BRANCH_NAME
       - git switch main
   branch:pull:
     cmds:
-      - git switch {{.BRANCH_NAME}}
+      - git switch $DOTS_BRANCH_NAME
       - git merge --ff main
       - task: rebuild
       - git push
@@ -59,20 +30,21 @@ tasks:
       - exec bash
   rebuild:
     cmds:
-      - task {{.DOTS}}:rebuild
+      - dots:rebuild
   update:
     cmds:
       - nix flake update
   gc:
     cmds:
       - nix-collect-garbage
-  rebase-rebuild-push:
+  rrr:
+    # rebase-rebuild-push
     cmds:
       - git checkout main
       - git pull --rebase
       - task: rebuild
       - git push
-      - git switch {{.BRANCH_NAME}}
+      - git switch $DOTS_BRANCH_NAME
       - git merge --ff main
       - git push
       - git switch main
@@ -81,4 +53,4 @@ tasks:
     cmds:
       - lazygit
       - cz commit
-      - task: rebase-rebuild-push
+      - task: rrr

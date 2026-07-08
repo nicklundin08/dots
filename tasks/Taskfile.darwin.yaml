@@ -1,6 +1,0 @@
-version: '3'
-
-tasks:
-  rebuild:
-    cmds:
-      - sudo darwin-rebuild switch --flake .

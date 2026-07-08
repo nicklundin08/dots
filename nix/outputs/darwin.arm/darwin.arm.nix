@@ -13,6 +13,7 @@
   ];
 in {
   imports = [
+    ./dots.nix
     inputs.home-manager.darwinModules.home-manager
   ];
   environment.systemPackages = [

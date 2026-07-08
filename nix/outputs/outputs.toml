@@ -1,7 +1,7 @@
 title = "outputs"
 
 [[darwin-hosts]]
-name = "ARM-MRY5H99C3Y"
+name = "darwin-arm"
 module = "/nix/outputs/darwin.arm/darwin.arm.nix"
 
 [[darwin-hosts]]
