@@ -1,0 +1,28 @@
+services:
+  dot_box:
+    build:
+      context: ../
+      dockerfile: ./containers/Dockerfile
+      # args:
+      #   APP_VERSION: "2.5.0"
+      #   BUILD_ENV: "production"
+    container_name: dot_box
+    restart: unless-stopped
+    command:
+      - sh
+      - -c
+      - |
+        echo 'Starting nix daemon'
+        sudo /nix/var/nix/profiles/default/bin/nix-daemon &
+        echo 'Nix daemon started'
+        echo 'Try it out'
+        echo 'nix run nixpkgs#hello'
+        echo 'nix run home-manager/master -- switch -b backup --flake github:nlundin08/dots#nixuser'
+        echo 'nix run home-manager/master -- switch -b backup --flake .#nixuser'
+        exec bash
+    environment:
+      NIX_CONFIG: "extra-experimental-features = flakes nix-command"
+      USER: "nixuser"
+    stdin_open: true
+    tty: true
+    working_dir: /home/nixuser/dots

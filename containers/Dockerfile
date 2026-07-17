@@ -9,17 +9,14 @@ RUN apt-get update && \
 # Add a user to simulate multi-user setup
 RUN useradd -m -s /bin/bash nixuser && echo "nixuser ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-COPY install.nix.sh /drip-coffee/install.nix.sh
-RUN chmod +x -R /drip-coffee/
-
 # Switch to the nixuser
 USER nixuser
 WORKDIR /home/nixuser
 
 # Install Nix (Multi-User)
-RUN /drip-coffee/install.nix.sh
+RUN echo "Installing nix" && \
+	curl -L https://nixos.org/nix/install | sh -s -- --daemon --yes && \
+	# yes | sh <(curl -L https://nixos.org/nix/install) --daemon && \
+	echo "Nix installed"
 
-COPY entrypoint*sh /drip-coffee/
-RUN sudo chmod +x -R /drip-coffee/
-
-ENTRYPOINT ["/drip-coffee/entrypoint.sh"]
+# ENTRYPOINT ["/bin/sh"]

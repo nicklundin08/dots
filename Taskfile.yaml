@@ -1,8 +1,5 @@
 version: '3'
 includes:
-  docker:
-    taskfile: ./tasks/Taskfile.docker.yaml
-    dir: ./docker/
   ssh: ./tasks/Taskfile.ssh.yaml
   fmt: ./tasks/Taskfile.fmt.yaml
   wg: ./tasks/Taskfile.wg.yaml
