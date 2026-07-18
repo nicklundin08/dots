@@ -1,6 +1,7 @@
 {outputs, ...}: {
   imports = [
     ./dots.nix
+    ./distrobox-workarounds.nix
     outputs.homeModules.dev-programs
   ];
 

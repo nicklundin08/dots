@@ -1,14 +1,4 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: {
-  imports = [
-    inputs.catppuccin.homeModules.catppuccin
-  ];
-  catppuccin.alacritty.enable = true;
-  catppuccin.alacritty.flavor = "mocha";
-
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # Run `fc-cache -rv` if changing stuff wrt fonts!
     nerd-fonts.jetbrains-mono
