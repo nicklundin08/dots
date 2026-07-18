@@ -13,39 +13,34 @@ name = "default"
 module = "/nix/dev-shells/default.nix"
 system = "aarch64-linux"
 
-[[home-manager-hosts]]
-name = "nixuser"
-module = "/nix/outputs/home-manager.docker/home.docker.nix"
-system = "aarch64-linux"
+# [[home-manager-hosts]]
+# name = "nicholaslundin@BL-003.local"
+# module = "/nix/home-manager-hosts/home.work.nix"
+# system = "aarch64-darwin"
+
+# [[home-manager-hosts]]
+# name = "nick@ARM-MRY5H99C3Y.local"
+# module = "/nix/home-manager-hosts/home.arm.nix"
+# system = "aarch64-darwin"
 
 [[home-manager-hosts]]
-name = "nicholaslundin@BL-003.local"
-module = "/nix/home-manager-hosts/home.work.nix"
-system = "aarch64-darwin"
-
-[[home-manager-hosts]]
-name = "nick@ARM-MRY5H99C3Y.local"
-module = "/nix/home-manager-hosts/home.arm.nix"
-system = "aarch64-darwin"
-
-[[home-manager-hosts]]
-name = "nick@MSI"
-module = "/nix/home-manager-hosts/home.default.nix"
+name = "hm-msi"
+module = "/nix/outputs/home-manager.msi/home.msi.nix"
 system = "x86_64-linux"
 
-[[home-manager-hosts]]
-name = "nick@nixos"
-module = "/nix/home-manager-hosts/home.default.nix"
-system = "x86_64-linux"
+# [[home-manager-hosts]]
+# name = "nick@nixos"
+# module = "/nix/home-manager-hosts/home.default.nix"
+# system = "x86_64-linux"
 
-[[nixos-hosts]]
-name = "tower"
-module = "/nix/nixos-hosts/host.tower/configuration.nix"
-
-[[nixos-hosts]]
-name = "nixos"
-module = "/nix/nixos-hosts/host.laptop/configuration.nix"
-
-[[nixos-hosts]]
-name = "dell"
-module = "/nix/nixos-hosts/host.dell/configuration.nix"
+# [[nixos-hosts]]
+# name = "tower"
+# module = "/nix/nixos-hosts/host.tower/configuration.nix"
+#
+# [[nixos-hosts]]
+# name = "nixos"
+# module = "/nix/nixos-hosts/host.laptop/configuration.nix"
+#
+# [[nixos-hosts]]
+# name = "dell"
+# module = "/nix/nixos-hosts/host.dell/configuration.nix"

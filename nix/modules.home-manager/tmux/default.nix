@@ -11,9 +11,9 @@
   config = lib.mkIf config.tmux.enable {
     programs.tmux = {
       enable = true;
-      #defaultShell = "bash";
+      # defaultShell = "bash";
       prefix = "M-t";
-      #shell = "${pkgs.bash}/bin/bash";
+      # shell = "bash";
       terminal = "tmux-256color";
       extraConfig = builtins.readFile ./tmux.conf;
       plugins = with pkgs; [

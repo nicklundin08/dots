@@ -81,7 +81,7 @@
     homeManagerHosts = outputsToml.home-manager-hosts;
     nixosHosts = outputsToml.nixos-hosts;
     darwinHosts = outputsToml.darwin-hosts;
-    devShells = outputsToml.devShells;
+    devShells = outputsToml.dev-shells;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
