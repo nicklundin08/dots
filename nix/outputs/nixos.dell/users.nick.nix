@@ -9,13 +9,13 @@
   ];
   programs.firefox.enable = true;
 
-  home-manager = {
-    extraSpecialArgs = {inherit inputs outputs;};
-    users = {
-      # Import your home-manager configuration
-      nick = import ../../home-manager-hosts/home.default.nix;
-    };
-  };
+  # home-manager = {
+  #   extraSpecialArgs = {inherit inputs outputs;};
+  #   users = {
+  #     # Import your home-manager configuration
+  #     nick = import ../home-manager-hosts/home.default.nix;
+  #   };
+  # };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.nick = {

@@ -41,6 +41,6 @@ system = "x86_64-linux"
 # name = "nixos"
 # module = "/nix/nixos-hosts/host.laptop/configuration.nix"
 #
-# [[nixos-hosts]]
-# name = "dell"
-# module = "/nix/nixos-hosts/host.dell/configuration.nix"
+[[nixos-hosts]]
+name = "dell"
+module = "/nix/outputs/nixos.dell/configuration.nix"
