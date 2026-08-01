@@ -36,7 +36,7 @@
 
   # Add stuff for your user as you see fit:
   # programs.neovim.enable = true;
-  home.packages = with pkgs; [xremap];
+  home.packages = with pkgs; [minikube];
 
   # Enable home-manager and git
   programs.home-manager.enable = true;
