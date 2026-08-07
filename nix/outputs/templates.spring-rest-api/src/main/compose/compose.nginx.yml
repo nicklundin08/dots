@@ -1,0 +1,12 @@
+services:
+  nginx:
+    container_name: nginx
+    profiles: [all, deps]
+    image: nginx
+    command: nginx
+    volumes:
+      - ../local.nginx/nginx/:/etc/nginx/
+      - ../local.nginx/www/data/:/www/data/
+      - ../service.spring/target/site/:/www/site/
+    ports:
+      - 80:80

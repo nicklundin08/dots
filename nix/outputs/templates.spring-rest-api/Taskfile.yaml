@@ -6,6 +6,9 @@ includes:
   nix:
     taskfile: ./src/main/nix/Taskfile.yaml
     dir: ./src/main/nix
+  compose:
+    taskfile: ./src/main/compose/Taskfile.yaml
+    dir: ./src/main/compose
   demo-api: ./src/main/extra-tasks/Taskfile.demo.yaml
 # minikube: ./tasks/Taskfile.minikube.yaml
 # openapi:

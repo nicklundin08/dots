@@ -72,6 +72,7 @@
             openapi-generator-cli
             plantuml
             tbls
+            podman-compose
 
             # Tools
             postgresql
