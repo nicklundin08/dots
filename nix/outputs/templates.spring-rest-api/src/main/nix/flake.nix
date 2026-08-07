@@ -59,6 +59,7 @@
             jdk
             lombok
             gradle
+            groovy
 
             # Node/TS/etc
             nodejs

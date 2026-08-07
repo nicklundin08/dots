@@ -68,3 +68,15 @@ checkstyle {
 	ignoreFailures = false
 	configFile = rootProject.file('src/main/checkstyle/google_checks.xml')
 }
+
+tasks.register("printClasspath") {
+    def runtimeClasspath = sourceSets.main.runtimeClasspath
+    inputs.files(runtimeClasspath)
+
+    def outputFile = layout.projectDirectory.file("classpath.txt")
+    outputs.file(outputFile)
+
+    doLast {
+        outputFile.asFile.text = runtimeClasspath.asPath
+    }
+}

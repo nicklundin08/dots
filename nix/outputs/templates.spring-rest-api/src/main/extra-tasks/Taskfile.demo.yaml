@@ -3,6 +3,10 @@ tasks:
   run:
     cmds:
       - ./gradlew bootRun
+  repl:
+    cmds:
+      - ./gradlew compileJava
+      - groovysh -cp $(cat classpath.txt)
   fmt:
     cmds:
       - ./gradlew spotlessApply
