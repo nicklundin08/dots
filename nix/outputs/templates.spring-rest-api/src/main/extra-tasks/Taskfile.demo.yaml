@@ -9,12 +9,14 @@ tasks:
   fmt:check:
     cmds:
       - ./gradlew spotlessCheck
-  # lint:
-  #   cmds:
-  #     - mvn spotless:apply
+  lint:
+    cmds:
+      - ./gradlew checkstyleMain
+      - ./gradlew checkstyleTest
   # lint:check:
   #   cmds:
-  #     - mvn spotless:check
+  #   # https://docs.openrewrite.org/running-recipes/popular-recipe-guides/automatically-fix-checkstyle-violations
+  #     - ./gradlew checkstyleMain
   test:all:
     cmds:
       - ./gradlew test
