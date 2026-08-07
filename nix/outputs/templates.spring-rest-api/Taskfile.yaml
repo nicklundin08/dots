@@ -1,0 +1,38 @@
+version: '3'
+env:
+  ENV: local
+dotenv: ['src/main/envs/{{.ENV}}.env']
+includes:
+  nix:
+    taskfile: ./src/main/nix/Taskfile.yaml
+    dir: ./src/main/nix
+  demo-api: ./src/main/extra-tasks/Taskfile.demo.yaml
+# minikube: ./tasks/Taskfile.minikube.yaml
+# openapi:
+#   taskfile: ./contracts/openapi/Taskfile.yaml
+#   dir: ./contracts/openapi/
+# liquibase:
+#   taskfile: ./contracts/liquibase/Taskfile.yaml
+#   dir: ./contracts/liquibase/
+tasks:
+  default:
+    cmds:
+      - task --list-all
+  print-env:
+    cmds:
+      - echo $ENV
+      - echo $ENV_NAME
+  increment:
+    - lazygit
+    - cz commit
+    - git checkout main
+    - git pull --rebase
+    - git push
+    - task: demo-api:check
+    - lazygit
+  tree:
+    - echo "# Project Tree" > docs/TREE.md
+    - tree --gitignore -L 3 --dirsfirst -F . >> docs/TREE.md
+    - echo "" >> docs/TREE.md
+    - echo "# Java main source" >> docs/TREE.md
+    - tree --gitignore -L 3 --dirsfirst -F src/main/java/com/example/demo >> docs/TREE.md

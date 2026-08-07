@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - includeAll:
+      path: ./event_sourcing/
+  - includeAll:
+      path: ./logs/
+  - includeAll:
+      path: ./users/
+  - includeAll:
+      path: ./pets/

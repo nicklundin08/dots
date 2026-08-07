@@ -1,0 +1,18 @@
+openapi: 3.0.3
+info:
+  title: Task Manager API
+  description: A sample API for managing user tasks and to-do lists.
+  version: 1.0.0
+  contact:
+    name: API Support
+    email: support@example.com
+servers:
+  - url: https://example.com
+    description: Production server
+  - url: http://localhost:8080/v1
+    description: Local development server
+paths:
+  /tasks:
+    $ref: './paths/tasks.yaml'
+  /tasks/{taskId}:
+    $ref: './paths/taskById.yaml'

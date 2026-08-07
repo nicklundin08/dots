@@ -1,0 +1,38 @@
+NewTask:
+  type: object
+  required:
+    - title
+  properties:
+    title:
+      type: string
+      example: "Buy groceries"
+    description:
+      type: string
+      example: "Need to pick up milk, eggs, and bread."
+    completed:
+      type: boolean
+      default: false
+Task:
+  type: object
+  required:
+    - id
+    - title
+    - completed
+  properties:
+    id:
+      type: string
+      format: uuid
+      example: "d3b07384-d113-4956-a5cc-484194fc842d"
+    title:
+      type: string
+      example: "Buy groceries"
+    description:
+      type: string
+      example: "Need to pick up milk, eggs, and bread."
+    completed:
+      type: boolean
+      example: false
+    createdAt:
+      type: string
+      format: date-time
+      example: "2026-07-31T20:18:00Z"

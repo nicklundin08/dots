@@ -1,0 +1,12 @@
+version: "3"
+tasks:
+  lint:
+    cmds:
+      - redocly lint openapi.yaml
+      # - redocly lint openapi.yaml --debug
+  bundle:
+    cmds:
+      - redocly bundle openapi.yaml --output dist.yaml
+  preview:
+    cmds:
+      - redocly preview

@@ -1,0 +1,6 @@
+version: '3'
+tasks:
+  check:
+    - nix flake check --all-systems
+  search:
+    - nix-search {{.CLI_ARGS}}

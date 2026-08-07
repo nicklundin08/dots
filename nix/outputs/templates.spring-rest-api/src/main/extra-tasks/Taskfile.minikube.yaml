@@ -1,0 +1,8 @@
+version: '3'
+tasks:
+  start:
+    - minikube start
+  stop:
+    - minikube stop
+  dashboard:
+    - minikube dashboard

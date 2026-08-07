@@ -1,0 +1,45 @@
+version: "3"
+tasks:
+  default:
+    summary: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file.
+      Generates the java server stubs from the bundles openapi json file
+    desc: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file.
+      Generates the java server stubs from the bundles openapi json file
+    cmds:
+      - task: bundle_contract
+      - task: generate_spring2
+  bundle_contract:
+    summary: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file
+      TODO: update this task so it only runs when the `.yaml` files change
+    desc: |
+      Bundles all the `.yaml` files for the openapi spec into a single json file
+    cmds:
+      - redocly bundle --output ./openapi-generated --ext json ./openapi.yaml
+      - rm -rf ../../src/main/resources/static/openapi.json || true
+      - mkdir -p ../../src/main/resources/static
+      - cp ./openapi-generated.json ../../src/main/resources/static/openapi.json
+  compare_changes_with_main:
+    ## https://www.youtube.com/watch?v=sNalT1RIF4w
+    # status:
+    #   - test -d ../../.git
+    cmds:
+      - rm -rf ../openapi-main || true
+      - mkdir ../openapi-main
+      - git --work-tree=../openapi-main/ checkout HEAD -- ./misc/openapi/
+      - openapi-changes summary ../openapi-main/misc/openapi/openapi.yaml ./openapi.yaml
+  generate_ts:
+    summary: |
+      Generates the typescript client react web app.
+    desc: |
+      Generates the typescript client react web app.
+    vars:
+      REL_PATH: ../../src/main/java
+    cmds:
+      - |
+        openapi-generator-cli generate \
+        -i ./openapi-generated.json \
+        -g typescript-angular \
+        -o ../../src/main/java
