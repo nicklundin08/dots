@@ -3,12 +3,12 @@ tasks:
   run:
     cmds:
       - ./gradlew bootRun
-  # fmt:
-  #   cmds:
-  #     - mvn spotless:apply
-  # fmt:check:
-  #   cmds:
-  #     - mvn spotless:check
+  fmt:
+    cmds:
+      - ./gradlew spotlessApply
+  fmt:check:
+    cmds:
+      - ./gradlew spotlessCheck
   # lint:
   #   cmds:
   #     - mvn spotless:apply
