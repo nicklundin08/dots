@@ -44,7 +44,6 @@
     # Helper function to transform an array of attr sets into a single attr set
     reduceAttrsList = builtins.foldl' (a: b: a // b) {};
 
-    # Helper function that makes a home manager hosts from the toml entry
     mkHomeHost = host: {
       ${host.name} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${host.system};
@@ -67,6 +66,13 @@
       };
     };
 
+    mkTemplate = template: {
+      ${template.name} = {
+        path = ./. + builtins.toPath template.path;
+        description = template.description;
+      };
+    };
+
     mkDevShell = shell: let
       pkgs = nixpkgs.legacyPackages.${shell.system};
       devShellFn = import ./nix/dev-shells/default.nix;
@@ -82,6 +88,7 @@
     nixosHosts = outputsToml.nixos-hosts;
     darwinHosts = outputsToml.darwin-hosts;
     devShells = outputsToml.dev-shells;
+    templates = outputsToml.templates;
   in {
     # Your custom packages
     # Accessible through 'nix build', 'nix shell', etc
@@ -104,5 +111,6 @@
     nixosConfigurations = reduceAttrsList (builtins.map mkNixosHost nixosHosts);
     darwinConfigurations = reduceAttrsList (builtins.map mkDarwinHost darwinHosts);
     devShells = reduceAttrsList (builtins.map mkDevShell devShells);
+    templates = reduceAttrsList (builtins.map mkTemplate templates);
   };
 }

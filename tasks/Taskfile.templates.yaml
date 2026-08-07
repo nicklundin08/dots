@@ -1,0 +1,7 @@
+version: '3'
+tasks:
+  spring-rest-api:test:
+    cmds:
+      - rm -rf template-tests || true
+      - mkdir template-tests
+      - cd template-tests && nix flake init -t .#spring-rest-api

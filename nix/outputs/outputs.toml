@@ -44,3 +44,8 @@ system = "x86_64-linux"
 [[nixos-hosts]]
 name = "dell"
 module = "/nix/outputs/nixos.dell/configuration.nix"
+
+[[templates]]
+name = "spring-rest-api"
+path = "/nix/outputs/templates.spring-rest-api"
+description = "Spring boot rest api"
