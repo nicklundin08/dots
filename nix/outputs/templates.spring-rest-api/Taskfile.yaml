@@ -17,6 +17,9 @@ includes:
   openapi:
     taskfile: ./src/main/openapi/Taskfile.yaml
     dir: ./src/main/openapi/
+  jsonschema:
+    taskfile: ./src/main/jsonschema/Taskfile.yaml
+    dir: ./src/main/jsonschema/
   liquibase:
     taskfile: ./src/main/liquibase/Taskfile.yaml
     dir: ./src/main/liquibase/

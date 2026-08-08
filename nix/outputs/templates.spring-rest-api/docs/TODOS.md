@@ -1,13 +1,12 @@
 # TODOS
 Misc
-- taskfiles
-    - openapi
-    - jsonschema
 - gradle deps and plugins
+    - jacoco
+    - split gradle build up
+    - organize generated code
     - archunit
     - liquibase
     - gradle plugins for openapi generator
-    - gradle plugins for jsonschem to pojo (events)
 - openapi
     - Enforce nonbrekaing changes
 - liquibase

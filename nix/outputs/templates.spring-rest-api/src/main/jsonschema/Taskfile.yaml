@@ -1,0 +1,5 @@
+version: "3"
+tasks:
+  default:
+    cmds:
+      - jsonschema2pojo --source address.json --target ../java --package com.example.demo.events.address
