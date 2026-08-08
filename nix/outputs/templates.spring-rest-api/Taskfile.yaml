@@ -9,11 +9,14 @@ includes:
   compose:
     taskfile: ./src/main/compose/Taskfile.yaml
     dir: ./src/main/compose
+  docker:
+    taskfile: ./src/main/docker/Taskfile.yaml
+    dir: ./src/main/docker
   demo-api: ./src/main/extra-tasks/Taskfile.demo.yaml
   # minikube: ./tasks/Taskfile.minikube.yaml
-  # openapi:
-  #   taskfile: ./contracts/openapi/Taskfile.yaml
-  #   dir: ./contracts/openapi/
+  openapi:
+    taskfile: ./src/main/openapi/Taskfile.yaml
+    dir: ./src/main/openapi/
   liquibase:
     taskfile: ./src/main/liquibase/Taskfile.yaml
     dir: ./src/main/liquibase/

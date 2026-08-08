@@ -3,7 +3,6 @@ Misc
 - taskfiles
     - openapi
     - jsonschema
-    - Dockerfile
 - gradle deps and plugins
     - archunit
     - liquibase

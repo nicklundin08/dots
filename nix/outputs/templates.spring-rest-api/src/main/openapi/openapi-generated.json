@@ -114,11 +114,7 @@
     "schemas": {
       "Task": {
         "type": "object",
-        "required": [
-          "id",
-          "title",
-          "completed"
-        ],
+        "required": ["id", "title", "completed"],
         "properties": {
           "id": {
             "type": "string",
@@ -146,9 +142,7 @@
       },
       "NewTask": {
         "type": "object",
-        "required": [
-          "title"
-        ],
+        "required": ["title"],
         "properties": {
           "title": {
             "type": "string",

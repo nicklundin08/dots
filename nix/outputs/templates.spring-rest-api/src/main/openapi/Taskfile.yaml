@@ -8,9 +8,9 @@ tasks:
       Bundles all the `.yaml` files for the openapi spec into a single json file.
       Generates the java server stubs from the bundles openapi json file
     cmds:
-      - task: bundle_contract
-      - task: generate_spring2
-  bundle_contract:
+      - task: bundle
+      - task: generate
+  bundle:
     summary: |
       Bundles all the `.yaml` files for the openapi spec into a single json file
       TODO: update this task so it only runs when the `.yaml` files change
@@ -19,8 +19,8 @@ tasks:
     cmds:
       - redocly bundle --output ./openapi-generated --ext json ./openapi.yaml
       - rm -rf ../../src/main/resources/static/openapi.json || true
-      - mkdir -p ../../src/main/resources/static
-      - cp ./openapi-generated.json ../../src/main/resources/static/openapi.json
+      # - mkdir -p ../../src/main/resources/static
+      # - cp ./openapi-generated.json ../../src/main/resources/static/openapi.json
   compare_changes_with_main:
     ## https://www.youtube.com/watch?v=sNalT1RIF4w
     # status:
@@ -30,16 +30,22 @@ tasks:
       - mkdir ../openapi-main
       - git --work-tree=../openapi-main/ checkout HEAD -- ./misc/openapi/
       - openapi-changes summary ../openapi-main/misc/openapi/openapi.yaml ./openapi.yaml
-  generate_ts:
+  generate:
+    ## Customization: https://github.com/OpenAPITools/openapi-generator/blob/master/docs/customization.md
+    ## Spring options: https://github.com/OpenAPITools/openapi-generator/blob/master/docs/generators/spring.md
     summary: |
-      Generates the typescript client react web app.
+      Generates the server stubs (interfaces) for the spring boot rest controllers.
     desc: |
-      Generates the typescript client react web app.
+      Generates the server stubs (interfaces) for the spring boot rest controllers.
     vars:
-      REL_PATH: ../../src/main/java
+      OPENAPI_JSON_FILE: ./openapi-generated.json
+      GENERATED_CODE_DIR: ./generated
     cmds:
+      - rm -rf {{.GENERATED_CODE_DIR}}
       - |
         openapi-generator-cli generate \
-        -i ./openapi-generated.json \
-        -g typescript-angular \
-        -o ../../src/main/java
+        -i {{.OPENAPI_JSON_FILE}} \
+        -g spring \
+        -o {{.GENERATED_CODE_DIR}} \
+        -p interfaceOnly=true,skipDefaultInterface=true,sourceFolder=./,useSpringBoot3=true,useJakartaEe=true,generateSupportingFiles=false,artifactId=demo,groupId=com.example,parentArtifactId=core-api,apiPackage=com.example.demo.endpoints.api,modelPackage=com.example.demo.endpoints.model,artifactVersion=1.0-SNAPSHOT,snapshotVersion=true
+      - mv {{.GENERATED_CODE_DIR}}/com/example/demo/endpoints ../java/com/example/demo
