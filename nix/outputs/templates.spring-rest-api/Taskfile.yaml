@@ -10,13 +10,13 @@ includes:
     taskfile: ./src/main/compose/Taskfile.yaml
     dir: ./src/main/compose
   demo-api: ./src/main/extra-tasks/Taskfile.demo.yaml
-# minikube: ./tasks/Taskfile.minikube.yaml
-# openapi:
-#   taskfile: ./contracts/openapi/Taskfile.yaml
-#   dir: ./contracts/openapi/
-# liquibase:
-#   taskfile: ./contracts/liquibase/Taskfile.yaml
-#   dir: ./contracts/liquibase/
+  # minikube: ./tasks/Taskfile.minikube.yaml
+  # openapi:
+  #   taskfile: ./contracts/openapi/Taskfile.yaml
+  #   dir: ./contracts/openapi/
+  liquibase:
+    taskfile: ./src/main/liquibase/Taskfile.yaml
+    dir: ./src/main/liquibase/
 tasks:
   default:
     cmds:

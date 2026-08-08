@@ -8,9 +8,9 @@ tasks:
       Creates the database (if not exists).
       Applies all liquibase migrations.
     cmds:
-      - task: create_db_if_not_exists
+      - task: create
       - task: migrate
-      #- task: doc
+        #- task: doc
   test:
     summary: |
       Tests the connection by selecting 1.
@@ -27,7 +27,7 @@ tasks:
     cmds:
       - liquibase update --defaults-file liquibase.properties --username ${PG_USER} --password ${PG_PASS} --url jdbc:postgresql://${PG_HOST}:${PG_PORT}/${PG_DB}
     silent: false
-  create_db_if_not_exists:
+  create:
     summary: |
       Creates the db if it does not exist.
     desc: |
@@ -41,3 +41,11 @@ tasks:
       !!! WARNING - very destructive!!! Drops the DB
     cmds:
       - PGPASSWORD=${PG_PASS} psql -U ${PG_USER} -h ${PG_HOST}  -d 'postgres'  -c "DROP DATABASE ${PG_DB}" || true
+  document:
+    summary: |
+      Removes and regenerates the ERDs for the database.
+    desc: |
+      Removes and regenerates the ERDs for the database.
+    cmds:
+      - rm -rf dbdoc || true
+      - tbls doc postgres://${PG_USER}:${PG_PASS}@${PG_HOST}:${PG_PORT}/${PG_DB}?sslmode=disable
