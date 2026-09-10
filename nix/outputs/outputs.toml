@@ -5,18 +5,13 @@ name = "darwin-arm"
 module = "/nix/outputs/darwin.arm/darwin.arm.nix"
 
 [[darwin-hosts]]
-name = "nicks-MacBook-Pro"
-module = "/nix/darwin-hosts/mbp.nix"
+name = "darwin-mbp"
+module = "/nix/outputs/darwin.mbp/default.nix"
 
 [[dev-shells]]
 name = "default"
 module = "/nix/dev-shells/default.nix"
 system = "aarch64-linux"
-
-# [[home-manager-hosts]]
-# name = "nicholaslundin@BL-003.local"
-# module = "/nix/home-manager-hosts/home.work.nix"
-# system = "aarch64-darwin"
 
 # [[home-manager-hosts]]
 # name = "nick@ARM-MRY5H99C3Y.local"

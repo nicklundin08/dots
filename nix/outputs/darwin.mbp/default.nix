@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./dots.nix
     inputs.home-manager.darwinModules.home-manager
   ];
   environment.systemPackages = [
@@ -18,7 +19,7 @@
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration
-      nick = import ../home-manager-hosts/home.work.nix;
+      nick = import ./home.nix;
     };
   };
 
