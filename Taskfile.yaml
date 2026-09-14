@@ -1,6 +1,7 @@
 version: '3'
 includes:
   templates: ./tasks/Taskfile.templates.yaml
+  flake: ./tasks/Taskfile.flake.yaml
   ssh: ./tasks/Taskfile.ssh.yaml
   fmt: ./tasks/Taskfile.fmt.yaml
   wg: ./tasks/Taskfile.wg.yaml
@@ -29,9 +30,6 @@ tasks:
   rebuild:
     cmds:
       - dots:rebuild
-  update:
-    cmds:
-      - nix flake update
   gc:
     cmds:
       - nix-collect-garbage

@@ -1,0 +1,8 @@
+version: '3'
+tasks:
+  update:
+    cmds:
+      - nix flake update
+  check:
+    cmds:
+      - nix flake check

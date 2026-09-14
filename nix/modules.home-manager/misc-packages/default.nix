@@ -19,7 +19,7 @@
     # dev tools
     pkgs.tmuxp
     pkgs.lazydocker
-    pkgs.docker
+    pkgs.docker_29
     pkgs.lazysql
     pkgs.tmux
     pkgs.go-task
