@@ -1,0 +1,8 @@
+version: '3'
+tasks:
+  serve:
+    cmds:
+      - ollama serve
+  run:
+    cmds:
+      - ollama run codeqwen

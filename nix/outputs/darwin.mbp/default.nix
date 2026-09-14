@@ -7,6 +7,7 @@
   ...
 }: {
   imports = [
+    ./agent.nix
     ./dots.nix
     inputs.home-manager.darwinModules.home-manager
   ];

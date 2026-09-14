@@ -1,6 +1,7 @@
 version: '3'
 includes:
   templates: ./tasks/Taskfile.templates.yaml
+  ollama: ./tasks/Taskfile.ollama.yaml
   flake: ./tasks/Taskfile.flake.yaml
   ssh: ./tasks/Taskfile.ssh.yaml
   fmt: ./tasks/Taskfile.fmt.yaml
