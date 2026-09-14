@@ -50,7 +50,7 @@
           javascript
           jsdoc
           json
-          jsonc
+          # jsonc
           tsx
           typescript
         ];
