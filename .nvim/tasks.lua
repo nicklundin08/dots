@@ -1,0 +1,43 @@
+-- local task_prefix = "<leader>zT"
+--
+-- local function run_task(task_name)
+-- 	vim.cmd("botright new")
+-- 	vim.fn.termopen({ "task", task_name })
+-- 	vim.cmd("startinsert")
+-- end
+--
+-- vim.system({ "task", "default" }, { text = true }, function(result)
+-- 	vim.schedule(function()
+-- 		if result.code ~= 0 then
+-- 			vim.notify("Unable to load project tasks: " .. result.stderr, vim.log.levels.WARN)
+-- 			return
+-- 		end
+--
+-- 		local which_key_ok, which_key = pcall(require, "which-key")
+-- 		if not which_key_ok then
+-- 			return
+-- 		end
+--
+-- 		local entries = {
+-- 			{ task_prefix, group = "[T]ask" },
+-- 		}
+-- 		local task_index = 0
+--
+-- 		for _, line in ipairs(vim.split(result.stdout, "\n", { plain = true, trimempty = true })) do
+-- 			local task_name = line:match("^%*%s+(.+):%s*$")
+-- 			if task_name then
+-- 				task_index = task_index + 1
+-- 				table.insert(entries, {
+-- 					task_prefix .. task_index,
+-- 					function()
+-- 						run_task(task_name)
+-- 					end,
+-- 					desc = task_name,
+-- 				})
+-- 			end
+-- 		end
+--
+-- 		which_key.add(entries)
+-- 	end)
+-- end)
+vim.keymap.set("n", "<leader>T", ":botright vsplit | terminal task fmt:all<CR>", { desc = "Format" })
