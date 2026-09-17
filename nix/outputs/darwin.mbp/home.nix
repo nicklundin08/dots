@@ -15,6 +15,7 @@
 
     # You can also split up your configuration and import pieces of it here:
     outputs.homeModules.dev-programs
+    ./iterm2.nix
     # inputs.home-manager.darwinModules.home-manager
   ];
 
