@@ -21,6 +21,8 @@ in {
     pkgs.k6
     pkgs.wireguard-tools
     pkgs.postgresql
+    pkgs.kubeconform
+    pkgs.kustomize
     azWithExtensions
   ];
   # programs.firefox.enable = true;
