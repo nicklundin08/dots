@@ -9,7 +9,19 @@ windows:
     layout: tiled
     panes:
       - nvim .
-  - window_name: shell
+  - window_name: tests
+    layout: tiled
+    panes:
+      - null
+  - window_name: server
+    layout: tiled
+    panes:
+      - null
+  - window_name: repl
+    layout: tiled
+    panes:
+      - null
+  - window_name: misc
     layout: tiled
     panes:
       - null
