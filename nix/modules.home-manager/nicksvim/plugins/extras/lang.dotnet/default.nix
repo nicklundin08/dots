@@ -16,17 +16,15 @@ in {
           tostring(vim.fn.getpid()),
         },
       })
-
-      require("neotest").setup({
-        adapters = {
-          require("neotest-vstest"),
-        },
-      })
     '';
 
     extraPlugins = [
       neotest-vstest
     ];
+
+    # plugins.neotest.settings.adapters = [
+    #   "require('neotest-vstest')"
+    # ];
 
     plugins = {
       lsp.servers.omnisharp = {

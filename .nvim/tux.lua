@@ -30,6 +30,39 @@ vim.keymap.set("n", "<leader>zF", function()
 	vim.fn.system([[tmux send-keys -t tests "task fmt:all" Enter \;]])
 end, { desc = "Format" })
 
+-- vim.keymap.set("n", "<leader>zf", function()
+--     -- 1. Save the file so the external formatter has the latest code
+--     vim.cmd("write")
+--
+--     -- 2. Get the current Neovim listen address/pipe
+--     local server = vim.v.servername
+--
+--     -- 3. Construct the command to send to tmux
+--     -- It runs your task, then uses nvim RPC to tell this specific instance to reload
+--     local cmd = string.format(
+--         [[tmux send-keys -t tests "task core:fmt:quick && nvim --server %s --remote-send '<C-\><C-N>:checktime<CR>'" Enter \; select-window -t tests]],
+--         server
+--     )
+--     -- 4. Run the tmux command asynchronously using vim.fn.jobstart
+--     vim.fn.jobstart(cmd)
+-- end, { desc = "Fmt and switch" })
+--
+-- vim.keymap.set("n", "<leader>zF", function()
+--     -- 1. Save the file so the external formatter has the latest code
+--     vim.cmd("write")
+--
+--     -- 2. Get the current Neovim listen address/pipe
+--     local server = vim.v.servername
+--
+--     -- 3. Construct the command to send to tmux
+--     -- It runs your task, then uses nvim RPC to tell this specific instance to reload
+--     local cmd = string.format(
+--         [[tmux send-keys -t tests "task core:fmt:quick && nvim --server %s --remote-send '<C-\><C-N>:checktime<CR>'" Enter \;]],
+--         server
+--     )
+--     -- 4. Run the tmux command asynchronously using vim.fn.jobstart
+--     vim.fn.jobstart(cmd)
+-- end, { desc = "Fmt" })
 -----------------------------------
 -- REPL
 -----------------------------------

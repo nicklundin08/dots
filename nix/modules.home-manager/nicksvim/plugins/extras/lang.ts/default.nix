@@ -57,32 +57,27 @@
       };
 
       neotest = {
-        adapters.jest = {
-          enable = true;
-        };
+        adapters.jest.enable = false;
+        adapters.vitest.enable = true;
       };
 
       conform-nvim = {
         settings.formatters_by_ft = {
           typescriptreact = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
+            __unkeyed-1 = "oxfmt";
+            __unkeyed-2 = "oxlint";
           };
           typescript = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
+            __unkeyed-1 = "oxfmt";
+            __unkeyed-2 = "oxlint";
           };
           javascriptreact = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
+            __unkeyed-1 = "oxfmt";
+            __unkeyed-2 = "oxlint";
           };
           javascript = {
-            __unkeyed-1 = "prettierd";
-            __unkeyed-2 = "prettier";
-            stop_after_first = true;
+            __unkeyed-1 = "oxfmt";
+            __unkeyed-2 = "oxlint";
           };
         };
       };
