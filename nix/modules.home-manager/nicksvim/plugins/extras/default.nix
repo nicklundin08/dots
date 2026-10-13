@@ -11,6 +11,7 @@
     ./lang.scala
     ./lang.sql
     ./lang.ts
+    ./lazygit
     ./quickfix
     ./test.nix
   ];

@@ -37,6 +37,10 @@
             group = "[C]hecks";
           }
           {
+            __unkeyed-1 = "<leader>g";
+            group = "LazyGit";
+          }
+          {
             __unkeyed-1 = "<leader>k";
             group = "quickfix";
           }

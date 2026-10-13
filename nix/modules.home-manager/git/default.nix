@@ -33,6 +33,9 @@
       lazygit = {
         enable = true;
         settings = {
+          os = {
+            editPreset = "nvim-remote";
+          };
           gui = {
             theme = {
               activeBorderColor = [
