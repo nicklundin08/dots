@@ -22,9 +22,9 @@ in {
       neotest-vstest
     ];
 
-    # plugins.neotest.settings.adapters = [
-    #   "require('neotest-vstest')"
-    # ];
+    plugins.neotest.settings.adapters = [
+      "require('neotest-vstest')"
+    ];
 
     plugins = {
       lsp.servers.omnisharp = {
