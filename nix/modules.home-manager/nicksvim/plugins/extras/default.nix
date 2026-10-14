@@ -13,6 +13,7 @@
     ./lang.ts
     ./lazygit
     ./quickfix
+    ./toggleterm
     ./test.nix
   ];
 }
