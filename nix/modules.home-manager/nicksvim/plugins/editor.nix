@@ -8,6 +8,17 @@
     #   enable = true;
     # };
 
+    autoCmd = [
+      {
+        event = "VimEnter";
+        callback.__raw = ''
+          function()
+            require("nvim-tree.api").tree.open()
+            vim.cmd("wincmd p")
+          end
+        '';
+      }
+    ];
     plugins.flash = {
       enable = true;
     };
