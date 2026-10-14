@@ -12,6 +12,10 @@
       enable = true;
     };
 
+    plugins.nvim-tree = {
+      enable = true;
+    };
+
     plugins.which-key = {
       enable = true;
 

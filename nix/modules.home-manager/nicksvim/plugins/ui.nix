@@ -7,6 +7,12 @@
     plugins.lualine = {
       enable = true;
       settings.options.globalstatus = true;
+      settings.sections.lualine_c = [
+        {
+          __unkeyed-1 = "filename";
+          path = 1;
+        }
+      ];
     };
 
     # mini-icons = {
@@ -42,6 +48,10 @@
     ];
 
     plugins.nui = {
+      enable = true;
+    };
+
+    plugins.bufferline = {
       enable = true;
     };
 
