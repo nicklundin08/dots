@@ -3,7 +3,29 @@
   lib,
   ...
 }: {
-  programs.nixvim.plugins.neotest.enable = true;
+  programs.nixvim.plugins.neotest = {
+    enable = true;
+    settings.summary.open.__raw = ''
+      function()
+        local width = math.floor(vim.o.columns * 0.8)
+        local height = math.floor(vim.o.lines * 0.8)
+
+        return vim.api.nvim_open_win(
+          vim.api.nvim_create_buf(false, true),
+          true,
+          {
+            relative = "editor",
+            width = width,
+            height = height,
+            col = math.floor((vim.o.columns - width) / 2),
+            row = math.floor((vim.o.lines - height) / 2),
+            style = "minimal",
+            border = "rounded",
+          }
+        )
+      end
+    '';
+  };
   programs.nixvim.keymaps = [
     # keys = {
     #   {"<leader>t", "", desc = "+test"},
@@ -39,7 +61,7 @@
     {
       key = "<leader>ts";
       mode = "n";
-      action = lib.generators.mkLuaInline "function() require('neotest').summary.toggle() end";
+      action = lib.generators.mkLuaInline "function() require('neotest').summary.toggle({enter = true}) end";
       options.desc = "Test summary";
     }
     {
