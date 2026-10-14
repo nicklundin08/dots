@@ -12,7 +12,7 @@
     programs.tmux = {
       enable = true;
       # shell = pkgs.bash;
-      prefix = "M-t";
+      prefix = "M-Space";
       terminal = "tmux-256color";
       extraConfig = builtins.readFile ./tmux.conf;
       plugins = with pkgs; [
