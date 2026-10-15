@@ -13,15 +13,31 @@
         # userName = "Nick Lundin";
         # userEmail = "nick@moontwer.net";
         enable = true;
-        settings.extraConfig = {
+        settings = {
           core.editor = "nvim";
-          # github.user = "nicklundin08";
+          core.pager = "delta";
+          interactive.diffFilter = "delta --color-only";
           mergetool.prompt = false;
           pull.rebase = false;
           init.defaultBranch = "main";
+          delta.navigate = true;
+          delta.dark = true;
+          merge.conflictStyle = "zdiff3";
         };
       };
+      delta = {
+        enable = true;
+        options = {
+          # Automatically hooks into Git's pager and diff filter
+          enableGitIntegration = true;
 
+          # Custom delta features and aesthetics
+          navigate = true;
+          line-numbers = true;
+          side-by-side = true;
+          theme = "Visual Studio Dark+";
+        };
+      };
       gh = {
         enable = true;
 
@@ -33,6 +49,10 @@
       lazygit = {
         enable = true;
         settings = {
+          paging = {
+            colorArg = "always";
+            pager = "delta --dark --paging=never --syntax-theme base16-256 -s";
+          };
           os = {
             editPreset = "nvim-remote";
           };

@@ -12,6 +12,7 @@ end
 
 terminal_keybind("n", "<leader>ac", wrap_cmd("cz commit"), "Committizen")
 terminal_keybind("n", "<leader>ai", "task increment", "increment")
+terminal_keybind("n", "<leader>ar", wrap_cmd("task rebuild"), "rebuild")
 terminal_keybind("n", "<leader>az", wrap_cmd("ls"), "ls")
 
 vim.keymap.set("n", "<leader>ur", function()
