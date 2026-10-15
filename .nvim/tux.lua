@@ -1,3 +1,8 @@
+vim.keymap.set('n', '<leader>Tc', function()
+    local cmd = "cz commit"
+    require("toggleterm").exec(cmd .. " && exit", 1, nil, nil, "float", "false")
+end, { desc = "Committizen" })
+
 -- vim.keymap.set("n", "<leader>zR", function()
 -- 	-- local project_config = vim.fn.getcwd() .. "/.nvim.lua"
 -- 	local tux_config = vim.fn.getcwd() .. "/.nvim/tux.lua"
