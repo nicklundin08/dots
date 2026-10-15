@@ -101,22 +101,19 @@
     #   action = ":m '<-2<CR>gv=gv";
     # }
     #####################################
-    # Edits
+    # Utils
     #####################################
     {
       mode = "n";
-      key = "<leader>eL";
-      action = "<cmd>e ~/.local/state/nvim/lsp.log<CR>";
-      options.desc = "[e]dit [L]SP log";
-    }
-    #####################################
-    # Checks
-    #####################################
-    {
-      mode = "n";
-      key = "<leader>CL";
+      key = "<leader>ulh";
       action = "<cmd>checkhealth vim.lsp<CR>";
-      options.desc = "[C]heck [L]SP health";
+      options.desc = "[L]SP [h]ealth";
+    }
+    {
+      mode = "n";
+      key = "<leader>ule";
+      action = "<cmd>e ~/.local/state/nvim/lsp.log<CR>";
+      options.desc = "[L]SP edit log";
     }
   ];
 }

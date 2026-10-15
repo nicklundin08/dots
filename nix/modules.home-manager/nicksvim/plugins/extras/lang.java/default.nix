@@ -76,13 +76,13 @@
       settings.formatters_by_ft.java = ["google-java-format"];
     };
 
-    keymaps = [
-      {
-        action = lib.generators.mkLuaInline "function() require('jdtls').jshell() end";
-        key = "<leader>ls";
-        mode = "n";
-        options.desc = "Shell";
-      }
-    ];
+    #   keymaps = [
+    #     {
+    #       action = lib.generators.mkLuaInline "function() require('jdtls').jshell() end";
+    #       key = "<leader>ls";
+    #       mode = "n";
+    #       options.desc = "Shell";
+    #     }
+    #   ];
   };
 }

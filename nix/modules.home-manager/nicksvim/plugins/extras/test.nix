@@ -47,7 +47,7 @@
       options.desc = "Test file";
     }
     {
-      key = "<leader>tt";
+      key = "<leader>tr";
       mode = "n";
       action = lib.generators.mkLuaInline "function() require('neotest').run.run() end";
       options.desc = "Test nearest";
@@ -71,7 +71,7 @@
       options.desc = "Show output";
     }
     {
-      key = "<leader>tO";
+      key = "<leader>tt";
       mode = "n";
       action = lib.generators.mkLuaInline "function() require('neotest').output_panel.toggle() end";
       options.desc = "Toggle output";
