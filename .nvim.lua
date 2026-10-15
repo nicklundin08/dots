@@ -6,4 +6,4 @@
 -- Now you can require files from that folder directly
 package.path = package.path .. ";./.nvim/?.lua"
 
-require("tux")
+require("pde")

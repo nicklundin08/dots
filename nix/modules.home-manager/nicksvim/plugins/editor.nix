@@ -37,6 +37,10 @@
         delay = 0;
         spec = [
           {
+            __unkeyed-1 = "<leader>a";
+            group = "automate";
+          }
+          {
             __unkeyed-1 = "<leader>b";
             group = "buffer";
           }
