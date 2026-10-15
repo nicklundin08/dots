@@ -1,18 +1,18 @@
 function wrap_cmd(cmd)
-    local full_cmd = cmd .. ' && echo -e "\\e[32m\r\n\tTask completed successfully. Press any key to exit.\\e[0m"'
-    full_cmd = full_cmd .. " && read input && exit"
-    return full_cmd
+	local full_cmd = cmd .. ' && echo -e "\\e[32m\r\n\tTask completed successfully. Press any key to exit.\\e[0m"'
+	full_cmd = full_cmd .. " && read input"
+	return full_cmd
 end
 
 function terminal_keybind(mode, keybind, cmd, desc)
-    vim.keymap.set(mode, keybind, function()
-        require("toggleterm").exec(cmd, 1, nil, nil, "float", "false")
-    end, { desc = desc })
+	vim.keymap.set(mode, keybind, function()
+		require("toggleterm").exec(cmd .. " && exit", 1, nil, nil, "float", "false")
+	end, { desc = desc })
 end
 
-terminal_keybind('n', '<leader>ac', wrap_cmd("cz commit"), "Committizen")
-terminal_keybind('n', '<leader>ai', "task increment", "increment")
-terminal_keybind('n', '<leader>az', wrap_cmd("ls"), "ls")
+terminal_keybind("n", "<leader>ac", wrap_cmd("cz commit"), "Committizen")
+terminal_keybind("n", "<leader>ai", "task increment", "increment")
+terminal_keybind("n", "<leader>az", wrap_cmd("ls"), "ls")
 
 vim.keymap.set("n", "<leader>ur", function()
 	local config_relative_path = "/.nvim/pde.lua"
