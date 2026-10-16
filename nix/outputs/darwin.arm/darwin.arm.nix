@@ -26,8 +26,8 @@ in {
     azWithExtensions
   ];
   # programs.firefox.enable = true;
-
   home-manager = {
+    backupFileExtension = "bak";
     extraSpecialArgs = {inherit inputs outputs;};
     users = {
       # Import your home-manager configuration

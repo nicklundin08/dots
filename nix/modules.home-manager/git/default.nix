@@ -16,7 +16,7 @@
         settings = {
           core.editor = "nvim";
           core.pager = "delta";
-          interactive.diffFilter = "delta --color-only";
+          # interactive.diffFilter = "delta --color-only";
           mergetool.prompt = false;
           pull.rebase = false;
           init.defaultBranch = "main";
@@ -27,10 +27,9 @@
       };
       delta = {
         enable = true;
+        # Automatically hooks into Git's pager and diff filter
+        enableGitIntegration = true;
         options = {
-          # Automatically hooks into Git's pager and diff filter
-          enableGitIntegration = true;
-
           # Custom delta features and aesthetics
           navigate = true;
           line-numbers = true;
@@ -49,10 +48,6 @@
       lazygit = {
         enable = true;
         settings = {
-          paging = {
-            colorArg = "always";
-            pager = "delta --dark --paging=never --syntax-theme base16-256 -s";
-          };
           os = {
             editPreset = "nvim-remote";
           };
@@ -71,6 +66,12 @@
             log.order = "default";
 
             fetchAll = false;
+            pagers = [
+              {
+                colorArg = "always";
+                pager = "delta --side-by-side --dark --paging=never";
+              }
+            ];
           };
           customCommands = [
             {
