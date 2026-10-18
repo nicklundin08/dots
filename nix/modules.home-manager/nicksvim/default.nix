@@ -10,6 +10,18 @@
   readFile = file: builtins.readFile "${luaDir}/${file}";
   fileContents = builtins.map readFile files;
   extraLua = lib.strings.concatStrings fileContents;
+
+  pluginDir = ./custom-plugins;
+
+  pluginFiles = builtins.readDir pluginDir;
+
+  luaFiles =
+    builtins.filter
+    (name:
+      pluginFiles.${name}
+      == "regular"
+      && builtins.match ".*\\.lua" name != null)
+    (builtins.attrNames pluginFiles);
 in {
   imports = [
     inputs.nixvim.homeModules.nixvim
@@ -32,6 +44,15 @@ in {
       vimAlias = true;
       #extraConfigLua = builtins.readFile ./autocmd.lua;
       extraConfigLua = extraLua;
+
+      extraFiles = builtins.listToAttrs (
+        map (name: {
+          # name = "lua/custom/plugins/${name}";
+          name = "lua/${name}";
+          value.source = pluginDir + "/${name}";
+        })
+        luaFiles
+      );
     };
   };
 }
