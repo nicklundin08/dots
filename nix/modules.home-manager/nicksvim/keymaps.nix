@@ -46,6 +46,32 @@
     # Buffers
     #####################################
     {
+      action = "<Cmd>BufferLineTogglePin<CR>";
+      key = "<leader>bp";
+      mode = "n";
+      options.desc = "Toggle Pin";
+    }
+    {
+      action = "<Cmd>BufferLineGroupClose ungrouped<CR>";
+      key = "<leader>bP";
+      mode = "n";
+      options.desc = "Delete non-pinned buffers";
+    }
+    {
+      action = "<Cmd>BufferLineCloseOthers<CR>";
+      key = "<leader>bo";
+      mode = "n";
+      options.desc = "Delete other buffers";
+    }
+    # { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete Non-Pinned Buffers" },
+    # { "<leader>br", "<Cmd>BufferLineCloseRight<CR>", desc = "Delete Buffers to the Right" },
+    # { "<leader>bl", "<Cmd>BufferLineCloseLeft<CR>", desc = "Delete Buffers to the Left" },
+    # { "[b", "<cmd>BufferLineCyclePrev<cr>", desc = "Prev Buffer" },
+    # { "]b", "<cmd>BufferLineCycleNext<cr>", desc = "Next Buffer" },
+    # { "[B", "<cmd>BufferLineMovePrev<cr>", desc = "Move buffer prev" },
+    # { "]B", "<cmd>BufferLineMoveNext<cr>", desc = "Move buffer next" },
+    # { "<leader>bj", "<cmd>BufferLinePick<cr>", desc = "Pick Buffer" },
+    {
       action = ":bprev<CR>";
       key = "<S-h>";
       mode = "n";
@@ -114,6 +140,15 @@
       key = "<leader>ule";
       action = "<cmd>e ~/.local/state/nvim/lsp.log<CR>";
       options.desc = "[L]SP edit log";
+    }
+    #####################################
+    # Misc
+    #####################################
+    {
+      mode = "n";
+      key = "<esc><esc>";
+      action = ":noh<CR>";
+      options.desc = "No highlight";
     }
   ];
 }
