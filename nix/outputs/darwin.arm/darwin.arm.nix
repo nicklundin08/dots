@@ -2,6 +2,7 @@
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 {
   pkgs,
+  lib,
   inputs,
   outputs,
   ...
@@ -23,8 +24,16 @@ in {
     pkgs.postgresql
     pkgs.kubeconform
     pkgs.kustomize
+    pkgs.acli
     azWithExtensions
   ];
+
+  nixpkgs.config.allowUnfree = true;
+  # pkgs.config.allowUnfreePredicate = pkg:
+  #   builtins.elem (lib.getName pkg) [
+  #     "acli"
+  #   ];
+  #
   # programs.firefox.enable = true;
   home-manager = {
     backupFileExtension = "bak";
